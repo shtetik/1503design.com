@@ -1,0 +1,69 @@
+#fullpage
+  .section#section1
+    .test4
+      %h2{ style: 'font-size: 100px; margin-top: 200px' }
+        Branding&
+        %br
+        Visual Communication
+      %p{ style: 'font-size: 34px; width: 50%; margin: 0 auto; margin-top: 300px' }
+        1,618 is a branding and visual communication studio founded by Ksenia Smirnova, based in Milan, Italy.
+      %p{ style: 'font-size: 34px; width: 50%; margin: 0 auto; margin-top: 30px; margin-bottom: 300px' }
+        We design everything visual, including brand identities, packaging, websites and mobile apps, patterns and illustrations.
+  .section#section2.test1
+    %h2.test5{ style: 'font-size: 152px; color: white' }
+      Branding&
+      %br
+      Identities
+  .section#section3.test2
+    %h2.test6{ style: 'font-size: 110px; color: white' }
+      Web&Mobile
+  .section#section4.test3
+    %h2{ style: 'font-size: 110px; color: white' }
+      ILLUSTRATION
+  .section#section5{ style: 'text-align: left; padding-left: 6%' }
+    %h2{ style: 'font-size: 90px; color: white' }
+      Always in balance between an artistic vision and a market approach, we define our work as
+      %span{ style: 'font-size: 90px; color: black' } scenical decorations tailor-made on the client needs.
+  .section#section6
+    %h2{ style: 'font-size: 240px; color: white' }
+      Clients
+  .section#section7
+    %h2{ style: 'font-size: 152px; color: white' }
+      Contact
+
+:javascript
+  $(document).ready(function() {
+    $('#fullpage').fullpage({
+      css3: false,
+      fitToSection: false,
+      autoScrolling: false
+    });
+  });
+
+  var controller = new ScrollMagic.Controller();
+
+  var timeline1 = new TimelineLite()
+    .add(TweenMax.to("#section1", 1, { y: 6, opacity: 0.6, scale: 0.99, ease: Circ.easeOut }));
+
+  var timeline2 = new TimelineLite()
+    .add(TweenMax.to("#section2", 1, { y: 4, opacity: 0.6, scale: 0.99, ease: Circ.easeOut }))
+    .add(TweenMax.to(".test5", 1, { y: 140, delay: -1 }));
+
+  var timeline3 = new TimelineLite()
+    .add(TweenMax.to("#section3", 1, { y: 4, opacity: 0.6, scale: 0.99, ease: Circ.easeOut }))
+    .add(TweenMax.to(".test6", 1, { y: 140, delay: -1 }));
+
+  var scene = new ScrollMagic.Scene({ triggerElement: ".test1", duration: '100%', tweenChanges: true })
+                  .triggerHook(1)
+                  .setTween(timeline1)
+                  .addTo(controller);
+
+  var scene = new ScrollMagic.Scene({ triggerElement: ".test2", duration: '100%' })
+                  .triggerHook(1)
+                  .setTween(timeline2)
+                  .addTo(controller);
+
+  var scene = new ScrollMagic.Scene({ triggerElement: ".test3", duration: '100%' })
+                  .triggerHook(1)
+                  .setTween(timeline3)
+                  .addTo(controller);
