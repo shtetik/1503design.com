@@ -1,14 +1,13 @@
 #fullpage
   .section#section1
-    .test4
-      %h2{ style: 'font-size: 100px; margin-top: 200px' }
-        Branding&
-        %br
-        Visual Communication
-      %p{ style: 'font-size: 34px; width: 50%; margin: 0 auto; margin-top: 300px' }
-        1,618 is a branding and visual communication studio founded by Ksenia Smirnova, based in Milan, Italy.
-      %p{ style: 'font-size: 34px; width: 50%; margin: 0 auto; margin-top: 30px; margin-bottom: 300px' }
-        We design everything visual, including brand identities, packaging, websites and mobile apps, patterns and illustrations.
+    %h2{ style: 'font-size: 100px; margin-top: 200px' }
+      Branding&
+      %br
+      Visual Communication
+    %p{ style: 'font-size: 34px; width: 50%; margin: 0 auto; margin-top: 300px' }
+      1,618 is a branding and visual communication studio founded by Ksenia Smirnova, based in Milan, Italy.
+    %p{ style: 'font-size: 34px; width: 50%; margin: 0 auto; margin-top: 30px; margin-bottom: 300px' }
+      We design everything visual, including brand identities, packaging, websites and mobile apps, patterns and illustrations.
   .section#section2.test1
     %h2.test5{ style: 'font-size: 152px; color: white' }
       Branding&
@@ -18,12 +17,13 @@
     %h2.test6{ style: 'font-size: 110px; color: white' }
       Web&Mobile
   .section#section4.test3
-    %h2{ style: 'font-size: 110px; color: white' }
+    %h2.test7{ style: 'font-size: 110px; color: white' }
       ILLUSTRATION
-  .section#section5{ style: 'text-align: left; padding-left: 6%' }
+  .section#section5.test4{ style: 'text-align: left; padding-left: 6%' }
     %h2{ style: 'font-size: 90px; color: white' }
-      Always in balance between an artistic vision and a market approach, we define our work as
-      %span{ style: 'font-size: 90px; color: black' } scenical decorations tailor-made on the client needs.
+      Always in balance between an artistic vision and a market approach
+      %span.typed-trigger , we define our work as
+      %span.typed{ style: 'font-size: 90px; color: black' }
   .section#section6
     %h2{ style: 'font-size: 240px; color: white' }
       Clients
@@ -53,6 +53,10 @@
     .add(TweenMax.to("#section3", 1, { y: 4, opacity: 0.6, scale: 0.99, ease: Circ.easeOut }))
     .add(TweenMax.to(".test6", 1, { y: 140, delay: -1 }));
 
+  var timeline4 = new TimelineLite()
+    .add(TweenMax.to("#section4", 1, { y: 4, opacity: 0.6, scale: 0.99, ease: Circ.easeOut }))
+    .add(TweenMax.to(".test7", 1, { y: 140, delay: -1 }));
+
   var scene = new ScrollMagic.Scene({ triggerElement: ".test1", duration: '100%', tweenChanges: true })
                   .triggerHook(1)
                   .setTween(timeline1)
@@ -67,3 +71,21 @@
                   .triggerHook(1)
                   .setTween(timeline3)
                   .addTo(controller);
+
+  var scene = new ScrollMagic.Scene({ triggerElement: ".test4", duration: '100%' })
+                  .triggerHook(1)
+                  .setTween(timeline4)
+                  .addTo(controller);
+
+  new ScrollMagic.Scene({ triggerElement: ".typed-trigger", reverse:false})
+      .on('start', function () {
+          console.log("passed trigger");
+          var typed = new Typed('.typed', {
+            strings: ["scenical decorations tailor-made on the client needs."],
+            typeSpeed: 50,
+            showCursor: false,
+            loop: true
+          });
+      })
+      .addTo(controller);
+

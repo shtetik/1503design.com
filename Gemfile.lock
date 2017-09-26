@@ -146,6 +146,7 @@ GEM
       rails-assets-jquery (>= 1.6.0)
     rails-assets-jquery (3.2.1)
     rails-assets-normalize.css (7.0.0)
+    rails-assets-typed.js (2.0.6)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -235,6 +236,7 @@ DEPENDENCIES
   rails-assets-ScrollMagic!
   rails-assets-fullpage!
   rails-assets-normalize.css!
+  rails-assets-typed.js!
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

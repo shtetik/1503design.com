@@ -16,9 +16,10 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'greensock-rails', '~> 1.20', '>= 1.20.2.0'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-fullpage'
   gem 'rails-assets-normalize.css'
   gem 'rails-assets-ScrollMagic'
+  gem 'rails-assets-fullpage'
+  gem 'rails-assets-typed.js'
 end
 
 group :development, :test do
