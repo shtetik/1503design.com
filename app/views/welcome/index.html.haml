@@ -81,10 +81,11 @@
       .on('start', function () {
           console.log("passed trigger");
           var typed = new Typed('.typed', {
-            strings: ["scenical decorations tailor-made on the client needs."],
-            typeSpeed: 50,
+            strings: ["scenical decorations tailor-made on the client needs.", "Ксюша, тут можно несколько текстов вставить 🤘", "А можно вообще подключится к серверу анекдотов и бесконечно их тут менять 😎"],
+            typeSpeed: 60,
             showCursor: false,
-            loop: true
+            loop: true,
+            backDelay: 700
           });
       })
       .addTo(controller);
