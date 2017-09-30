@@ -1,0 +1,43 @@
+$ ->
+  # Fullpage.js
+  $('#fullpage-js').fullpage
+    css3: false
+    sectionSelector: '.section'
+    fitToSection: false
+    autoScrolling: false
+
+  # ScrollMagic + TweenMax
+  controller = new ScrollMagic.Controller
+
+  $('[data-section]').each (i, el) ->
+    hook = if i == 0 then 1 else 0
+    blackout_tween = TweenMax.fromTo '.blackout', 1,
+      { opacity: 0, ease: Power0.easeNone }
+      { opacity: 1, ease: Power0.easeNone }
+    trigger = "[data-section='#{i + 1 + hook}']"
+    new ScrollMagic.Scene(triggerElement: trigger, duration: '100%')
+      .triggerHook(hook)
+      .setTween(blackout_tween)
+      .setPin("[data-section='#{i + 1}']", { pushFollowers: false })
+      .addTo(controller)
+      .on 'enter leave', (event) ->
+        if event.state == 'BEFORE' && event.type == 'leave' && event.target.triggerHook() == 1
+          $('.blackout').css('z-index', 0)
+      .on 'progress', (event) ->
+        if event.progress > 0.01
+          index_delta = if i != 0 then 1 else 0
+          index = parseInt($(event.target.triggerElement()).css('z-index'))
+          $('.blackout').css('z-index', index + index_delta)
+
+  # ScrollMagic + Typed.js
+  new ScrollMagic.Scene(triggerElement: '#typed-trigger', reverse: false)
+    .addTo(controller)
+    .on 'start', ->
+      new Typed '#typed',
+        strings: ['scenical decorations tailor-made on the client needs.']
+        stringsElement: '#typed-strings'
+        loop: true
+        typeSpeed: 40
+        fadeOut: true
+        backDelay: 2000
+        showCursor: false

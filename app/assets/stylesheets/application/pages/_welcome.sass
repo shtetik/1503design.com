@@ -1,0 +1,75 @@
+.blackout
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 0
+  opacity: 0
+  background: #000000
+
+.section
+  text-align: center
+
+  &--first
+    z-index: 1
+    background-image: asset-url('pages/welcome/1.jpg')
+  &--work-type-1
+    z-index: 2
+    background-image: asset-url('pages/welcome/2.jpg')
+  &--work-type-2
+    z-index: 3
+    background-image: asset-url('pages/welcome/3.jpg')
+  &--work-type-3
+    z-index: 4
+    background-image: asset-url('pages/welcome/4.jpg')
+    margin-bottom: 0
+
+  &--first,
+  &--work-type-1,
+  &--work-type-2,
+  &--work-type-3
+    background-size: cover
+
+  &--first,
+    background-attachment: fixed
+
+  &--gradient-1
+    padding-left: 6%
+    text-align: left
+    background: linear-gradient(#efefef, #ffe8e8)
+  &--gradient-2
+    background: linear-gradient(#ffe8e8, #f4e8ff)
+  &--gradient-3
+    background: linear-gradient(#f4e8ff, #dfefdb)
+
+  &--gradient-1,
+  &--gradient-2,
+  &--gradient-3
+    z-index: 10
+
+.text
+  &--quote,
+  &--clients,
+  &--contact
+    color: #ffffff
+
+  &--clients
+    font-size: 240px
+  &--contact
+    font-size: 152px
+
+.quote
+  position: relative
+  font-size: 5rem
+  &__placeholder
+    color: transparent
+  &__typed
+    color: #ffffff
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    span:last-child
+      color: #000000
