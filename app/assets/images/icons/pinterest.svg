@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14.8749313 19.3452053" enable-background="new 0 0 14.8749313 19.3452053" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  height="19.3452053" width="14.8749313" bottomLeftOrigin="true" x="195.5324554" y="-1019.4655762">
+			</sliceSourceBounds>
+	</sfw>
+</metadata>
+<g>
+	<path fill="#8F9193" d="M14.7863092,5.3785224c-0.5184126-3.8203926-4.2887144-5.7683601-8.302494-5.3134899
+		c-3.1802714,0.3596808-6.342627,2.957463-6.4770627,6.6765785c-0.082193,2.2668328,0.5541986,3.9669576,2.6903045,4.4445186
+		c0.9216738-1.6517467-0.2987759-2.012949-0.4899669-3.2113471c-0.7827708-4.8993893,5.5837436-8.2406988,8.9149532-4.822278
+		c2.3108854,2.3725836,0.7886972,9.6582079-2.9293613,8.8965092c-3.564158-0.7208376,1.7447433-6.5178838-1.0964537-7.657342
+		c-2.3108854-0.926389-3.5417745,2.8275003-2.4453211,4.6938372c-0.6408134,3.2113476-2.0240991,6.2337914-1.4639285,10.2596893
+		c1.8149469-1.3344021,2.4274509-3.8898468,2.9293616-6.5526571c0.9157019,0.560667,1.405623,1.1455002,2.566308,1.2392139
+		C12.9787931,14.3627491,15.3762932,9.693078,14.7863092,5.3785224L14.7863092,5.3785224z M14.7863092,5.3785224"/>
+</g>
+</svg>

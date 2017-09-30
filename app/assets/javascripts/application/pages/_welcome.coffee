@@ -1,19 +1,28 @@
-$ ->
-  # Fullpage.js
-  $('#fullpage-js').fullpage
+$(document).on 'turbolinks:load', ->
+  # FULLPAGE.JS
+  $('#intro').fullpage
     css3: false
     sectionSelector: '.section'
     fitToSection: false
     autoScrolling: false
+  # TODO: мб пригодится
+  # $.fn.fullpage.destroy('all')
 
-  # ScrollMagic + TweenMax
+  # SCROLLMAGIC + TWEENMAX
   controller = new ScrollMagic.Controller
 
+  # Arrow
+  new ScrollMagic.Scene(triggerElement: '#intro', duration: 200)
+    .triggerHook(0)
+    .setTween(TweenMax.to('#arrow', 1, { opacity: 0 }))
+    .addTo(controller)
+
+  # Parallax + Blackout
   $('[data-section]').each (i, el) ->
     hook = if i == 0 then 1 else 0
-    blackout_tween = TweenMax.fromTo '.blackout', 1,
-      { opacity: 0, ease: Power0.easeNone }
-      { opacity: 1, ease: Power0.easeNone }
+    blackout_tween = TweenMax.fromTo '#blackout', 1,
+      { opacity: 0, ease: Power1.easeIn }
+      { opacity: 1, ease: Power1.easeIn }
     trigger = "[data-section='#{i + 1 + hook}']"
     new ScrollMagic.Scene(triggerElement: trigger, duration: '100%')
       .triggerHook(hook)
@@ -22,14 +31,14 @@ $ ->
       .addTo(controller)
       .on 'enter leave', (event) ->
         if event.state == 'BEFORE' && event.type == 'leave' && event.target.triggerHook() == 1
-          $('.blackout').css('z-index', 0)
+          $('#blackout').css('z-index', 0)
       .on 'progress', (event) ->
         if event.progress > 0.01
           index_delta = if i != 0 then 1 else 0
           index = parseInt($(event.target.triggerElement()).css('z-index'))
-          $('.blackout').css('z-index', index + index_delta)
+          $('#blackout').css('z-index', index + index_delta)
 
-  # ScrollMagic + Typed.js
+  # SCROLLMAGIC + TYPED.JS
   new ScrollMagic.Scene(triggerElement: '#typed-trigger', reverse: false)
     .addTo(controller)
     .on 'start', ->

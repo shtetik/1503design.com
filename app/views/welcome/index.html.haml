@@ -1,32 +1,31 @@
-#fullpage-js
-  .blackout
-  .section.section--first{ data: { section: 1 } }
+%article#intro
+  .arrow#arrow
+  .blackout#blackout
+  %section.section.section--first{ data: { section: 1 } }
     .text.text--first
-      %h2{ style: 'font-size: 100px; margin-top: 200px' }
+      %h2
         Branding&
         %br
         Visual Communication
-      %p{ style: 'font-size: 34px; width: 50%; margin: 0 auto; margin-top: 300px' }
-        1,618 is a branding and visual communication studio founded by Ksenia Smirnova, based in Milan, Italy.
-      %p{ style: 'font-size: 34px; width: 50%; margin: 0 auto; margin-top: 30px; margin-bottom: 300px' }
-        We design everything visual, including brand identities, packaging, websites and mobile apps, patterns and illustrations.
+      %p 1,618 is a branding and visual communication studio founded by Ksenia Smirnova, based in Milan, Italy.
+      %p We design everything visual, including brand identities, packaging, websites and mobile apps, patterns and illustrations.
 
-  .section.section--work-type-1{ data: { section: 2 } }
-    .text.text--work-type-1{ data: { text: 1 } }
-      %h2{ style: 'font-size: 152px; color: white' }
+  %section.section.section--branding{ data: { section: 2 } }
+    .text.text--branding{ data: { text: 1 } }
+      %h2
         Branding&
         %br
         Identities
-  .section.section--work-type-2{ data: { section: 3 } }
-    .text.text--work-type-2{ data: { text: 2 } }
-      %h2{ style: 'font-size: 110px; color: white' }
+  %section.section.section--web-and-mobile{ data: { section: 3 } }
+    .text.text--web-and-mobile{ data: { text: 2 } }
+      %h2
         Web&Mobile
-  .section.section--work-type-3{ data: { section: 4 } }
-    .text.text--work-type-3{ data: { text: 3 } }
-      %h2{ style: 'font-size: 110px; color: white' }
+  %section.section.section--illustration{ data: { section: 4 } }
+    .text.text--illustration{ data: { text: 3 } }
+      %h2
         ILLUSTRATION
 
-  .section.section--gradient-1
+  %section.section.section--quote
     .quote
       .quote__placeholder
         Always in balance between an artistic vision and a market approach, we define our work as scenical decorations tailor-made on the client needs.
@@ -34,9 +33,9 @@
         %span> Always in balance between an artistic vision and a market approach
         %span#typed-trigger , we define our work as
         %span#typed
-  .section.section--gradient-2
+  %section.section.section--clients
     .text.text--clients
       %h2 Clients
-  .section.section--gradient-3
+  %section.section.section--contact
     .text.text--contact
       %h2 Contact
