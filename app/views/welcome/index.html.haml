@@ -2,26 +2,33 @@
   .arrow#arrow
   .blackout#blackout
   %section.section.section--first{ data: { section: 1 } }
-    .text.text--first
-      %h2
-        Branding&
-        %br
-        Visual Communication
-      %p 1,618 is a branding and visual communication studio founded by Ksenia Smirnova, based in Milan, Italy.
-      %p We design everything visual, including brand identities, packaging, websites and mobile apps, patterns and illustrations.
+    .text
+      .text__heading--intro
+        %h2
+          %span{ data: { text_first: 1 } } Branding&
+          %br
+          %span{ data: { text_first: 2 } } Visual Communication
+      .text__info
+        .text__info--founded
+          %div{ data: { text: 1 } } 1,618 is a branding and visual communication studio
+          %div{ data: { text: 2 } } founded by Ksenia Smirnova, based in Milan, Italy.
+        .text__info--design
+          %div{ data: { text: 3 } } We design everything visual, including brand identities,
+          %div{ data: { text: 4 } } packaging, websites and mobile apps,
+          %div{ data: { text: 5 } } patterns and illustrations.
 
   %section.section.section--branding{ data: { section: 2 } }
-    .text.text--branding{ data: { text: 1 } }
+    .text.text--branding
       %h2
         Branding&
         %br
         Identities
   %section.section.section--web-and-mobile{ data: { section: 3 } }
-    .text.text--web-and-mobile{ data: { text: 2 } }
+    .text.text--web-and-mobile
       %h2
         Web&Mobile
   %section.section.section--illustration{ data: { section: 4 } }
-    .text.text--illustration{ data: { text: 3 } }
+    .text.text--illustration
       %h2
         ILLUSTRATION
 

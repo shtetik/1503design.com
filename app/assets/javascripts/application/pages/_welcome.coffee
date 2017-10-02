@@ -1,3 +1,4 @@
+### ANIMANION ON LANDING PAGE ###
 $(document).on 'turbolinks:load', ->
   # FULLPAGE.JS
   $('#intro').fullpage
@@ -16,6 +17,23 @@ $(document).on 'turbolinks:load', ->
     .triggerHook(0)
     .setTween(TweenMax.to('#arrow', 1, { opacity: 0 }))
     .addTo(controller)
+
+  # Text
+  $('[data-text-first]').each (i, el) ->
+    new ScrollMagic.Scene(triggerElement: '#intro', duration: '50%')
+      .triggerHook(0)
+      .setTween(TweenMax.to(el, 1, { opacity: 0.3, scale: 1.02, ease: Power1.easeIn }))
+      .addTo(controller)
+
+  $('[data-text]').each (i, el) ->
+    new ScrollMagic.Scene(triggerElement: el, duration: '100%')
+      .triggerHook(1)
+      .setTween(TweenMax.to(el, 1, { opacity: 1, repeat: 1, yoyo: true, ease: Power0.easeNone }))
+      .addTo(controller)
+    new ScrollMagic.Scene(triggerElement: el, duration: '100%')
+      .triggerHook(1)
+      .setTween(TweenMax.to(el, 1, { scale: 1, ease: Power0.easeNone }))
+      .addTo(controller)
 
   # Parallax + Blackout
   $('[data-section]').each (i, el) ->

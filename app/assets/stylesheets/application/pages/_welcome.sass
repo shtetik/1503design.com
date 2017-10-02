@@ -1,3 +1,6 @@
+#intro
+  overflow-x: hidden
+
 .arrow
   position: fixed
   z-index: 100
@@ -34,35 +37,19 @@
 
   &--first
     z-index: 1
-    background-image: asset-url('pages/welcome/1.jpg')
-    background-attachment: fixed
-    h2
-      @extend .font-tt-norms
-      color: #ffffff
-      font-size: 5.5rem
-      line-height: 5.5rem
-      margin-top: 35vh
-    p
-      @extend .font-tt-norms
-      font-size: 1.9rem
-      line-height: 2.3rem
-      letter-spacing: -1px
-      width: 60%
-      margin: 0 auto
-    p:first-of-type
-      margin-top: 100vh
-    p:last-of-type
-      margin-top: 3rem
-      margin-bottom: 100vh
+    background-color: #dfefdb
+    // TODO: потом тут будет фон
+    // background-image: asset-url('pages/welcome/1.jpg')
+    // background-attachment: fixed
   &--branding
     z-index: 2
-    background-image: asset-url('pages/welcome/2.jpg')
+    background-image: asset-url('pages/welcome/1.jpg')
   &--web-and-mobile
     z-index: 3
-    background-image: asset-url('pages/welcome/3.jpg')
+    background-image: asset-url('pages/welcome/2.jpg')
   &--illustration
     z-index: 4
-    background-image: asset-url('pages/welcome/4.jpg')
+    background-image: asset-url('pages/welcome/3.jpg')
     margin-bottom: 0
 
   &--first,
@@ -95,25 +82,55 @@
   &--contact
     color: #ffffff
 
+  &__heading
+    &--intro
+      h2
+        @extend .font-tt-norms
+        color: #ffffff
+        font-size: 5.5rem
+        line-height: 5.5rem
+        margin-top: 35vh
+  &__info
+    @extend .font-tt-norms
+    color: #000000
+    font-size: 1.9rem
+    line-height: 2.3rem
+    letter-spacing: -1px
+    &--founded
+      margin-top: 60vh
+    &--design
+      margin-top: 3rem
+      margin-bottom: 100vh
+    &--founded,
+    &--design
+      div
+        opacity: 0.1
+        transform: scale(0.94)
+
   &--branding > h2
-      font-family: 'Bell MT'
+      @extend .font-bell-mt
       font-size: 8.4rem
       line-height: 7.4rem
+
   &--web-and-mobile > h2
       @extend .font-tt-norms
       font-size: 6.1rem
+
   &--illustration > h2
       font-family: 'Engravers'
       font-size: 6.1rem
+
   &--clients > h2
-      font-family: 'Bell MT'
+      @extend .font-bell-mt
       font-size: 13.3rem
+
   &--contact > h2
       font-family: 'Engravers'
       font-size: 8.4rem
 
 .quote
   position: relative
+  margin-top: 5rem
   font-size: 5rem
 
   &__placeholder,
