@@ -1,11 +1,11 @@
 ### ANIMANION ON LANDING PAGE ###
-$(document).on 'turbolinks:load', ->
+$ ->
   # FULLPAGE.JS
   $('#intro').fullpage
-    css3: false
     sectionSelector: '.section'
     fitToSection: false
     autoScrolling: false
+
   # TODO: мб пригодится
   # $.fn.fullpage.destroy('all')
 
@@ -26,11 +26,11 @@ $(document).on 'turbolinks:load', ->
       .addTo(controller)
 
   $('[data-text]').each (i, el) ->
-    new ScrollMagic.Scene(triggerElement: el, duration: '100%')
+    new ScrollMagic.Scene(triggerElement: el, duration: '50%')
       .triggerHook(1)
-      .setTween(TweenMax.to(el, 1, { opacity: 1, repeat: 1, yoyo: true, ease: Power0.easeNone }))
+      .setTween(TweenMax.to(el, 1, { opacity: 1, ease: Power0.easeNone }))
       .addTo(controller)
-    new ScrollMagic.Scene(triggerElement: el, duration: '100%')
+    new ScrollMagic.Scene(triggerElement: el, duration: '10%')
       .triggerHook(1)
       .setTween(TweenMax.to(el, 1, { scale: 1, ease: Power0.easeNone }))
       .addTo(controller)
