@@ -2,33 +2,37 @@
   .arrow#arrow
   .blackout#blackout
   %section.section.section--first{ data: { section: 1 } }
-    .text.text--intro
-      %h2
-        %span{ data: { text_first: 1 } } Branding&
-        %br
-        %span{ data: { text_first: 2 } } Visual Communication
-    .text.text--founded
-      %div{ data: { text: 1 } } 1,618 is a branding and visual communication studio
-      %div{ data: { text: 2 } } founded by Ksenia Smirnova, based in Milan, Italy.
-    .text.text--design
-      %div{ data: { text: 3 } } We design everything visual, including brand identities,
-      %div{ data: { text: 4 } } packaging, websites and mobile apps,
-      %div{ data: { text: 5 } } patterns and illustrations.
+    .section__wrapper
+      .text.text--intro
+        %h2
+          %span{ data: { text_first: 1 } } Branding&
+          %br
+          %span{ data: { text_first: 2 } } Visual Communication
+      .text.text--founded
+        %div{ data: { text: 1 } } 1,618 is a branding and visual communication studio
+        %div{ data: { text: 2 } } founded by Ksenia Smirnova, based in Milan, Italy.
+      .text.text--design
+        %div{ data: { text: 3 } } We design everything visual, including brand identities,
+        %div{ data: { text: 4 } } packaging, websites and mobile apps,
+        %div{ data: { text: 5 } } patterns and illustrations.
 
   %section.section.section--branding{ data: { section: 2 } }
-    .text.text--branding
-      %h2
-        Branding&
-        %br
-        Identities
+    .section__wrapper
+      .text.text--branding
+        %h2
+          Branding&
+          %br
+          Identities
   %section.section.section--web-and-mobile{ data: { section: 3 } }
-    .text.text--web-and-mobile
-      %h2
-        Web&Mobile
+    .section__wrapper
+      .text.text--web-and-mobile
+        %h2
+          Web&Mobile
   %section.section.section--illustration{ data: { section: 4 } }
-    .text.text--illustration
-      %h2
-        ILLUSTRATION
+    .section__wrapper
+      .text.text--illustration
+        %h2
+          ILLUSTRATION
 
   %section.section.section--quote
     .section__wrapper.section__wrapper--quote
@@ -39,8 +43,10 @@
         %span#typed-trigger , we define our work as
         %span#typed
   %section.section.section--clients
-    .text.text--clients
-      %h2 Clients
+    .section__wrapper
+      .text.text--clients
+        %h2 Clients
   %section.section.section--contact
-    .text.text--contact
-      %h2 Contact
+    .section__wrapper
+      .text.text--contact
+        %h2 Contact
