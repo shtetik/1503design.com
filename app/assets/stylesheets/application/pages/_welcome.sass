@@ -1,5 +1,6 @@
 #intro
   position: relative
+  padding-top: 500vh
 
 .arrow
   position: fixed
@@ -44,6 +45,8 @@
   display: table
 
   &--first
+    top: 0
+    height: 200vh
     z-index: 1
     background-color: #dfefdb
     // TODO: потом тут будет фон
@@ -65,12 +68,12 @@
   &--web-and-mobile,
   &--illustration
     background-size: cover
+    position: fixed
 
-  // &--branding,
-  // &--web-and-mobile,
-  // &--illustration
-    // position: fixed
-    // top: 0
+  &--branding,
+  &--web-and-mobile,
+  &--illustration,
+    top: 100%
 
   &--quote
     padding-top: 5rem
@@ -109,7 +112,7 @@
       color: #ffffff
       font-size: 5.5rem
       line-height: 5.5rem
-      margin-top: 35vh
+      margin-top: 30vh
 
   &--founded,
   &--design
@@ -125,7 +128,7 @@
     margin-top: 60vh
   &--design
     margin-top: 3rem
-    margin-bottom: 35vh
+    margin-bottom: 30vh
 
   &--branding > h2
       @extend .font-bell-mt
