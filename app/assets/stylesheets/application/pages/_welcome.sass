@@ -1,3 +1,6 @@
+#intro
+  position: relative
+
 .arrow
   position: fixed
   z-index: 100
@@ -30,11 +33,13 @@
   z-index: 0
   opacity: 0
   background: #000000
+  pointer-events: none
+  backface-visibility: hidden
 
 .section
   position: relative
   text-align: center
-  height: 100%
+  height: 100vh
   width: 100%
   display: table
 
@@ -61,6 +66,12 @@
   &--illustration
     background-size: cover
 
+  // &--branding,
+  // &--web-and-mobile,
+  // &--illustration
+    // position: fixed
+    // top: 0
+
   &--quote
     padding-top: 5rem
     padding-left: 6%
@@ -78,6 +89,8 @@
     z-index: 10
 
   &__wrapper
+    display: table-cell
+    vertical-align: middle
     &--quote
       position: relative
 

@@ -19,7 +19,6 @@ gem 'autoprefixer-rails', '~> 7.1', '>= 7.1.4.1'
 source 'https://rails-assets.org' do
   gem 'rails-assets-normalize.css'
   gem 'rails-assets-ScrollMagic'
-  gem 'rails-assets-fullpage'
   gem 'rails-assets-typed.js'
 end
 

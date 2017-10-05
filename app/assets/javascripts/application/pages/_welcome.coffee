@@ -1,13 +1,5 @@
 ### ANIMANION ON LANDING PAGE ###
-$ ->
-  # FULLPAGE.JS
-  $('#intro').fullpage
-    sectionSelector: '.section'
-    fitToSection: false
-    autoScrolling: false
-
-  # TODO: мб пригодится
-  # $.fn.fullpage.destroy('all')
+$(document).on 'turbolinks:load', ->
 
   # SCROLLMAGIC + TWEENMAX
   controller = new ScrollMagic.Controller
