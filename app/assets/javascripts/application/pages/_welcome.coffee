@@ -1,4 +1,4 @@
-blackout_timeline = ->
+blackoutTimeline = ->
   timeline = new TimelineLite()
   timeline.add(TweenMax.to('#blackout', 1, { opacity: 1, ease: Linear.easeNone }))
   timeline.set('#blackout', { opacity: 0, zIndex: "+=1" })
@@ -33,27 +33,27 @@ animanions = ->
       .addTo(controller)
 
   # Parallax + Blackout
-  duration_first = $('.section--first').height() - $( window ).height()
-  new ScrollMagic.Scene(triggerElement: '#intro', duration: duration_first)
+  durationFirst = $('.section--first').height() - $( window ).height()
+  new ScrollMagic.Scene(triggerElement: '#intro', duration: durationFirst)
     .triggerHook(0)
-    .setTween(TweenMax.to(".section--first", 1, { y: -duration_first, ease: Linear.easeNone }))
+    .setTween(TweenMax.to(".section--first", 1, { y: -durationFirst, ease: Linear.easeNone }))
     .addTo(controller)
 
   $('[data-section]').each (i, el) ->
     return if i == 0
-    offset = duration_first + $( window ).height() * (i - 1)
+    offset = durationFirst + $( window ).height() * (i - 1)
     new ScrollMagic.Scene(triggerElement: '#intro', offset: offset, duration: $( window ).height())
       .triggerHook(0)
       .setTween(TweenMax.to("[data-section='#{i + 1}']", 1, { y: '-100%', ease: Linear.easeNone }))
       .addTo(controller)
     new ScrollMagic.Scene(triggerElement: '#intro', offset: offset, duration: $( window ).height())
       .triggerHook(0)
-      .setTween(blackout_timeline())
+      .setTween(blackoutTimeline())
       .addTo(controller)
 
   new ScrollMagic.Scene(triggerElement: '.section--quote', duration: $( window ).height())
     .triggerHook(1)
-    .setTween(blackout_timeline())
+    .setTween(blackoutTimeline())
     .addTo(controller)
 
   # SCROLLMAGIC + TYPED.JS
@@ -72,6 +72,4 @@ animanions = ->
 $(document).on 'turbolinks:load', ->
   animanions()
 $( window ).resize ->
-  Turbolinks.enableTransitionCache(true)
-  Turbolinks.visit(location.toString())
-  Turbolinks.enableTransitionCache(false)
+  reloadWithTurbolinks()

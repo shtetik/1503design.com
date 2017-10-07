@@ -15,6 +15,7 @@ gem 'haml-rails', '~> 1.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'greensock-rails', '~> 1.20', '>= 1.20.2.0'
 gem 'autoprefixer-rails', '~> 7.1', '>= 7.1.4.1'
+gem 'neat', '~> 2.1'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-normalize.css'

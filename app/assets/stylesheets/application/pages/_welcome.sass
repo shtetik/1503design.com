@@ -82,6 +82,8 @@
     text-align: left
     background: linear-gradient(#efefef, #ffe8e8)
   &--clients
+    padding-left: 6%
+    padding-right: 6%
     background: linear-gradient(#ffe8e8, #f4e8ff)
   &--contact
     background: linear-gradient(#f4e8ff, #dfefdb)
@@ -143,17 +145,18 @@
 
   &--illustration
     h2
-      font-family: 'Engravers'
+      @extend .font-engravers
       font-size: 6.1rem
 
   &--clients
+    margin-top: 12rem
     h2
       @extend .font-bell-mt
       font-size: 13.3rem
 
   &--contact
     h2
-      font-family: 'Engravers'
+      @extend .font-engravers
       font-size: 8.4rem
 
   &--placeholder,
@@ -173,3 +176,44 @@
     bottom: 0
     span:last-child
       color: #000000
+
+.clients
+  +grid-container
+  margin-top: 2.4rem
+
+  &__wrapper
+    +grid-collapse
+
+.client
+  +grid-column(4)
+  height: 100px
+  margin-bottom: 2.9rem
+
+  &__title,
+  &__work
+    @extend .font-tt-norms
+    letter-spacing: -1px
+    text-align: left
+
+  &__title
+    position: relative
+    display: block
+    font-size: 1.6rem
+    margin-bottom: 1rem
+    color: #000000
+    &, &:hover, &:focus
+      text-decoration: none
+    &, &:hover
+      transition: color 0.1s
+    &:hover
+      color: #ffffff
+    &:after
+      position: absolute
+      content: ''
+      width: 70%
+      height: 2px
+      left: 0
+      bottom: -0.625rem
+      background-color: #ffffff
+  &__work
+    font-size: 0.8rem

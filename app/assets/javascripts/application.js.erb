@@ -1,13 +1,14 @@
 //= require jquery3
 //= require jquery_ujs
 //= require rails-ujs
-//= require turbolinks
 //= require greensock/TweenMax
 //= require ScrollMagic
 //= require ScrollMagic/plugins/animation.gsap
 //= require typed.js.js
+//= require turbolinks
 
 //= require_tree ./application/pages
+//= require_tree ./application/helpers
 
 <% if Rails.env.development? %>
   <%= require_asset('ScrollMagic/plugins/debug.addIndicators') %>
