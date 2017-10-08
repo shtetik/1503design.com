@@ -1,6 +1,6 @@
 blackoutTimeline = ->
   timeline = new TimelineLite()
-  timeline.add(TweenMax.to('#blackout', 1, { opacity: 1, ease: Linear.easeNone }))
+  timeline.add(TweenMax.to('#blackout', 1, { opacity: 1, ease: Power1.easeIn }))
   timeline.set('#blackout', { opacity: 0, zIndex: "+=1" })
   timeline
 
@@ -55,6 +55,13 @@ animanions = ->
     .triggerHook(1)
     .setTween(blackoutTimeline())
     .addTo(controller)
+
+  # Clients
+  $('.client').each (i, el) ->
+    new ScrollMagic.Scene(triggerElement: el, duration: 100)
+      .triggerHook(0.95)
+      .setTween(TweenMax.to(el, 0.5, { marginTop: '1rem', marginBottom: '1rem', opacity: 1, ease: Power0.easeNone }))
+      .addTo(controller)
 
   # SCROLLMAGIC + TYPED.JS
   new ScrollMagic.Scene(triggerElement: '#typed-trigger', reverse: false)
