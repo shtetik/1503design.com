@@ -58,9 +58,9 @@ animanions = ->
 
   # Clients
   $('.client').each (i, el) ->
-    new ScrollMagic.Scene(triggerElement: el, duration: 100)
-      .triggerHook(0.95)
-      .setTween(TweenMax.to(el, 0.5, { marginTop: '1rem', marginBottom: '1rem', opacity: 1, ease: Power0.easeNone }))
+    new ScrollMagic.Scene(triggerElement: el, duration: 250)
+      .triggerHook(0.98)
+      .setTween(TweenMax.fromTo(el, 1, { y: 35, opacity: 0.3 }, { y: 0, opacity: 1 }))
       .addTo(controller)
 
   # SCROLLMAGIC + TYPED.JS

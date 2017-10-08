@@ -82,8 +82,6 @@
     text-align: left
     background: linear-gradient(#efefef, #ffe8e8)
   &--clients
-    padding-left: 6%
-    padding-right: 6%
     background: linear-gradient(#ffe8e8, #f4e8ff)
   &--contact
     background: linear-gradient(#f4e8ff, #dfefdb)
@@ -180,15 +178,20 @@
 .clients
   +grid-container
   margin-top: 2.4rem
+  padding-left: 2%
 
   &__wrapper
     +grid-collapse
 
 .client
-  +grid-column(4)
-  margin-top: 2rem
-  margin-bottom: 2rem
-  opacity: 0.3
+  +grid-column(1, $client-grid)
+  +grid-media($client-grid--tablet-only)
+    +grid-column(1)
+  +grid-media($client-grid--mobile-only)
+    +grid-column(1)
+  padding-left: 3rem
+  padding-top: 1.4rem
+  padding-bottom: 1.4rem
 
   &__title,
   &__work
@@ -201,17 +204,18 @@
     display: block
     font-size: 1.6rem
     margin-bottom: 1rem
-    color: #000000
     &, &:hover, &:focus
       text-decoration: none
-    &, &:hover
-      transition: color 0.1s
+    &:not(:hover)
+      color: #000000
+      transition: color 1s ease
     &:hover
       color: #ffffff
+      transition: color 0.3s ease
     &:after
       position: absolute
       content: ''
-      width: 70%
+      width: 76%
       height: 2px
       left: 0
       bottom: -0.625rem
