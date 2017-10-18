@@ -17,22 +17,25 @@
         %div{ data: { text: 5 } } patterns and illustrations.
 
   %section.section.section--branding{ data: { section: 2 } }
-    .section__wrapper
+    = link_to '#', class: 'section__wrapper link link--section' do
       .text.text--branding
         %h2
           Branding&
           %br
           Identities
+        %span Discover more
   %section.section.section--web-and-mobile{ data: { section: 3 } }
-    .section__wrapper
+    = link_to '#', class: 'section__wrapper link link--section' do
       .text.text--web-and-mobile
         %h2
           Web&Mobile
+        %span Discover more
   %section.section.section--illustration{ data: { section: 4 } }
-    .section__wrapper
+    = link_to '#', class: 'section__wrapper link link--section' do
       .text.text--illustration
         %h2
           ILLUSTRATION
+        %span Discover more
 
   %section.section.section--quote
     .section__wrapper.section__wrapper--quote
@@ -47,7 +50,6 @@
       .text.text--clients
         %h2 Clients
       .clients
-        / .clients__wrapper
         .client
           = link_to 'Mytha Hotel Anthology', '', class: 'client__title'
           .client__work Branding
@@ -73,3 +75,16 @@
     .section__wrapper
       .text.text--contact
         %h2 Contact
+        %p.text--contact__mail-us Feel free to contact us if you have any questions or comments:
+        = link_to 'ksmirnova.graphics@gmail.com', 'mailto:ksmirnova.graphics@gmail.com', class: 'text--contact__mail'
+        %br
+        %p.text--contact__info
+          Ksenia Smirnova
+          %br
+          Creative Director
+          %br
+          (+39) 346 844 1463
+        %p.text--contact__info
+          Via Ascanio Sforza, 21, 20136 Milan, Italy
+          %br
+          P.Iva 09040380967

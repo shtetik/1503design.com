@@ -79,4 +79,4 @@ animanions = ->
 $(document).on 'turbolinks:load', ->
   animanions()
 $( window ).resize ->
-  reloadWithTurbolinks()
+  Turbolinks.visit window.location.toString(), { action: 'replace' }
