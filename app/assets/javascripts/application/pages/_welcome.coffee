@@ -14,6 +14,13 @@ animanions = ->
     .triggerHook(0)
     .setTween(TweenMax.to('#arrow', 1, { opacity: 0 }))
     .addTo(controller)
+  new ScrollMagic.Scene(triggerElement: '#intro', offset: 200)
+    .triggerHook(0)
+    .setClassToggle('#arrow', 'arrow--hide')
+    .addTo(controller)
+
+  $('#arrow').click ->
+    TweenLite.to(window, 1, { scrollTo: $( window ).height(), ease: Expo.easeOut })
 
   # Text
   $('[data-text-first]').each (i, el) ->
