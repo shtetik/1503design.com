@@ -12,7 +12,7 @@
   margin-left: -25px
   opacity: 1
   cursor: pointer
-  background: asset-url('icons/arrow_down.svg') no-repeat
+  background: asset-url('icons/control/arrow_down.svg') no-repeat
   animation: arrow 1s infinite
   &--hide
     display: none
@@ -70,6 +70,7 @@
   &--web-and-mobile,
   &--illustration
     background-size: cover
+    background-repeat: no-repeat
     position: fixed
 
   &--branding,
@@ -82,11 +83,12 @@
     text-align: left
     background: linear-gradient(#efefef, #ffe8e8)
   &--clients
-    padding-top: 4.2rem
-    padding-bottom: 4.2rem
+    padding-top: 5rem
+    padding-bottom: 5rem
     background: linear-gradient(#ffe8e8, #f4e8ff)
   &--contact
-    padding: 4.2rem 11%
+    padding-top: 5rem
+    padding-bottom: 5rem
     background: linear-gradient(#f4e8ff, #dfefdb)
 
   &--quote,
@@ -101,16 +103,13 @@
       position: relative
 
 .link
-  &, &:hover, &:focus
-    text-decoration: none
-
   &--section
     span
       @extend .font-tt-norms
       position: relative
       color: #000000
       font-size: 1.4rem
-      letter-spacing: -1px
+      letter-spacing: -0.5px
       transition: color 0.6s
       &:before
         position: absolute
@@ -121,7 +120,7 @@
         height: 2px
         background-color: #000000
         transition: background-color 0.6s
-      &:hover
+      &:hover, &:focus
         color: #ffffff
         transition: color 0.3s
         &:before
@@ -151,7 +150,7 @@
     color: #000000
     font-size: 1.9rem
     line-height: 2.3rem
-    letter-spacing: -1px
+    letter-spacing: -0.5px
     div
       opacity: 0.1
       transform: scale(0.99)
@@ -183,16 +182,19 @@
       font-size: 13.3rem
 
   &--contact
-    text-align: left
     h2
       @extend .font-engravers
       font-size: 8.4rem
+    &__vcard
+      text-align: left
+      padding-left: 11%
+      padding-right: 11%
     &__mail-us,
     &__mail,
     &__info
       @extend .font-tt-norms
       color: #000000
-      letter-spacing: -1px
+      letter-spacing: -0.5px
     &__mail-us,
     &__mail
       font-size: 3.6rem
@@ -207,8 +209,6 @@
       padding-bottom: 0.8rem
       cursor: pointer
       transition: color 0.6s
-      &, &:hover, &:focus
-        text-decoration: none
       &:before
         content: ''
         position: absolute
@@ -217,9 +217,12 @@
         width: 100%
         height: 3px
         background-color: #ffffff
-      &:hover
+      &:hover, &:focus
         color: #ffffff
         transition: color 0.3s
+    &__tel
+      &, &:hover, &:focus
+        color: #000000
     &__info
       font-size: 1rem
       line-height: 1.26rem
@@ -227,7 +230,7 @@
   &--placeholder,
   &--typed
     @extend .font-tt-norms
-    letter-spacing: -1px
+    letter-spacing: -0.5px
     font-size: 5rem
 
   &--placeholder
@@ -259,7 +262,7 @@
   &__title,
   &__work
     @extend .font-tt-norms
-    letter-spacing: -1px
+    letter-spacing: -0.5px
     text-align: left
 
   &__title
@@ -267,12 +270,10 @@
     display: block
     font-size: 1.6rem
     margin-bottom: 1rem
-    &, &:hover, &:focus
-      text-decoration: none
     &:not(:hover)
       color: #000000
       transition: color 1s ease
-    &:hover
+    &:hover, &:focus
       color: #ffffff
       transition: color 0.3s ease
     &:after

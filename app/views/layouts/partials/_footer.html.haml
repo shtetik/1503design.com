@@ -1,1 +1,14 @@
-%footer
+%footer.footer
+  .footer__arrow#scroll-top
+    = inline_svg 'icons/control/arrow_up.svg'
+  %span © 1,618Design 2017
+  .footer__build
+    %span built by
+    = link_to 'Pavel Kulikov', 'https://vk.com/shtetik', target: :_blank, class: 'footer__build__link'
+  .footer__social-networks
+    = link_to 'https://www.facebook.com/ksmirnova.graphics', target: :_blank do
+      = inline_svg 'icons/social/facebook.svg', class: 'social'
+    = link_to 'https://www.instagram.com/ksmirnova.graphics/', target: :_blank do
+      = inline_svg 'icons/social/instagram.svg', class: 'social'
+    = link_to 'https://ru.pinterest.com/kseniasmirnova/', target: :_blank do
+      = inline_svg 'icons/social/pinterest.svg', class: 'social'

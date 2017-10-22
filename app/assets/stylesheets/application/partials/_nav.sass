@@ -4,15 +4,15 @@
   z-index: 1000
 
 .logo-1618
-  left: 30px
-  top: 30px
+  left: 1.4rem
+  top: 1.4rem
 
   &__root
     display: block
     width: 5.9rem
     height: 2.12rem
     margin-bottom: 0.8rem
-    background: asset-url('icons/logo.svg') no-repeat
+    background: asset-url('icons/logo/logo.svg') no-repeat
 
   &__menu
     opacity: 0
@@ -26,12 +26,11 @@
         display: inline-block
         padding: 0.53rem 0
         font-size: 0.95rem
-        letter-spacing: -1px
+        letter-spacing: -0.5px
         opacity: 0
         transform: translateX(-10px)
         &, &:hover, &:focus
           color: #000000
-          text-decoration: none
         &:before
           position: absolute
           content: ''
@@ -42,7 +41,7 @@
           background-color: #000000
           opacity: 0
           transition: opacity 0.3s
-      &:hover
+      &:hover, &:focus
         .logo-1618__menu__item__link
           &:before
             opacity: 1
@@ -73,8 +72,8 @@
           transition: opacity 0.35s, transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1)
 
 .logo-work
-  right: 30px
-  top: 30px
+  right: 1.4rem
+  top: 1.4rem
   width: 6.4rem
   height: 2.8rem
-  background: asset-url('icons/work.svg') no-repeat
+  background: asset-url('icons/logo/work.svg') no-repeat

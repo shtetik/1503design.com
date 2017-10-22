@@ -1,0 +1,42 @@
+.footer
+  @extend .font-tt-norms
+  position: relative
+  z-index: 1000
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  padding: 1.4rem
+  padding-top: 3.8rem
+  font-size: 0.8rem
+  letter-spacing: -0.5px
+  color: #000000
+  background-color: #dfefdb
+
+  &__arrow
+    position: absolute
+    width: 1.6rem
+    height: 1.6rem
+    left: 50%
+    top: 0
+    transform: translateX(-50%)
+    cursor: pointer
+    rect
+      transition: fill 0.3s
+    &:hover, &:focus
+      rect
+        fill: #000000
+        transition: fill 0.3s
+
+  &__social-networks
+    width: 5rem
+    display: flex
+    justify-content: space-between
+  &__build
+    color: #a7a9ac
+    &__link
+      display: inline-block
+      color: #a7a9ac
+      transition: color 0.3s
+      &:hover, &:focus
+        color: #000000
+        transition: color 0.3s

@@ -75,16 +75,21 @@
     .section__wrapper
       .text.text--contact
         %h2 Contact
-        %p.text--contact__mail-us Feel free to contact us if you have any questions or comments:
-        = link_to 'ksmirnova.graphics@gmail.com', 'mailto:ksmirnova.graphics@gmail.com', class: 'text--contact__mail'
-        %br
-        %p.text--contact__info
-          Ksenia Smirnova
-          %br
-          Creative Director
-          %br
-          (+39) 346 844 1463
-        %p.text--contact__info
-          Via Ascanio Sforza, 21, 20136 Milan, Italy
-          %br
-          P.Iva 09040380967
+        .text--contact__vcard.vcard
+          %p.text--contact__mail-us Feel free to contact us if you have any questions or comments:
+          = link_to 'ksmirnova.graphics@gmail.com', 'mailto:ksmirnova.graphics@gmail.com', class: 'text--contact__mail email'
+          .text--contact__info
+            %span.fn Ksenia Smirnova
+            %br
+            %span Creative Director
+            %br
+            = link_to '(+39) 346 844 1463', 'tel:(+39) 346 844 1463', class: 'text--contact__tel tel'
+            %br
+            %br
+            .adr
+              %span.street-address Via Ascanio Sforza, 21
+              %span.postal-code 20136
+              %span.locality Milan
+              %span ,
+              %span.country-name Italy
+            %span P.Iva 09040380967

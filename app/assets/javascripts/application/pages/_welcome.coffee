@@ -43,24 +43,29 @@ animanions = ->
   durationFirst = $('.section--first').height() - $( window ).height()
   new ScrollMagic.Scene(triggerElement: '#intro', duration: durationFirst)
     .triggerHook(0)
-    .setTween(TweenMax.to(".section--first", 1, { y: -durationFirst, ease: Linear.easeNone }))
+    .setTween(TweenMax.to('.section--first', 1, { y: -durationFirst, ease: Linear.easeNone }))
     .addTo(controller)
 
   $('[data-section]').each (i, el) ->
     return if i == 0
     offset = durationFirst + $( window ).height() * (i - 1)
-    new ScrollMagic.Scene(triggerElement: '#intro', offset: offset, duration: $( window ).height())
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: offset, duration: '100%')
       .triggerHook(0)
       .setTween(TweenMax.to("[data-section='#{i + 1}']", 1, { y: '-100%', ease: Linear.easeNone }))
       .addTo(controller)
-    new ScrollMagic.Scene(triggerElement: '#intro', offset: offset, duration: $( window ).height())
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: offset, duration: '100%')
       .triggerHook(0)
       .setTween(blackoutTimeline())
       .addTo(controller)
 
-  new ScrollMagic.Scene(triggerElement: '.section--quote', duration: $( window ).height())
+  new ScrollMagic.Scene(triggerElement: '.section--quote', duration: '100%')
     .triggerHook(1)
     .setTween(blackoutTimeline())
+    .addTo(controller)
+
+  new ScrollMagic.Scene(triggerElement: '.section--quote', duration: '100%')
+    .triggerHook(0)
+    .setTween('[data-section]', 1, { y: '-200%' })
     .addTo(controller)
 
   # Clients
