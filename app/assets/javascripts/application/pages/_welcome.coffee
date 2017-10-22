@@ -63,9 +63,10 @@ animanions = ->
     .setTween(blackoutTimeline())
     .addTo(controller)
 
-  new ScrollMagic.Scene(triggerElement: '.section--quote', duration: '100%')
+  new ScrollMagic.Scene(triggerElement: '.section--quote', offset: 100, duration: '100%')
     .triggerHook(0)
     .setTween('[data-section]', 1, { y: '-200%' })
+    .addIndicators()
     .addTo(controller)
 
   # Clients
