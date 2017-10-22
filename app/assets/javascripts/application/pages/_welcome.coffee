@@ -1,7 +1,7 @@
-blackoutTimeline = ->
+blackoutTimeline = (reset = true) ->
   timeline = new TimelineLite()
   timeline.add(TweenMax.to('#blackout', 1, { opacity: 1, ease: Power1.easeIn }))
-  timeline.set('#blackout', { opacity: 0, zIndex: "+=1" })
+  timeline.set('#blackout', { opacity: 0, zIndex: "+=1" }) if reset
   timeline
 
 ### ANIMANION ON LANDING PAGE ###
@@ -40,15 +40,20 @@ animanions = ->
       .addTo(controller)
 
   # Parallax + Blackout
-  durationFirst = $('.section--first').height() - $( window ).height()
-  new ScrollMagic.Scene(triggerElement: '#intro', duration: durationFirst)
+  firstHeight = $('.section--first').height()
+  firstDuration = firstHeight - $( window ).height()
+  introPadding = firstHeight + $( window ).height() * ($('[data-section]').length - 1)
+
+  $('#intro').css 'padding-top', introPadding
+
+  new ScrollMagic.Scene(triggerElement: '#intro', duration: firstDuration)
     .triggerHook(0)
-    .setTween(TweenMax.to('.section--first', 1, { y: -durationFirst, ease: Linear.easeNone }))
+    .setTween(TweenMax.to('.section--first', 1, { y: -firstDuration, ease: Linear.easeNone }))
     .addTo(controller)
 
   $('[data-section]').each (i, el) ->
     return if i == 0
-    offset = durationFirst + $( window ).height() * (i - 1)
+    offset = firstDuration + $( window ).height() * (i - 1)
     new ScrollMagic.Scene(triggerElement: '#intro', offset: offset, duration: '100%')
       .triggerHook(0)
       .setTween(TweenMax.to("[data-section='#{i + 1}']", 1, { y: '-100%', ease: Linear.easeNone }))
@@ -60,13 +65,12 @@ animanions = ->
 
   new ScrollMagic.Scene(triggerElement: '.section--quote', duration: '100%')
     .triggerHook(1)
-    .setTween(blackoutTimeline())
+    .setTween(blackoutTimeline(false))
     .addTo(controller)
 
-  new ScrollMagic.Scene(triggerElement: '.section--quote', offset: 100, duration: '100%')
+  new ScrollMagic.Scene(triggerElement: '.section--quote', offset: 300, duration: '100%')
     .triggerHook(0)
     .setTween('[data-section]', 1, { y: '-200%' })
-    .addIndicators()
     .addTo(controller)
 
   # Clients
