@@ -41,19 +41,18 @@ animanions = ->
 
   # Parallax + Blackout
   firstHeight = $('.section--first').height()
-  firstDuration = firstHeight - $( window ).height()
-  introPadding = firstHeight + $( window ).height() * ($('[data-section]').length - 1)
+  introPadding = firstHeight + $( window ).height() * $('[data-section]').length
 
   $('#intro').css 'padding-top', introPadding
 
-  new ScrollMagic.Scene(triggerElement: '#intro', duration: firstDuration)
+  new ScrollMagic.Scene(triggerElement: '#intro', duration: firstHeight)
     .triggerHook(0)
-    .setTween(TweenMax.to('.section--first', 1, { y: -firstDuration, ease: Linear.easeNone }))
+    .setTween(TweenMax.to('.section--first, .section--info', 1, { y: -firstHeight, ease: Linear.easeNone }))
     .addTo(controller)
 
   $('[data-section]').each (i, el) ->
     return if i == 0
-    offset = firstDuration + $( window ).height() * (i - 1)
+    offset = firstHeight + $( window ).height() * (i - 1)
     new ScrollMagic.Scene(triggerElement: '#intro', offset: offset, duration: '100%')
       .triggerHook(0)
       .setTween(TweenMax.to("[data-section='#{i + 1}']", 1, { y: '-100%', ease: Linear.easeNone }))

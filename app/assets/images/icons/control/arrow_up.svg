@@ -12,19 +12,17 @@
 ]>
 <svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 31.9829426 31.9829426" enable-background="new 0 0 31.9829426 31.9829426" xml:space="preserve">
+	 viewBox="0 196.5774841 425.2000122 230.4650269" enable-background="new 0 196.5774841 425.2000122 230.4650269"
+	 xml:space="preserve">
 <metadata>
 	<sfw  xmlns="&ns_sfw;">
 		<slices></slices>
-		<sliceSourceBounds  height="31.9829426" width="31.9829426" bottomLeftOrigin="true" x="186.9689941" y="-1024.6671143">
+		<sliceSourceBounds  height="230.4650269" width="425.2000122" bottomLeftOrigin="true" x="0" y="196.5774841">
 			</sliceSourceBounds>
 	</sfw>
 </metadata>
 <g>
-	<rect x="0.0001662" y="-0.000005" fill="#DADADB" width="31.9829426" height="31.9829426"/>
-	<g>
-		<polygon fill="#FFFFFF" points="22.431097,19.1642799 15.9916439,12.7248268 9.5521908,19.1642799 8.4916439,18.1037331 
-			15.9916439,10.6037331 23.4916439,18.1037331 		"/>
-	</g>
+	<polygon fill="#A7A9AC" points="212.6041107,196.5774841 425.2000122,409.1816101 407.3390808,427.042511 212.6041107,232.2993164 
+		17.8609161,427.042511 0,409.1816101 	"/>
 </g>
 </svg>
