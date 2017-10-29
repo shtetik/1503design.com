@@ -20,29 +20,15 @@
     &__item
       width: 5.9rem
       cursor: pointer
-      &__link
-        @extend .font-tt-norms
-        position: relative
-        display: inline-block
-        padding: 0.53rem 0
-        font-size: 0.95rem
-        letter-spacing: -0.5px
+      padding: 0.3rem 0
+      .link
         opacity: 0
         transform: translateX(-10px)
-        &, &:hover, &:focus
-          color: #000000
         &:before
-          position: absolute
-          content: ''
-          left: 0
-          bottom: 0.25rem
-          width: 100%
-          height: 2px
-          background-color: #000000
           opacity: 0
           transition: opacity 0.3s
       &:hover, &:focus
-        .logo-1618__menu__item__link
+        .link
           &:before
             opacity: 1
             transition: opacity 0.3s
@@ -51,22 +37,22 @@
       opacity: 1
       visibility: visible
       .logo-1618__menu__item:nth-child(1)
-        .logo-1618__menu__item__link
+        .link
           transition-delay: 0.035s
       .logo-1618__menu__item:nth-child(2)
-        .logo-1618__menu__item__link
+        .link
           transition-delay: 0.07s
       .logo-1618__menu__item:nth-child(3)
-        .logo-1618__menu__item__link
+        .link
           transition-delay: 0.105s
       .logo-1618__menu__item:nth-child(4)
-        .logo-1618__menu__item__link
+        .link
           transition-delay: 0.14s
       .logo-1618__menu__item:nth-child(5)
-        .logo-1618__menu__item__link
+        .link
           transition-delay: 0.175s
       .logo-1618__menu__item
-        .logo-1618__menu__item__link
+        .link
           opacity: 1
           transform: translateX(0)
           transition: opacity 0.35s, transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1)

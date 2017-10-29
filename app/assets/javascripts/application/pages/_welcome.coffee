@@ -93,6 +93,7 @@ animanions = ->
         showCursor: false
 
 $(document).on 'turbolinks:load', ->
-  animanions()
+  if $('#intro').length
+    animanions()
 $( window ).resize ->
   Turbolinks.visit window.location.toString(), { action: 'replace' }

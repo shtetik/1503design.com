@@ -1,4 +1,4 @@
-%article#intro
+%article.intro#intro
   .arrow#arrow
   .blackout#blackout
   %section.section.section--first
@@ -19,25 +19,28 @@
         %div{ data: { text: 5 } } patterns and illustrations.
 
   %section.section.section--branding{ data: { section: 2 } }
-    = link_to '#', class: 'section__wrapper link link--section' do
+    = link_to '#', class: 'section__wrapper' do
       .text.text--branding
         %h2
           Branding&
           %br
           Identities
-        %span Discover more
+        %span.link.link--black.link--sm.link--hover-white
+          Discover more
   %section.section.section--web-and-mobile{ data: { section: 3 } }
-    = link_to '#', class: 'section__wrapper link link--section' do
+    = link_to '#', class: 'section__wrapper' do
       .text.text--web-and-mobile
         %h2
           Web&Mobile
-        %span Discover more
+        %span.link.link--black.link--sm.link--hover-white
+          Discover more
   %section.section.section--illustration{ data: { section: 4 } }
-    = link_to '#', class: 'section__wrapper link link--section' do
+    = link_to '#', class: 'section__wrapper' do
       .text.text--illustration
         %h2
           ILLUSTRATION
-        %span Discover more
+        %span.link.link--black.link--sm.link--hover-white
+          Discover more
 
   %section.section.section--quote
     .section__wrapper.section__wrapper--quote
