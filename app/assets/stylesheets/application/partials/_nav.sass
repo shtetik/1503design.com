@@ -11,12 +11,12 @@
     display: block
     width: 5.9rem
     height: 2.12rem
-    margin-bottom: 0.8rem
     background: asset-url('icons/logo/logo.svg') no-repeat
 
   &__menu
-    opacity: 0
     visibility: hidden
+    height: 0
+    opacity: 0
     &__item
       width: 5.9rem
       cursor: pointer
@@ -32,10 +32,13 @@
           &:before
             opacity: 1
             transition: opacity 0.3s
+    &__item:first-child
+      padding-top: 0.8rem
 
     &--show
-      opacity: 1
       visibility: visible
+      height: auto
+      opacity: 1
       .logo-1618__menu__item:nth-child(1)
         .link
           transition-delay: 0.035s

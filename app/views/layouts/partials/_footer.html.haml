@@ -1,9 +1,9 @@
 %footer.footer
-  .footer__arrow#scroll-top
-    = inline_svg 'icons/control/arrow_up.svg'
   .footer__copyright © 1,618Design 2017
   .footer__build
-    %span built by
+    %span code with
+    = inline_svg 'icons/heart.svg', class: 'footer__build__heart'
+    %span by
     = link_to 'Pavel Kulikov', 'https://vk.com/shtetik', target: :_blank, class: 'footer__build__link'
   .footer__social-networks
     .footer__social-networks__wrapper

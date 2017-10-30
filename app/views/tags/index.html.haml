@@ -1,24 +1,41 @@
 %section.tags
   %h1.tags__title Work
-  = link_to 'All', tags_path, class: 'link link--xs link--black link--hover-line'
-  = link_to 'Branding & Identities', tags_path, class: 'link link--xs link--black link--hover-line'
-  = link_to 'Web & Mobile', tags_path, class: 'link link--xs link--black link--hover-line'
-  = link_to 'Illustration', tags_path, class: 'link link--xs link--black link--hover-line'
+  .tags__filter
+    - link_classes = 'link link--xs link--black link--hover-line'
+    = link_to 'All'                  , tags_path, class: link_classes, data: { filter: '*' }
+    = link_to 'Branding & Identities', tags_path, class: link_classes, data: { filter: '.work--b' }
+    = link_to 'Web & Mobile'         , tags_path, class: link_classes, data: { filter: '.work--w' }
+    = link_to 'Illustration'         , tags_path, class: link_classes, data: { filter: '*' }
 
   .works
     .works__wrapper
-      %figure.work
-        = image_tag 'temp/work.jpg', class: 'work__img'
-        %figcaption
-      %figure.work
-        = image_tag 'temp/work.jpg', class: 'work__img'
-        %figcaption
-      %figure.work
-        = image_tag 'temp/work.jpg', class: 'work__img'
-        %figcaption
-      %figure.work
-        = image_tag 'temp/work.jpg', class: 'work__img'
-        %figcaption
-      %figure.work
-        = image_tag 'temp/work.jpg', class: 'work__img'
-        %figcaption
+      %figure.work.work--b
+        = link_to tags_path do
+          = image_tag 'temp/work1.jpg', class: 'work__img'
+          %figcaption.work__wrapper
+            .work__title Villa Catalfamо
+            .work__caption Branding , Web for a Hotel Design
+      %figure.work.work--w
+        = link_to tags_path do
+          = image_tag 'temp/work2.jpg', class: 'work__img'
+          %figcaption.work__wrapper
+            .work__title Villa Catalfamо
+            .work__caption Branding , Web for a Hotel Design
+      %figure.work.work--b
+        = link_to tags_path do
+          = image_tag 'temp/work3.jpg', class: 'work__img'
+          %figcaption.work__wrapper
+            .work__title Villa Catalfamо
+            .work__caption Branding , Web for a Hotel Design
+      %figure.work.work--i
+        = link_to tags_path do
+          = image_tag 'temp/work4.jpg', class: 'work__img'
+          %figcaption.work__wrapper
+            .work__title Villa Catalfamо
+            .work__caption Branding , Web for a Hotel Design
+      %figure.work.work--i
+        = link_to tags_path do
+          = image_tag 'temp/work5.jpg', class: 'work__img'
+          %figcaption.work__wrapper
+            .work__title Villa Catalfamо
+            .work__caption Branding , Web for a Hotel Design

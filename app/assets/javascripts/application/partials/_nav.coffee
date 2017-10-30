@@ -1,7 +1,8 @@
+canOpen = true
+canClose = false
+isMouseleave = false
+
 $(document).on 'turbolinks:load', ->
-  canOpen = true
-  canClose = false
-  isMouseleave = false
 
   logoHide = (logo) ->
     if canClose

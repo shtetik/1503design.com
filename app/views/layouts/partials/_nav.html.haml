@@ -1,4 +1,4 @@
-%nav
+%nav#nav(data-turbolinks-permanent)
   .logo-1618
     = link_to '', root_path, class: 'logo-1618__root'
     .logo-1618__menu
@@ -9,8 +9,8 @@
       .logo-1618__menu__item
         = link_to 'Illustration', tags_path, class: 'link link--xs link--black'
       .logo-1618__menu__item
-        = link_to 'Clients', '#Clients', class: 'link link--xs link--black'
+        = link_to 'Clients', '#Clients', class: 'link link--xs link--black', data: { turbolinks: false }
       .logo-1618__menu__item
-        = link_to 'Contact', '#Contact', class: 'link link--xs link--black'
+        = link_to 'Contact', '#Contact', class: 'link link--xs link--black', data: { turbolinks: false }
 
   = link_to '', tags_path, class: 'logo-work'

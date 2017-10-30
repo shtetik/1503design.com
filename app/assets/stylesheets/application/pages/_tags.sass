@@ -1,0 +1,68 @@
+.tags
+  min-height: 100vh
+  padding: 4.6rem 1.4rem 0.6rem 1.4rem
+  padding-top: 4.6rem
+  &__title
+    @extend .font-bell-mt
+    margin: 0
+    font-size: 10.2rem
+    line-height: 9.4rem
+    color: #ffffff
+
+  .link
+    margin-right: 1.8rem
+
+.works
+  +grid-container
+  padding-top: 2rem
+
+  &__wrapper
+    @include grid-collapse
+
+.work
+  +grid-column(1, $work-grid)
+  +grid-media($work-grid--tablet-only)
+    +grid-column(1)
+  +grid-media($work-grid--mobile-only)
+    +grid-column(1)
+  position: relative
+
+  &__wrapper
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    padding: 1.2rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    opacity: 0
+    transition: opacity 0.3s
+    &:hover
+      opacity: 1
+      transition: opacity 0.3s
+
+  &__img
+    width: 100%
+    height: auto
+    filter: grayscale(0) opacity(1)
+    transition: filter 0.3s
+
+  &__title,
+  &__caption
+    @extend .font-tt-norms
+
+  &__title
+    font-size: 4.2rem
+    line-height: 4.2rem
+
+  &__caption
+    margin-top: 0.4rem
+    font-size: 1rem
+    letter-spacing: -0.5px
+
+  &:hover
+    .work__img
+      filter: grayscale(100%) opacity(50%)
+      transition: filter 0.3s

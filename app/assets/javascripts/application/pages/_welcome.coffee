@@ -83,17 +83,16 @@ animanions = ->
   new ScrollMagic.Scene(triggerElement: '#typed-trigger', reverse: false)
     .addTo(controller)
     .on 'start', ->
-      new Typed '#typed',
-        strings: ['scenical decorations tailor-made on the client needs.']
-        stringsElement: '#typed-strings'
-        loop: true
-        typeSpeed: 40
-        fadeOut: true
-        backDelay: 2000
-        showCursor: false
+      try
+        new Typed '#typed',
+          strings: ['scenical decorations tailor-made on the client needs.']
+          stringsElement: '#typed-strings'
+          loop: true
+          typeSpeed: 40
+          fadeOut: true
+          backDelay: 2000
+          showCursor: false
 
 $(document).on 'turbolinks:load', ->
   if $('#intro').length
     animanions()
-$( window ).resize ->
-  Turbolinks.visit window.location.toString(), { action: 'replace' }
