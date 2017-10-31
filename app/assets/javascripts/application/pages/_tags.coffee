@@ -4,10 +4,6 @@ $(document).on 'turbolinks:load', ->
     $grid = $('.works__wrapper').isotope
       itemSelector: '.work'
       transitionDuration: 300
-      hiddenStyle:
-        opacity: 0
-      visibleStyle:
-        opacity: 1
 
     $('.tags__filter').on 'click', 'a', (event) ->
       event.preventDefault()
