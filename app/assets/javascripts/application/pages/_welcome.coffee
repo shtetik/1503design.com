@@ -93,6 +93,11 @@ animanions = ->
           backDelay: 2000
           showCursor: false
 
+  # Clients and Contact scroll
+  $('#clients-scroll, #contact-scroll').click (event) ->
+    event.preventDefault()
+    TweenLite.to(window, 1, { scrollTo: "##{event.target.id.replace('-scroll', '')}", ease: Expo.easeOut })
+
 $(document).on 'turbolinks:load', ->
   if $('#intro').length
     animanions()

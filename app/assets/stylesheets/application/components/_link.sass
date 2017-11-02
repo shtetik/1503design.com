@@ -31,6 +31,7 @@
     padding-bottom: 0.4rem
 
   &--hover-line
+      color: red
     &:before
       opacity: 0
       transition: opacity 0.3s
@@ -38,6 +39,9 @@
       &:before
         opacity: 1
         transition: opacity 0.3s
+    &.link--active
+      &:before
+        opacity: 1
 
   &--hover-white
     &:hover, &:focus

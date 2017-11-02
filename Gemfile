@@ -18,6 +18,8 @@ gem 'autoprefixer-rails', '~> 7.1', '>= 7.1.4.1'
 gem 'neat', '~> 2.1'
 gem 'inline_svg', '~> 1.2', '>= 1.2.3'
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+gem 'active_link_to', '~> 1.0', '>= 1.0.5'
+gem 'gon', '~> 6.2'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-normalize.css'
@@ -34,6 +36,9 @@ end
 
 group :development do
   gem 'puma', '~> 3.7'
+  gem 'better_errors', '~> 2.4'
+  gem 'binding_of_caller', '~> 0.7.3'
+  gem 'annotate', '~> 2.7', '>= 2.7.2'
   gem 'meta_request', '~> 0.4.3'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

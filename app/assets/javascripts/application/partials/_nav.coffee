@@ -3,8 +3,9 @@ canClose = false
 isMouseleave = false
 
 $(document).on 'turbolinks:load', ->
+  logo = $('.logo-1618')
 
-  logoHide = (logo) ->
+  logoHide = ->
     if canClose
       canClose = false
       menu = logo.find('.logo-1618__menu')
@@ -14,7 +15,7 @@ $(document).on 'turbolinks:load', ->
         unless isMouseleave
           logoShow(logo)
 
-  logoShow = (logo) ->
+  logoShow = ->
     if canOpen
       canOpen = false
       logo.find('.logo-1618__menu').addClass 'logo-1618__menu--show'
@@ -26,8 +27,11 @@ $(document).on 'turbolinks:load', ->
 
   $('.logo-1618__root').on 'mouseenter', ->
     isMouseleave = false
-    logoShow($(@).parent())
+    logoShow()
 
   $('.logo-1618').on 'mouseleave', ->
     isMouseleave = true
-    logoHide($(@))
+    logoHide()
+
+  $('.logo-1618 a').on 'click', ->
+    logo.find('.logo-1618__menu').hide()
