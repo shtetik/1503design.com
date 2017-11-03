@@ -112,11 +112,10 @@
     color: #ffffff
 
   &--intro
-    h2
-      @extend .font-tt-norms
-      color: #ffffff
-      font-size: 5.5rem
-      line-height: 5.5rem
+    @extend .font-tt-norms
+    color: #ffffff
+    font-size: 5.5rem
+    line-height: 5.5rem
 
   &--founded,
   &--design
@@ -127,7 +126,7 @@
     letter-spacing: -0.5px
     div
       opacity: 0.1
-      transform: scale(0.99)
+      transform: scale(0.94)
   &--design
     margin-top: 3rem
 
@@ -237,6 +236,13 @@
   padding-top: 1.4rem
   padding-bottom: 1.4rem
 
+  &__delimiter
+    width: 76%
+    height: 2px
+    margin-top: 0.6rem
+    margin-bottom: 0.5rem
+    background-color: #ffffff
+
   &__title,
   &__work
     @extend .font-tt-norms
@@ -247,20 +253,11 @@
     position: relative
     display: block
     font-size: 1.6rem
-    margin-bottom: 1rem
     &:not(:hover)
       color: #000000
       transition: color 1s ease
     &:hover, &:focus
       color: #ffffff
       transition: color 0.3s ease
-    &:after
-      position: absolute
-      content: ''
-      width: 76%
-      height: 2px
-      left: 0
-      bottom: -0.625rem
-      background-color: #ffffff
   &__work
     font-size: 0.8rem

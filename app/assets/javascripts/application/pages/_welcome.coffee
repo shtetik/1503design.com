@@ -24,17 +24,29 @@ animanions = ->
 
   # Text
   $('[data-text-first]').each (i, el) ->
-    new ScrollMagic.Scene(triggerElement: '#intro', duration: '50%')
+    new ScrollMagic.Scene(triggerElement: '#intro', duration: '60%')
       .triggerHook(0)
-      .setTween(TweenMax.to(el, 1, { opacity: 0.3, scale: 1.02, ease: Power1.easeIn }))
+      .setTween(TweenMax.to(el, 1, { opacity: 0.3, scale: 0.96, ease: Power1.easeIn }))
       .addTo(controller)
 
+  scroll = $(window).scrollTop()
+  info_height = $('.section--info').height()
+  info_top = $('.section--info').offset().top - scroll
+
+  dataTextDurations = $('[data-text]').map (i, el) ->
+    el_height = $(el).height()
+    el_top = $(el).offset().top - scroll
+    info_top + info_height - el_top - el_height
+
+  dataTextOffsets = $('[data-text]').map (i, el) ->
+    info_top + info_height - dataTextDurations[i] - $(el).height()
+
   $('[data-text]').each (i, el) ->
-    new ScrollMagic.Scene(triggerElement: el, duration: '50%')
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: dataTextOffsets[i], duration: dataTextDurations[i])
       .triggerHook(1)
       .setTween(TweenMax.to(el, 1, { opacity: 1, ease: Power0.easeNone }))
       .addTo(controller)
-    new ScrollMagic.Scene(triggerElement: el, duration: '10%')
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: dataTextOffsets[i], duration: dataTextDurations[i])
       .triggerHook(1)
       .setTween(TweenMax.to(el, 1, { scale: 1, ease: Power0.easeNone }))
       .addTo(controller)
@@ -72,11 +84,30 @@ animanions = ->
     .setTween('[data-section]', 1, { y: '-200%' })
     .addTo(controller)
 
+  # Clients + Contact TITLE
+  $('#clients h2, #contact h2').each (i, el) ->
+    new ScrollMagic.Scene(triggerElement: el, duration: $( window ).height() + $(el).height())
+      .triggerHook(1)
+      .setTween(TweenMax.fromTo(el, 1, { scale: 0.98, opacity: 0 }, { scale: 1, opacity: 1, repeat: 1, yoyo: true }))
+      .addTo(controller)
+
   # Clients
   $('.client').each (i, el) ->
     new ScrollMagic.Scene(triggerElement: el, duration: 250)
       .triggerHook(0.98)
       .setTween(TweenMax.fromTo(el, 1, { y: 35, opacity: 0.3 }, { y: 0, opacity: 1 }))
+      .addTo(controller)
+
+    delimiter = $(el).find('.client__delimiter')[0]
+    new ScrollMagic.Scene(triggerElement: delimiter, duration: 120)
+      .triggerHook(0.98)
+      .setTween(TweenMax.fromTo(delimiter, 1, { y: 6 }, { y: 0 }))
+      .addTo(controller)
+
+    work = $(el).find('.client__work')[0]
+    new ScrollMagic.Scene(triggerElement: work, duration: 125)
+      .triggerHook(0.98)
+      .setTween(TweenMax.fromTo(work, 1, { y: 12 }, { y: 0 }))
       .addTo(controller)
 
   # SCROLLMAGIC + TYPED.JS
