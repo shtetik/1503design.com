@@ -10,6 +10,12 @@
 #  year       :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  slug       :string           default(""), not null
+#
+# Indexes
+#
+#  index_works_on_name  (name) UNIQUE
+#  index_works_on_slug  (slug) UNIQUE
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

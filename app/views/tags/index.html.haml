@@ -1,49 +1,46 @@
 %section.tags
   %h1.tags__title Work
-  .tags__filter.js-works-filter
+  .tags__filter
     - link_classes = 'link link--xs link--black link--hover-line'
     = active_link_to 'All',
                      tags_path,
                      class: link_classes,
-                     data: { filter: '*' },
                      class_active: 'link--active',
                      active: :exact
     - Tag.all.each do |tag|
       = active_link_to tag.name,
                        tag_path(tag),
                        class: link_classes,
-                       data: { filter: ".work--#{tag.slug}" },
                        class_active: 'link--active'
-
-  .works
-    .works__wrapper
-      %figure.work.work--web-mobile
-        = link_to tags_path do
-          = image_tag 'temp/work1.jpg', class: 'work__img'
-          %figcaption.work__wrapper
-            .work__title Villa Catalfamо
-            .work__caption Branding , Web for a Hotel Design
-      %figure.work.work--branding-identities
-        = link_to tags_path do
-          = image_tag 'temp/work2.jpg', class: 'work__img'
-          %figcaption.work__wrapper
-            .work__title Villa Catalfamо
-            .work__caption Branding , Web for a Hotel Design
-      %figure.work.work--web-mobile
-        = link_to tags_path do
-          = image_tag 'temp/work3.jpg', class: 'work__img'
-          %figcaption.work__wrapper
-            .work__title Villa Catalfamо
-            .work__caption Branding , Web for a Hotel Design
-      %figure.work.work--illustration
-        = link_to tags_path do
-          = image_tag 'temp/work4.jpg', class: 'work__img'
-          %figcaption.work__wrapper
-            .work__title Villa Catalfamо
-            .work__caption Branding , Web for a Hotel Design
-      %figure.work.work--illustration
-        = link_to tags_path do
-          = image_tag 'temp/work5.jpg', class: 'work__img'
-          %figcaption.work__wrapper
-            .work__title Villa Catalfamо
-            .work__caption Branding , Web for a Hotel Design
+  .tags-works
+    .tags-works__wrapper
+      %figure.tags-work
+        = link_to work_path(1) do
+          = image_tag 'temp/work1.jpg', class: 'tags-work__img'
+          %figcaption.tags-work__wrapper
+            .tags-work__title Villa Catalfamо
+            .tags-work__caption Branding , Web for a Hotel Design
+      %figure.tags-work
+        = link_to work_path(1) do
+          = image_tag 'temp/work2.jpg', class: 'tags-work__img'
+          %figcaption.tags-work__wrapper
+            .tags-work__title Villa Catalfamо
+            .tags-work__caption Branding , Web for a Hotel Design
+      %figure.tags-work
+        = link_to work_path(1) do
+          = image_tag 'temp/work3.jpg', class: 'tags-work__img'
+          %figcaption.tags-work__wrapper
+            .tags-work__title Villa Catalfamо
+            .tags-work__caption Branding , Web for a Hotel Design
+      %figure.tags-work
+        = link_to work_path(1) do
+          = image_tag 'temp/work4.jpg', class: 'tags-work__img'
+          %figcaption.tags-work__wrapper
+            .tags-work__title Villa Catalfamо
+            .tags-work__caption Branding , Web for a Hotel Design
+      %figure.tags-work
+        = link_to work_path(1) do
+          = image_tag 'temp/work5.jpg', class: 'tags-work__img'
+          %figcaption.tags-work__wrapper
+            .tags-work__title Villa Catalfamо
+            .tags-work__caption Branding , Web for a Hotel Design

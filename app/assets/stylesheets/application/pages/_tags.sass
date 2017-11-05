@@ -1,25 +1,29 @@
 .tags
   min-height: 150vh
-  padding: 4.6rem 1.4rem 0.6rem 1.4rem
-  padding-top: 4.6rem
+  padding: 4.6rem 1.4rem 0rem 1.4rem
+
+  &__filter
+    margin-bottom: 0.4rem
+
   &__title
     @extend .font-bell-mt
     margin: 0
     font-size: 10.2rem
     line-height: 9.4rem
+    letter-spacing: -8px
     color: #ffffff
 
   .link
     margin-right: 1.8rem
 
-.works
+.tags-works
   +grid-container
-  padding-top: 2rem
+  padding-top: 1.6rem
 
   &__wrapper
     @include grid-collapse
 
-.work
+.tags-work
   +grid-column(1, $work-grid)
   +grid-media($work-grid--tablet-only)
     +grid-column(1)
@@ -46,8 +50,6 @@
   &__img
     width: 100%
     height: auto
-    // filter: grayscale(0) opacity(1)
-    // transition: filter 0.3s
 
   &__title,
   &__caption
@@ -63,6 +65,4 @@
     letter-spacing: -0.5px
 
   &:hover
-    .work__img
-      // filter: grayscale(100%) opacity(50%)
-      // transition: filter 0.3s
+    .tags-work__img

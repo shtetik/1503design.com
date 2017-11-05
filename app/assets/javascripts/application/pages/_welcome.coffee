@@ -84,14 +84,13 @@ animanions = ->
     .setTween('[data-section]', 1, { y: '-200%' })
     .addTo(controller)
 
-  # Clients + Contact TITLE
-  $('#clients h2, #contact h2').each (i, el) ->
-    new ScrollMagic.Scene(triggerElement: el, duration: $( window ).height() + $(el).height())
-      .triggerHook(1)
-      .setTween(TweenMax.fromTo(el, 1, { scale: 0.98, opacity: 0 }, { scale: 1, opacity: 1, repeat: 1, yoyo: true }))
-      .addTo(controller)
-
   # Clients
+  clientsTitle = $('#clients h2')
+  new ScrollMagic.Scene(triggerElement: clientsTitle[0], duration: $( window ).height() + clientsTitle.height())
+    .triggerHook(1)
+    .setTween(TweenMax.fromTo(clientsTitle[0], 1, { scale: 0.98, opacity: 0.1 }, { scale: 1, opacity: 1, repeat: 1, yoyo: true }))
+    .addTo(controller)
+
   $('.client').each (i, el) ->
     new ScrollMagic.Scene(triggerElement: el, duration: 250)
       .triggerHook(0.98)
@@ -110,6 +109,32 @@ animanions = ->
       .setTween(TweenMax.fromTo(work, 1, { y: 12 }, { y: 0 }))
       .addTo(controller)
 
+  # Contact
+  contactTitle = $('#contact h2')
+  new ScrollMagic.Scene(triggerElement: contactTitle[0], duration: '60%')
+    .triggerHook(1)
+    .setTween(TweenMax.fromTo(contactTitle[0], 1, { scale: 0.98, opacity: 0.1 }, { scale: 1, opacity: 1 }))
+    .addTo(controller)
+
+  mailUs = $('.text--contact__mail-us')
+  new ScrollMagic.Scene(triggerElement: mailUs[0], duration: '60%')
+    .triggerHook(1)
+    .setTween(TweenMax.fromTo(mailUs[0], 1, { scale: 0.98, opacity: 0.1 }, { scale: 1, opacity: 1 }))
+    .addTo(controller)
+
+  mail = $('.text--contact__mail')
+  new ScrollMagic.Scene(triggerElement: mail[0], duration: '50%')
+    .triggerHook(1)
+    .setTween(TweenMax.fromTo(mail[0], 1, { scale: 0.98, opacity: 0.1 }, { scale: 1, opacity: 1 }))
+    .addTo(controller)
+
+  info = $('.text--contact__info')
+  new ScrollMagic.Scene(triggerElement: info[0], duration: '30%')
+    .triggerHook(1)
+    .setTween(TweenMax.fromTo(info[0], 1, { scale: 0.99, opacity: 0.1 }, { scale: 1, opacity: 1 }))
+    .addTo(controller)
+
+
   # SCROLLMAGIC + TYPED.JS
   new ScrollMagic.Scene(triggerElement: '#typed-trigger', reverse: false)
     .addTo(controller)
@@ -124,7 +149,7 @@ animanions = ->
           backDelay: 2000
           showCursor: false
 
-  # Clients and Contact scroll
+  # CLIENTS AND CONTACT SCROLL
   $('#clients-scroll, #contact-scroll').click (event) ->
     event.preventDefault()
     TweenLite.to(window, 1, { scrollTo: "##{event.target.id.replace('-scroll', '')}", ease: Expo.easeOut })

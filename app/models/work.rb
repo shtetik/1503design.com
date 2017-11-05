@@ -10,10 +10,22 @@
 #  year       :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  slug       :string           default(""), not null
+#
+# Indexes
+#
+#  index_works_on_name  (name) UNIQUE
+#  index_works_on_slug  (slug) UNIQUE
 #
 
 class Work < ApplicationRecord
-  validates :name, :caption, :text, :year, presence: true
+  extend FriendlyId
+
+  friendly_id :name
+
+  validates :caption, :text, :year, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :slug, presence: true, uniqueness: { case_sensitive: false }
 
   has_and_belongs_to_many :tags
 end

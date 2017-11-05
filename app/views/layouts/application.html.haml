@@ -10,6 +10,6 @@
   %body
     = Gon::Base.render_data
     = render 'layouts/partials/nav'
-    %main#root
+    %main.main
       = yield
     = render 'layouts/partials/footer'

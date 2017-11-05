@@ -15,9 +15,8 @@
         %div{ data: { text: 3 } } We design everything visual, including brand identities,
         %div{ data: { text: 4 } } packaging, websites and mobile apps,
         %div{ data: { text: 5 } } patterns and illustrations.
-
   %section.section.section--branding{ data: { section: 2 } }
-    = link_to '#', class: 'section__wrapper' do
+    = link_to tag_path('branding-identities'), class: 'section__wrapper' do
       .text.text--branding
         %h2
           Branding&
@@ -26,20 +25,19 @@
         %span.link.link--black.link--sm.link--hover-white
           Discover more
   %section.section.section--web-and-mobile{ data: { section: 3 } }
-    = link_to '#', class: 'section__wrapper' do
+    = link_to tag_path('web-mobile'), class: 'section__wrapper' do
       .text.text--web-and-mobile
         %h2
           Web&Mobile
         %span.link.link--black.link--sm.link--hover-white
           Discover more
   %section.section.section--illustration{ data: { section: 4 } }
-    = link_to '#', class: 'section__wrapper' do
+    = link_to tag_path('illustration'), class: 'section__wrapper' do
       .text.text--illustration
         %h2
           ILLUSTRATION
         %span.link.link--black.link--sm.link--hover-white
           Discover more
-
   %section.section.section--quote
     .section__wrapper.section__wrapper--quote
       .text.text--placeholder
