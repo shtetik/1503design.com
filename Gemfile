@@ -28,6 +28,7 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
+  gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
   gem 'sqlite3'
   gem 'pry-rails', '~> 0.3.6'
   gem 'capybara', '~> 2.13'
@@ -44,8 +45,9 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-group :production do
-  gem 'pg', '~> 0.21.0'
+  gem 'capistrano', '~> 3.10'
+  gem 'capistrano-bundler', '~> 1.3'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rails', '~> 1.3'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.2'
 end

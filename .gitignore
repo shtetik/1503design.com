@@ -20,5 +20,10 @@
 /node_modules
 /yarn-error.log
 
+.env
+
 .byebug_history
 .DS_Store
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key
