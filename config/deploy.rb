@@ -39,3 +39,15 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+namespace :rails do
+  rvm_execer = '/usr/local/rvm/bin/rvm default do bundle exec'
+
+  desc 'Open the rails console on the primary remote server'
+  task :console do
+    on roles(:app), primary: true do |host|
+      command = "cd #{deploy_to}/current && #{rvm_execer} rails console #{fetch(:stage)}"
+      exec "ssh -l #{host.user} #{host.hostname} -p #{host.port || 22} -t 'cd #{deploy_to}/current && #{command}'"
+    end
+  end
+end
