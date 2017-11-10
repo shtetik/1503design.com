@@ -1,0 +1,3 @@
+= form_for [:admin, @tag] do |f|
+  = f.text_field :name
+  = f.submit @tag.new_record? ? 'Create' : 'Save', class: 'button-outline'

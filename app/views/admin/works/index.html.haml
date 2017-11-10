@@ -1,0 +1,21 @@
+%h2 Works
+
+%table
+  %thead
+    %tr
+      %th Id
+      %th Name
+      %th Slug
+      %th
+        .float-right
+          = link_to 'New Work', new_admin_work_path()
+  %tbody
+    - @works.each do |work|
+      %tr
+        %td= work.id
+        %td= work.name
+        %td= work.slug
+        %td
+          .float-right
+            = link_to 'Edit', edit_admin_work_path(work.id)
+            = link_to 'Delete', admin_work_path(work.id), mathod: :delete, data: { confirm: "Right? The return path will not be 🤪" }

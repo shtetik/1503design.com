@@ -23,5 +23,13 @@ module Kseniasmirnova
       g.helper          false
       g.skip_routes     true
     end
+
+    config.to_prepare do
+      Clearance::PasswordsController.layout "admin"
+      Clearance::SessionsController.layout "admin"
+      Clearance::UsersController.layout "admin"
+    end
+
+    config.autoload_paths += [Rails.root.join('app', 'validators').to_s]
   end
 end

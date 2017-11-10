@@ -20,12 +20,13 @@ gem 'neat', '~> 2.1'
 gem 'inline_svg', '~> 1.2', '>= 1.2.3'
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 gem 'active_link_to', '~> 1.0', '>= 1.0.5'
-gem 'gon', '~> 6.2'
+gem 'clearance', '~> 1.16', '>= 1.16.1'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-normalize.css'
+  gem 'rails-assets-normalize-css'
   gem 'rails-assets-ScrollMagic'
   gem 'rails-assets-typed.js'
+  gem 'rails-assets-mousetrap'
 end
 
 group :development, :test do

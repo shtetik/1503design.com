@@ -26,6 +26,7 @@ class Work < ApplicationRecord
   validates :caption, :text, :year, presence: true
   validates :name, presence: true, uniqueness: true
   validates :slug, presence: true, uniqueness: { case_sensitive: false }
+  validates :link, url: { allow_blank: true }
 
   has_and_belongs_to_many :tags
 end

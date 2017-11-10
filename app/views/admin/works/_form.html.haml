@@ -1,0 +1,14 @@
+= form_for [:admin, @work] do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :caption
+  = f.text_field :caption
+  = f.label :text
+  = f.text_area :text
+  = f.label :link
+  = f.text_field :link
+  = f.label :year
+  = f.text_field :year
+  = f.label :tag_ids, 'Tags'
+  = f.collection_select :tag_ids, Tag.all, :id, :name, {}, multiple: true
+  = f.submit @work.new_record? ? 'Create' : 'Save', class: 'button-outline'

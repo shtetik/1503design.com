@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104133633) do
+ActiveRecord::Schema.define(version: 20171110120115) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20171104133633) do
     t.integer "work_id", null: false
     t.index ["tag_id", "work_id"], name: "index_tags_works_on_tag_id_and_work_id"
     t.index ["work_id", "tag_id"], name: "index_tags_works_on_work_id_and_tag_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", null: false
+    t.string "encrypted_password", limit: 128, null: false
+    t.string "confirmation_token", limit: 128
+    t.string "remember_token", limit: 128, null: false
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
   create_table "works", force: :cascade do |t|

@@ -2,16 +2,23 @@
   .logo-1618
     = link_to '', root_path, class: 'logo-1618__root', data: { turbolinks: false }
     .logo-1618__menu
-      - Tag.all.each do |tag|
+      - tags = Tag.all
+      - tags.each_with_index do |tag, index|
         .logo-1618__menu__item
-          = link_to tag.name,
+          = link_to tag.name.delete(' '),
                     tag_path(tag),
                     class: 'link link--xs link--black',
+                    style: "transition-delay: #{0.035 * (index + 1)}s",
                     data: { turbolinks: false }
       - link_class = 'link link--xs link--black'
-      - [:clients, :contact].each do |link|
+      - [:clients, :contact].each_with_index do |link, index|
         .logo-1618__menu__item
           - id = current_page?(root_path) ? "#{link}-scroll" : nil
-          = link_to link.capitalize, root_path(anchor: link), class: link_class, id: id, data: { turbolinks: false }
+          = link_to link.capitalize,
+                    root_path(anchor: link),
+                    class: link_class,
+                    style: "transition-delay: #{0.035 * (tags.size + index + 1)}s",
+                    id: id,
+                    data: { turbolinks: false }
 
   = link_to '', tags_path, class: 'logo-work'
