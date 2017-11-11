@@ -1,6 +1,6 @@
 html,
 body
-  padding-top: 2.8rem
+  padding: 2.8rem 0 2.8rem
 
 textarea
   resize: vertical
@@ -9,5 +9,21 @@ select[multiple]
   min-height: 7.2rem
   background: none
 
-.container
-  max-width: 80rem
+blockquote
+  margin: 0rem 0 1rem
+  padding: 0 0 0 1rem
+
+blockquote:last-of-type
+  margin-bottom: 3rem
+
+pre
+  border-left: 0.3rem solid #cc0033
+  color: #cc0033
+
+.field_with_errors
+  display: inline
+  label
+    color: #cc0033
+  input:not(:focus),
+  textarea:not(:focus)
+    border-color: #cc0033

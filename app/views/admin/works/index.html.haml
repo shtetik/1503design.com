@@ -17,5 +17,5 @@
         %td= work.slug
         %td
           .float-right
-            = link_to 'Edit', edit_admin_work_path(work.id)
-            = link_to 'Delete', admin_work_path(work.id), mathod: :delete, data: { confirm: "Right? The return path will not be 🤪" }
+            = link_to 'Edit', edit_admin_work_path(work)
+            = link_to 'Delete', admin_work_path(work), method: :delete, data: { confirm: "Right? The return path will not be 🤪" }

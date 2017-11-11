@@ -14,33 +14,10 @@
                        class_active: 'link--active'
   .tags-works
     .tags-works__wrapper
-      %figure.tags-work
-        = link_to work_path(1) do
-          = image_tag 'temp/work1.jpg', class: 'tags-work__img'
-          %figcaption.tags-work__wrapper
-            .tags-work__title Villa Catalfamо
-            .tags-work__caption Branding , Web for a Hotel Design
-      %figure.tags-work
-        = link_to work_path(1) do
-          = image_tag 'temp/work2.jpg', class: 'tags-work__img'
-          %figcaption.tags-work__wrapper
-            .tags-work__title Villa Catalfamо
-            .tags-work__caption Branding , Web for a Hotel Design
-      %figure.tags-work
-        = link_to work_path(1) do
-          = image_tag 'temp/work3.jpg', class: 'tags-work__img'
-          %figcaption.tags-work__wrapper
-            .tags-work__title Villa Catalfamо
-            .tags-work__caption Branding , Web for a Hotel Design
-      %figure.tags-work
-        = link_to work_path(1) do
-          = image_tag 'temp/work4.jpg', class: 'tags-work__img'
-          %figcaption.tags-work__wrapper
-            .tags-work__title Villa Catalfamо
-            .tags-work__caption Branding , Web for a Hotel Design
-      %figure.tags-work
-        = link_to work_path(1) do
-          = image_tag 'temp/work5.jpg', class: 'tags-work__img'
-          %figcaption.tags-work__wrapper
-            .tags-work__title Villa Catalfamо
-            .tags-work__caption Branding , Web for a Hotel Design
+      - @works.each do |work|
+        %figure.tags-work
+          = link_to work_path(work), data: { turbolinks: false } do
+            = image_tag work.cover_image.img.url, class: 'tags-work__img'
+            %figcaption.tags-work__wrapper
+              .tags-work__title= work.name
+              .tags-work__caption= work.caption

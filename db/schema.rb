@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110120115) do
+ActiveRecord::Schema.define(version: 20171111184609) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 20171110120115) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer "work_id"
+    t.string "img_file_name"
+    t.string "img_content_type"
+    t.integer "img_file_size"
+    t.datetime "img_updated_at"
+    t.integer "kind", default: 0, null: false
+    t.boolean "half", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["work_id"], name: "index_images_on_work_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -51,17 +64,7 @@ ActiveRecord::Schema.define(version: 20171110120115) do
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
-  create_table "works", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "caption", null: false
-    t.text "text", null: false
-    t.string "link"
-    t.integer "year", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "slug", default: "", null: false
-    t.index ["name"], name: "index_works_on_name", unique: true
-    t.index ["slug"], name: "index_works_on_slug", unique: true
-  end
+# Could not dump table "works" because of following StandardError
+#   Unknown type 'json' for column 'image_positions'
 
 end

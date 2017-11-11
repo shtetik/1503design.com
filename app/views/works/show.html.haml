@@ -1,41 +1,36 @@
 %section.work
-  .work__imgs
-    = image_tag 'temp/napoli.jpg', alt: 'Image Alt', class: 'work__img'
+  - if @images.present?
+    .work__imgs
+      .grid#js-grid
+        - @images.each do |image|
+          .item{class: image.half? ? 'item--half' : 'item--full', data: { id: image.id }}
+            .item__content
+              = image_tag image.img.url, class: 'item__img'
 
   .work__content-wrapper
-    %h1.work__title Mytha Hotel Anthology
-    .work__text Branding for a High Jewelry company based in London, from coroprate identity to web design. Exquisite, intriguing and timeless – this is how the London-based designer describes her jewellery. Inspired by the beauty of nature, various forms of art and precious stones, her jewels may seem traditional at first glance. However, on closer look, you’d notice how the classic pieces are transformed
+    %h1.work__title= @work.name
+    .work__text= @work.text
     .work__link
-      = link_to 'nadineaysoy.com', 'http://nadineaysoy.com', class: 'link link--xs link--black link--hover-white'
+      = link_to @work.link, @work.link, class: 'link link--xs link--black link--hover-white'
     .work__tags
       - link_classes = 'link link--xs link--black link--hover-line'
-      - 2.times do
-        = active_link_to 'Illustration',
-                         tags_path,
-                         class: link_classes,
-                         class_active: 'link--active',
-                         active: :exact
-    .work__year 2016
+      - @work.tags.each do |tag|
+        = link_to tag.name,
+                  tags_path(tag),
+                  class: link_classes,
+                  class_active: 'link--active',
+                  active: :exact
+    .work__year= @work.year
 
-  .work__related-wrapper
-    %h2.work__related Related work
-    .tags-works
-      .tags-works__wrapper
-        %figure.tags-work
-          = link_to work_path(1) do
-            = image_tag 'temp/work1.jpg', class: 'tags-work__img'
-            %figcaption.tags-work__wrapper
-              .tags-work__title Villa Catalfamо
-              .tags-work__caption Branding , Web for a Hotel Design
-        %figure.tags-work
-          = link_to work_path(1) do
-            = image_tag 'temp/work2.jpg', class: 'tags-work__img'
-            %figcaption.tags-work__wrapper
-              .tags-work__title Villa Catalfamо
-              .tags-work__caption Branding , Web for a Hotel Design
-        %figure.tags-work
-          = link_to work_path(1) do
-            = image_tag 'temp/work3.jpg', class: 'tags-work__img'
-            %figcaption.tags-work__wrapper
-              .tags-work__title Villa Catalfamо
-              .tags-work__caption Branding , Web for a Hotel Design
+  - if @work.related_works.present?
+    .work__related-wrapper
+      %h2.work__related Related work
+      .tags-works
+        .tags-works__wrapper
+          - @work.related_works.each do |work|
+            %figure.tags-work
+              = link_to work_path(work), data: { turbolinks: false } do
+                = image_tag work.cover_image.img.url, class: 'tags-work__img'
+                %figcaption.tags-work__wrapper
+                  .tags-work__title= work.name
+                  .tags-work__caption= work.caption

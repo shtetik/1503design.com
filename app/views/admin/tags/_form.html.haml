@@ -1,3 +1,10 @@
+- if @tag.errors.present?
+  %pre
+    %code
+      - @tag.errors.full_messages.each do |error_message|
+        %span<= error_message
+
 = form_for [:admin, @tag] do |f|
+  = f.label :name
   = f.text_field :name
-  = f.submit @tag.new_record? ? 'Create' : 'Save', class: 'button-outline'
+  = f.submit @tag.new_record? ? 'Create' : 'Save', class: 'button float-right'

@@ -1,0 +1,38 @@
+.grid
+  position: relative
+  margin-bottom: 4rem
+
+  &--admin
+    display: none
+    border: 1px solid #606c76
+    .item__content
+      cursor: all-scroll
+
+.item
+  position: normal
+  z-index: 1
+
+  &--full
+    width: 100%
+  &--half
+    width: 50%
+
+  &__content
+    position: relative
+  &__img
+    display: block
+    width: 100%
+    height: auto
+    backface-visibility: hidden
+
+  &.muuri-item-hidden
+    z-index: 0
+
+  &.muuri-item-releasing
+    z-index: 2
+
+  &.muuri-item-dragging
+    z-index: 3
+
+  &.muuri-item-dragging .item-content
+    opacity: 0.5 !important

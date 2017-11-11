@@ -1,5 +1,5 @@
 class Admin::TagsController < Admin::ApplicationController
-  before_action :set_tag, only: [:edit, :update]
+  before_action :set_tag, only: [:edit, :update, :destroy]
 
   def index
     @tags = Tag.all
@@ -33,6 +33,12 @@ class Admin::TagsController < Admin::ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @tag.destroy
+    redirect_to admin_tags_path
+  end
+
 
   private
 
