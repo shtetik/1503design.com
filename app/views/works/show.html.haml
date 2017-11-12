@@ -11,7 +11,7 @@
     %h1.work__title= @work.name
     .work__text= @work.text
     .work__link
-      = link_to @work.link, @work.link, class: 'link link--xs link--black link--hover-white'
+      = link_to @work.link, @work.link, target: :_blank, class: 'link link--xs link--black link--hover-white'
     .work__tags
       - link_classes = 'link link--xs link--black link--hover-line'
       - @work.tags.each do |tag|
