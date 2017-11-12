@@ -12,7 +12,13 @@ $ ->
 
       controller = new ScrollMagic.Controller
 
-      $('.item:not(:first)').each (i, el) ->
+      items = $('.item')
+      first_item = items.first()
+      items = items.not(':first')
+      if first_item.offset().top == items.first().offset().top
+        items = items.not(':first')
+
+      items.each (i, el) ->
         img = $(el).find('.item__img')
         offset = if $(el).prev().offset().top == $(el).offset().top
           250
