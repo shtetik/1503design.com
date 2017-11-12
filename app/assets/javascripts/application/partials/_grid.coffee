@@ -14,7 +14,11 @@ $ ->
 
       $('.item:not(:first)').each (i, el) ->
         img = $(el).find('.item__img')
-        new ScrollMagic.Scene(triggerElement: el, offset: 150, duration: 0)
+        offset = if $(el).prev().offset().top == $(el).offset().top
+          250
+        else
+          150
+        new ScrollMagic.Scene(triggerElement: el, offset: offset, duration: 0)
           .triggerHook(1)
           .setTween(
             TweenMax.fromTo(
