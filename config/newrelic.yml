@@ -30,6 +30,7 @@ common: &default_settings
 # If your application has other named environments, configure them here.
 development:
   <<: *default_settings
+  app_name: 1503design (Development)
   monitor_mode: false
 
 test:
@@ -39,7 +40,9 @@ test:
 
 staging:
   <<: *default_settings
+  app_name: 1503design (Staging)
   monitor_mode: false
 
 production:
   <<: *default_settings
+  monitor_mode: true
