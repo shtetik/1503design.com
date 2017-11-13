@@ -24,16 +24,13 @@ gem 'paperclip', '~> 5.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.11'
 gem 'order_as_specified', '~> 1.3'
 gem 'babosa', '~> 1.0', '>= 1.0.2'
+gem 'newrelic_rpm', '~> 4.5', '>= 4.5.0.337'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-normalize-css'
   gem 'rails-assets-ScrollMagic'
   gem 'rails-assets-typed.js'
   gem 'rails-assets-mousetrap'
-end
-
-group :production do
-  gem 'newrelic_rpm', '~> 4.5', '>= 4.5.0.337'
 end
 
 group :development, :test do
