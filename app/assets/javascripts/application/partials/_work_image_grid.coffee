@@ -1,8 +1,9 @@
-$ ->
+@workImageGrimInit = ->
   grid = '#js-grid'
 
   if $(grid).length
     $(grid).imagesLoaded ->
+      console.log 'workImageGrimInit'
       grid = new Muuri grid,
         layoutOnResize: true
         layout:
@@ -11,6 +12,7 @@ $ ->
 
       grid.layout true, ->
         setTimeout ->
+          console.log 'TweenMax'
           controller = new ScrollMagic.Controller
 
           items = $('.item')

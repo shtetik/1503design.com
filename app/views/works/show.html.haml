@@ -16,7 +16,7 @@
       - link_classes = 'link link--xs link--black link--hover-line'
       - @work.tags.each do |tag|
         = link_to tag.name,
-                  tags_path(tag),
+                  tag_path(tag),
                   class: link_classes,
                   class_active: 'link--active',
                   active: :exact
