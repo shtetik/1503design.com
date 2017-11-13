@@ -1,6 +1,6 @@
 %nav.nav
   .logo-1618
-    = link_to '', root_path, class: 'logo-1618__root', data: { turbolinks: false }
+    = link_to '', root_path, class: 'logo-1618__root'
     .logo-1618__menu
       - tags = Tag.all
       - tags.each_with_index do |tag, index|
@@ -9,7 +9,6 @@
                     tag_path(tag),
                     class: 'link link--xs link--black',
                     style: "transition-delay: #{0.035 * (index + 1)}s",
-                    data: { turbolinks: false }
       - link_class = 'link link--xs link--black'
       - [:clients, :contact].each_with_index do |link, index|
         .logo-1618__menu__item
@@ -18,7 +17,6 @@
                     root_path(anchor: link),
                     class: link_class,
                     style: "transition-delay: #{0.035 * (tags.size + index + 1)}s",
-                    id: id,
-                    data: { turbolinks: false }
+                    id: id
 
   = link_to '', tags_path, class: 'logo-work'

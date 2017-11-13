@@ -154,6 +154,6 @@ animanions = ->
     event.preventDefault()
     TweenLite.to(window, 1, { scrollTo: "##{event.target.id.replace('-scroll', '')}", ease: Expo.easeOut })
 
-$(document).on 'turbolinks:load', ->
+$ ->
   if $('#intro').length
     animanions()

@@ -1,8 +1,8 @@
-canOpen = true
-canClose = false
-isMouseleave = false
+$ ->
+  canOpen = true
+  canClose = false
+  isMouseleave = false
 
-$(document).on 'turbolinks:load', ->
   logo = $('.logo-1618')
 
   logoHide = ->

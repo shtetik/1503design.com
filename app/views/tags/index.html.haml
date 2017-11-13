@@ -16,7 +16,7 @@
     .tags-works__wrapper
       - @works.each do |work|
         %figure.tags-work
-          = link_to work_path(work), data: { turbolinks: false } do
+          = link_to work_path(work) do
             = image_tag work.cover_image.img.url, class: 'tags-work__img'
             %figcaption.tags-work__wrapper
               .tags-work__title= work.name
