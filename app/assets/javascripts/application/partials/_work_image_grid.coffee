@@ -1,8 +1,8 @@
+# Is called in _loader.coffee
 @workImageGrimInit = ->
   grid = '#js-grid'
 
   if $(grid).length
-    console.log 'workImageGrimInit'
     grid = new Muuri grid,
       layoutOnResize: true
       layout:
@@ -10,7 +10,6 @@
         rounding: false
 
     grid.layout true, ->
-      console.log 'TweenMax'
       controller = new ScrollMagic.Controller
 
       items = $('.item')
