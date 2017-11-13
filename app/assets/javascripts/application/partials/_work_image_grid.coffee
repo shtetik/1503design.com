@@ -1,10 +1,8 @@
-# Run in the _loader.coffee
 $ ->
   grid = '#js-grid'
 
   if $(grid).length
     $(grid).imagesLoaded ->
-      $('.item').css 'position', 'absolute'
       grid = new Muuri grid,
         layoutOnResize: true
         layout:
@@ -39,4 +37,4 @@ $ ->
               )
               .reverse(false)
               .addTo(controller)
-        , 100
+        , 300

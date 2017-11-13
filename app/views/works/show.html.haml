@@ -23,8 +23,8 @@
     .work__year= @work.year
 
   - if @work.related_works.present?
+    %h2.work__related Related work
     .work__related-wrapper
-      %h2.work__related Related work
       .tags-works
         .tags-works__wrapper
           - @work.related_works.each do |work|
