@@ -1,5 +1,5 @@
 # Run in the _loader.coffee
-@workImageGridInit = ->
+$ ->
   grid = '#js-grid'
 
   if $(grid).length
