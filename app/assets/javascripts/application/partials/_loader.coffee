@@ -8,10 +8,11 @@ $(window).on 'load', ->
 
 $ ->
   checkLoading = setInterval ->
-    clearInterval checkLoading
-    @workImageGrimInit()
-    $('body').removeClass('loading')
-    $('.loader').fadeOut(300)
+    if isLoaded
+      clearInterval checkLoading
+      @workImageGrimInit()
+      $('body').removeClass('loading')
+      $('.loader').fadeOut(300)
   , 1000
 
   $("a:not(.skip-preloader):not([target='_blank'])").on 'click', (e) ->
