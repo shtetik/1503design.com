@@ -8,8 +8,9 @@
           = link_to tag.name.delete(' '),
                     tag_path(tag),
                     class: 'link link--xs link--black',
-                    style: "transition-delay: #{0.035 * (index + 1)}s",
+                    style: "transition-delay: #{0.035 * (index + 1)}s"
       - link_class = 'link link--xs link--black'
+      - link_class << ' skip-preloader' if current_page?(root_path)
       - [:clients, :contact].each_with_index do |link, index|
         .logo-1618__menu__item
           - id = current_page?(root_path) ? "#{link}-scroll" : nil
