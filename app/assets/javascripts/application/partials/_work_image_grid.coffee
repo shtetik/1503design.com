@@ -10,6 +10,7 @@
         rounding: false
 
     grid.layout true, ->
+      TweenLite.defaultOverwrite = false
       controller = new ScrollMagic.Controller
 
       items = $('.item')
@@ -24,7 +25,7 @@
           250
         else
           150
-        new ScrollMagic.Scene(triggerElement: el, offset: offset, duration: 0)
+        new ScrollMagic.Scene(triggerElement: el, offset: offset)
           .triggerHook(1)
           .setTween(
             TweenMax.fromTo(
