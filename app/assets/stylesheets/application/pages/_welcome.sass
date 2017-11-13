@@ -81,15 +81,15 @@
   &--quote
     padding: 5rem 6%
     text-align: left
-    background-color: $background-color
+    background-color: $color--background
   &--clients
     padding-top: 5rem
     padding-bottom: 5rem
-    background-color: $background-color
+    background-color: $color--background
   &--contact
     padding-top: 5rem
     padding-bottom: 2rem
-    background-color: $background-color
+    background-color: $color--background
 
   &--quote,
   &--clients,
@@ -109,18 +109,18 @@
   &--quote,
   &--clients,
   &--contact
-    color: #ffffff
+    color: $color--text-second
 
   &--intro
     @extend .font-tt-norms
-    color: #ffffff
+    color: $color--text-second
     font-size: 5.5rem
     line-height: 5.5rem
 
   &--founded,
   &--design
     @extend .font-tt-norms
-    color: #000000
+    color: $color--text-first
     font-size: 1.9rem
     line-height: 2.3rem
     letter-spacing: -0.5px
@@ -171,7 +171,7 @@
     &__mail,
     &__info
       @extend .font-tt-norms
-      color: #000000
+      color: $color--text-first
       letter-spacing: -0.5px
     &__mail-us,
     &__mail
@@ -195,13 +195,13 @@
         bottom: 0
         width: 100%
         height: 3px
-        background-color: #ffffff
+        background-color: $color--text-second
       &:hover, &:focus
-        color: #ffffff
+        color: $color--text-second
         transition: color 0.3s
     &__tel
       &, &:hover, &:focus
-        color: #000000
+        color: $color--text-first
     &__info
       font-size: 1rem
       line-height: 1.26rem
@@ -214,14 +214,14 @@
   &--placeholder
     color: transparent
   &--typed
-    color: #ffffff
+    color: $color--text-second
     position: absolute
     top: 0
     left: 0
     right: 0
     bottom: 0
     span:last-child
-      color: #000000
+      color: $color--text-first
 
 .clients
   +grid-container
@@ -242,7 +242,7 @@
     height: 2px
     margin-top: 0.6rem
     margin-bottom: 0.5rem
-    background-color: #ffffff
+    background-color: $color--text-second
 
   &__title,
   &__work
@@ -255,10 +255,10 @@
     display: block
     font-size: 1.6rem
     &:not(:hover)
-      color: #000000
+      color: $color--text-first
       transition: color 1s ease
     &:hover, &:focus
-      color: #ffffff
+      color: $color--text-second
       transition: color 0.3s ease
   &__work
     font-size: 0.8rem

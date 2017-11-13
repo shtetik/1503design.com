@@ -20,6 +20,7 @@ $ ->
           items = items.not(':first')
 
         items.each (i, el) ->
+          console.log $(el).offset().top
           img = $(el).find('.item__img')
           offset = if $(el).prev().offset().top == $(el).offset().top
             250

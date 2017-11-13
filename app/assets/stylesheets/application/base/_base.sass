@@ -5,15 +5,24 @@ body
 
 body
   overflow-x: hidden
-  background-color: $background-color
+  background-color: $color--background
 
 h2
   font-weight: normal
 
 a
   &, &:hover, &:focus
-    color: #000000
+    color: $color--text-first
     text-decoration: none
 
-.main
+body::-webkit-scrollbar
+  width: 0.4rem
+
+body::-webkit-scrollbar-track
+  background-color: $color--background
+
+body::-webkit-scrollbar-thumb
+  background-color: $color--first
+
+main
   position: relative
