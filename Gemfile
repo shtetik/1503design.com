@@ -32,6 +32,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-mousetrap'
 end
 
+group :production do
+  gem 'newrelic_rpm', '~> 4.5', '>= 4.5.0.337'
+end
+
 group :development, :test do
   gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
   gem 'pry-rails', '~> 0.3.6'
