@@ -31,7 +31,5 @@ module Kseniasmirnova
     end
 
     config.autoload_paths += [Rails.root.join('app', 'validators').to_s]
-
-    config.middleware.insert_after ActionDispatch::Static, Rack::Deflater
   end
 end
