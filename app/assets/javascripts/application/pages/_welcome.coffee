@@ -74,6 +74,13 @@ animanions = ->
       .setTween(blackoutTimeline())
       .addTo(controller)
 
+  $('[data-section]').each (i, el) ->
+    offset = firstHeight + $( window ).height() * (i)
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: offset, duration: '100%')
+      .triggerHook(0)
+      .setTween(TweenMax.to("[data-section='#{i + 1}']", 1, { y: '-=30px' }))
+      .addTo(controller)
+
   new ScrollMagic.Scene(triggerElement: '.section--quote', duration: '100%')
     .triggerHook(1)
     .setTween(blackoutTimeline(false))
@@ -83,6 +90,13 @@ animanions = ->
     .triggerHook(0)
     .setTween('[data-section]', 1, { y: '-200%' })
     .addTo(controller)
+
+  # Quote
+  $('.js-pretyped').each (i, el) ->
+    new ScrollMagic.Scene(triggerElement: el, offset: 50, duration: '120%')
+      .triggerHook(1)
+      .setTween(TweenMax.fromTo(el, 1, { opacity: 0.1 }, { opacity: 1, repeat: 1, yoyo: true }))
+      .addTo(controller)
 
   # Clients
   clientsTitle = $('#clients h2')
@@ -109,6 +123,11 @@ animanions = ->
       .setTween(TweenMax.fromTo(work, 1, { y: 12 }, { y: 0 }))
       .addTo(controller)
 
+    new ScrollMagic.Scene(triggerElement: el, duration: '40%')
+      .triggerHook(0.3)
+      .setTween(TweenMax.to(el, 1, { scale: 0.98, opacity: 0.1 }))
+      .addTo(controller)
+
   # Contact
   contactTitle = $('#contact h2')
   new ScrollMagic.Scene(triggerElement: contactTitle[0], duration: '60%')
@@ -119,19 +138,19 @@ animanions = ->
   mailUs = $('.text--contact__mail-us')
   new ScrollMagic.Scene(triggerElement: mailUs[0], duration: '60%')
     .triggerHook(1)
-    .setTween(TweenMax.fromTo(mailUs[0], 1, { scale: 0.98, opacity: 0.1 }, { scale: 1, opacity: 1 }))
+    .setTween(TweenMax.fromTo(mailUs[0], 1, { scale: 0.98, opacity: 0 }, { scale: 1, opacity: 1 }))
     .addTo(controller)
 
   mail = $('.text--contact__mail')
   new ScrollMagic.Scene(triggerElement: mail[0], duration: '50%')
     .triggerHook(1)
-    .setTween(TweenMax.fromTo(mail[0], 1, { scale: 0.98, opacity: 0.1 }, { scale: 1, opacity: 1 }))
+    .setTween(TweenMax.fromTo(mail[0], 1, { scale: 0.98, opacity: 0 }, { scale: 1, opacity: 1 }))
     .addTo(controller)
 
   info = $('.text--contact__info')
   new ScrollMagic.Scene(triggerElement: info[0], duration: '30%')
     .triggerHook(1)
-    .setTween(TweenMax.fromTo(info[0], 1, { scale: 0.99, opacity: 0.1 }, { scale: 1, opacity: 1 }))
+    .setTween(TweenMax.fromTo(info[0], 1, { scale: 0.99, opacity: 0 }, { scale: 1, opacity: 1 }))
     .addTo(controller)
 
 

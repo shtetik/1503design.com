@@ -1,5 +1,3 @@
-require 'new_relic/recipes'
-
 # Load DSL and set up stages
 require "capistrano/setup"
 

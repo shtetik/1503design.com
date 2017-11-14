@@ -40,12 +40,6 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-set :default_env, {
-  'NEW_RELIC_LICENSE_KEY' => ENV["NEW_RELIC_LICENSE_KEY"]
-}
-
-after "deploy:updated", "newrelic:notice_deployment"
-
 namespace :deploy do
   desc 'Runs rake db:seed'
   task :seed => [:set_rails_env] do

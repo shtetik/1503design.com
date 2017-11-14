@@ -79,7 +79,7 @@
     top: 100%
 
   &--quote
-    padding: 5rem 6%
+    padding: 5rem 6% 8rem
     text-align: left
     background-color: $color--background
   &--clients
@@ -88,7 +88,7 @@
     background-color: $color--background
   &--contact
     padding-top: 5rem
-    padding-bottom: 2rem
+    padding-bottom: 0.8rem
     background-color: $color--background
 
   &--quote,
@@ -165,7 +165,7 @@
     h2
       @extend .font-engravers
       font-size: 8.4rem
-      line-height: 6rem
+      line-height: 5rem
       margin: 0
     &__mail-us,
     &__mail,
@@ -220,7 +220,9 @@
     left: 0
     right: 0
     bottom: 0
-    span:last-child
+    div
+      display: inline
+    div:last-child
       color: $color--text-first
 
 .clients
