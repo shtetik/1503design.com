@@ -74,13 +74,6 @@ animanions = ->
       .setTween(blackoutTimeline())
       .addTo(controller)
 
-  $('[data-section]').each (i, el) ->
-    offset = firstHeight + $( window ).height() * (i)
-    new ScrollMagic.Scene(triggerElement: '#intro', offset: offset, duration: '100%')
-      .triggerHook(0)
-      .setTween(TweenMax.to("[data-section='#{i + 1}']", 1, { y: '-=30px' }))
-      .addTo(controller)
-
   new ScrollMagic.Scene(triggerElement: '.section--quote', duration: '100%')
     .triggerHook(1)
     .setTween(blackoutTimeline(false))
