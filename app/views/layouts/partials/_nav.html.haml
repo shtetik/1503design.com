@@ -30,6 +30,7 @@
                       class: link_class,
                       style: "transition-delay: #{0.035 * (tags.size + index + 1)}s",
                       id: id
-      .popup__close.visible--mobile
+      .popup__wrapper
+        .popup__close.visible--mobile
 
   = link_to '', tags_path, class: 'nav__work hidden--mobile'

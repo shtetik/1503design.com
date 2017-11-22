@@ -7,7 +7,7 @@ $ ->
   menu = $('.nav__menu')
 
   allowScroll = ->
-    $('.main').removeClass('main--not-scroll')
+    $('html').removeClass('not-scroll')
     $(window).scrollTop(scrollPosition)
 
   popupMobile = ->
@@ -48,7 +48,7 @@ $ ->
   $('.nav__button').on 'click', ->
     scrollPosition = $(window).scrollTop()
     $('.popup').addClass('popup--show').show()
-    $('.main').addClass('main--not-scroll')
+    $('html').addClass('not-scroll')
 
   $('.popup__close').on 'click', ->
     allowScroll()
