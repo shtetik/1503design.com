@@ -1,6 +1,7 @@
 %article.intro#intro
-  .arrow#arrow
-  .blackout#blackout
+  .arrow.js-arrow
+  .arrow.js-arrow.visible--mobile
+  .blackout#blackout.hidden--mobile
   %section.section.section--first
     .section__wrapper
       .text.text--intro
@@ -88,6 +89,10 @@
         .text--contact__vcard.vcard
           %p.text--contact__mail-us Feel free to contact us if you have any questions or comments:
           = link_to 'ksmirnova.graphics@gmail.com', 'mailto:ksmirnova.graphics@gmail.com', class: 'text--contact__mail email'
+          = link_to 'mailto:ksmirnova.graphics@gmail.com', class: 'text--contact__mail text--contact__mail--mobile email' do
+            %span ksmirnova.graphics@
+            %br
+            %span gmail.com
           .text--contact__info
             %span.fn Ksenia Smirnova
             %br

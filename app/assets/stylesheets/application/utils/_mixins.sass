@@ -1,0 +1,17 @@
+=media-only($media)
+  @if $media == mobile
+    // Extra small devices (portrait mobiles, less than 576px)
+    @media #{$media--mobile}
+      @content
+  @else if $media == tablet
+    // Small devices (landscape mobiles and tablets, 576px and up)
+    @media #{$media--tablet}
+      @content
+  @else if $media == desktop
+    // Large devices (desktops, 1024px and up)
+    @media #{$media--desktop}
+      @content
+  @else if $media == large-desktop
+    // Extra large devices (large desktops, 1599px and up)
+    @media #{$media--large-desktop}
+      @content

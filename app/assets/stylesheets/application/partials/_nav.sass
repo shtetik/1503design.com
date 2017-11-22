@@ -1,54 +1,112 @@
-.logo-1618,
-.logo-work
-  position: fixed
-  z-index: 1000
+.nav
+  &__menu,
+  &__work
+    position: fixed
+    z-index: 1000
 
-.logo-1618
-  left: 1.4rem
-  top: 1.4rem
+  &__menu
+    left: 1.4rem
+    top: 1.4rem
+    +media-only(mobile)
+      left: 5vw
+      top: 5vw
 
-  &__root
+  &__logo
     display: block
     width: 5.9rem
     height: 2.12rem
-    background: asset-url('icons/logo/logo.svg') no-repeat
+    background: asset-url('common/logo/logo.svg') no-repeat
 
-  &__menu
-    visibility: hidden
-    height: 0
-    opacity: 0
-    &__item
-      width: 5.9rem
-      cursor: pointer
-      white-space: nowrap
-      .link
-        padding: 0.6rem 0 0.35rem 0
+  &__work
+    right: 1.4rem
+    top: 1.4rem
+    width: 6.6rem
+    height: 2.4rem
+    background: asset-url('common/logo/work.svg') no-repeat
+    +media-only(mobile)
+      right: 5vw
+      top: 5vw
+
+  &__button
+    position: fixed
+    z-index: 1000
+    right: 5vw
+    top: 5vw
+    width: 2.1rem
+    height: 1.5rem
+    border: none
+    border-radius: 0
+    background: asset-url('common/control/menu_mobile.svg') no-repeat
+    &, &:focus
+      outline: 0
+
+.popup
+  visibility: hidden
+  height: 0
+  opacity: 0
+  &__item
+    width: 5.9rem
+    cursor: pointer
+    white-space: nowrap
+    .link
+      padding: 0.6rem 0 0.35rem 0
+      opacity: 0
+      transform: translateX(-10px)
+      &:before
         opacity: 0
-        transform: translateX(-10px)
+        transition: opacity 0.3s
+    &:hover, &:focus
+      .link
         &:before
-          opacity: 0
-          transition: opacity 0.3s
-      &:hover, &:focus
-        .link
-          &:before
-            opacity: 1
-            transition: opacity 0.3s
-    &__item:first-child
-      padding-top: 0.3rem
-
-    &--show
-      visibility: visible
-      height: auto
-      opacity: 1
-      .logo-1618__menu__item
-        .link
           opacity: 1
-          transform: translateX(0)
-          transition: opacity 0.35s, transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1)
+          transition: opacity 0.3s
+  &__item:first-child
+    padding-top: 0.3rem
 
-.logo-work
-  right: 1.4rem
-  top: 1.4rem
-  width: 6.6rem
-  height: 2.4rem
-  background: asset-url('icons/logo/work.svg') no-repeat
+  &__close
+    position: absolute
+    bottom: calc(8.5vw + 5px)
+    left: 50%
+    margin-left: -1.11rem
+    width: 2.22rem
+    height: 2.22rem
+    background: asset-url('common/control/cross_mobile.svg') no-repeat
+
+  &--show
+    visibility: visible
+    height: auto
+    opacity: 1
+    .popup__item
+      .link
+        opacity: 1
+        transform: translateX(0)
+        transition: opacity 0.35s, transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1)
+
+  &--mobile
+    position: fixed
+    left: 0
+    top: 0
+    width: 100vw
+    height: 100vh
+    padding: 8.5vw
+    padding-bottom: calc(8.5vw + 2.22rem + 10px)
+    background: asset-url('mobile/menu/menu_1.jpg') no-repeat
+    background-size: cover
+    z-index: 9999
+    .popup__wrapper
+      height: 100%
+      overflow-y: scroll
+    .popup__item
+      .link
+        padding: 0
+        font-size: 1.66rem
+      .link--white
+        &:before
+          background-color: #ffffff
+          opacity: 1
+    .popup__item + .popup__item
+      margin-top: 1.67rem
+
+  &:not(.popup--mobile)
+    .link
+      color: #000000

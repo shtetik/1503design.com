@@ -1,29 +1,52 @@
 .footer
-  @extend .font-tt-norms
+  @extend %font-tt-norms
+  @extend %size-text-3
   position: relative
   z-index: 1
   display: flex
   justify-content: space-between
   align-items: flex-end
   padding: 1.4rem
-  font-size: 0.8rem
   letter-spacing: -0.5px
   color: $color--text-first
   background-color: $color--background
+  +media-only(mobile)
+    padding: 2.78rem 5vw 5vw
+    flex-flow: row wrap
 
   &__copyright,
   &__social-networks
     width: 8rem
+    +media-only(mobile)
+      width: auto
+
+  &__copyright,
+  &__build
+    +media-only(mobile)
+      flex: 1 50%
+
+  &__copyright
+    +media-only(mobile)
+      order: 2
 
   &__social-networks
     display: flex
     justify-content: flex-end
+    +media-only(mobile)
+      padding: 1.38rem 0
+      justify-content: center
+      flex: 1 100%
+      order: 1
     &__wrapper
       width: 5rem
       display: flex
       justify-content: space-between
+
   &__build
     color: $color--first
+    +media-only(mobile)
+      text-align: right
+      order: 3
     &__heart
       height: 0.597rem
       width: 0.55rem
@@ -36,3 +59,14 @@
       &:hover, &:focus
         color: $color--text-first
         transition: color 0.3s
+
+  &__arrow
+    position: absolute
+    z-index: 100
+    left: 50%
+    top: 0
+    width: 50px
+    height: 50px
+    margin-left: -25px
+    cursor: pointer
+    background: asset-url('common/control/arrow_up.svg') no-repeat

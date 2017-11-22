@@ -1,23 +1,35 @@
 %nav.nav
-  .logo-1618
-    = link_to '', root_path, class: 'logo-1618__root'
-    .logo-1618__menu
-      - tags = Tag.all
-      - tags.each_with_index do |tag, index|
-        .logo-1618__menu__item
-          = link_to tag.name.delete(' '),
-                    tag_path(tag),
-                    class: 'link link--xs link--black',
-                    style: "transition-delay: #{0.035 * (index + 1)}s"
-      - link_class = 'link link--xs link--black'
-      - link_class << ' skip-preloader' if current_page?(root_path)
-      - [:clients, :contact].each_with_index do |link, index|
-        .logo-1618__menu__item
-          - id = current_page?(root_path) ? "#{link}-scroll" : nil
-          = link_to link.capitalize,
-                    root_path(anchor: link),
-                    class: link_class,
-                    style: "transition-delay: #{0.035 * (tags.size + index + 1)}s",
-                    id: id
+  .nav__menu
+    = link_to '', root_path, class: 'nav__logo'
+    = button_tag '', class: 'nav__button visible--mobile'
+    .popup
+      .popup__wrapper
+        .popup__item
+          = active_link_to 'Home',
+                           root_path,
+                           class: 'link link--xs visible--mobile',
+                           active: :exact,
+                           class_active: 'link--white',
+                           class_inactive: 'link--black'
+        - tags = Tag.all
+        - tags.each_with_index do |tag, index|
+          .popup__item
+            = active_link_to tag.name.delete(' '),
+                      tag_path(tag),
+                      class: 'link link--xs',
+                      style: "transition-delay: #{0.035 * (index + 1)}s",
+                      class_active: 'link--white',
+                      class_inactive: 'link--black'
+        - link_class = 'link link--xs link--black'
+        - link_class << ' skip-preloader' if current_page?(root_path)
+        - [:clients, :contact].each_with_index do |link, index|
+          .popup__item
+            - id = current_page?(root_path) ? "#{link}-scroll" : nil
+            = link_to link.capitalize,
+                      root_path(anchor: link),
+                      class: link_class,
+                      style: "transition-delay: #{0.035 * (tags.size + index + 1)}s",
+                      id: id
+      .popup__close.visible--mobile
 
-  = link_to '', tags_path, class: 'logo-work'
+  = link_to '', tags_path, class: 'nav__work hidden--mobile'

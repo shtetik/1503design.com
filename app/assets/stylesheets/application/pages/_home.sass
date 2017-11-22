@@ -1,21 +1,28 @@
 .intro
   position: relative
   padding-top: 600vh
+  +media-only(mobile)
+    padding-top: 0 !important
 
 .arrow
+  display: none
   position: fixed
   z-index: 100
   left: 50%
-  bottom: 70px
+  bottom: 3.88rem
   width: 50px
   height: 27px
   margin-left: -25px
   opacity: 1
   cursor: pointer
-  background: asset-url('icons/control/arrow_down.svg') no-repeat
+  background: asset-url('common/control/arrow_down.svg') no-repeat
   animation: arrow 1s infinite
+  +media-only(mobile)
+    bottom: 2.22rem
   &--hide
     display: none
+  &--show
+    display: block
 
 @keyframes arrow
   0%
@@ -38,6 +45,8 @@
   background: #000000
   pointer-events: none
   backface-visibility: hidden
+  &--hide
+    display: none
 
 .section
   position: relative
@@ -50,18 +59,24 @@
     top: 0
     z-index: 1
     // TODO: потом тут будет фон
-    // background-image: asset-url('pages/welcome/1.jpg')
+    // background-image: asset-url('desktope/home/1.jpg')
     // background-attachment: fixed
   &--branding
     z-index: 2
-    background-image: asset-url('pages/welcome/1.jpg')
+    background-image: asset-url('desktope/home/1.jpg')
+    +media-only(mobile)
+      background-image: asset-url('mobile/home/1.jpg')
   &--web-and-mobile
     z-index: 3
-    background-image: asset-url('pages/welcome/2.jpg')
+    background-image: asset-url('desktope/home/2.jpg')
+    +media-only(mobile)
+      background-image: asset-url('mobile/home/2.jpg')
   &--illustration
     z-index: 4
-    background-image: asset-url('pages/welcome/3.jpg')
+    background-image: asset-url('desktope/home/3.jpg')
     margin-bottom: 0
+    +media-only(mobile)
+      background-image: asset-url('mobile/home/3.jpg')
 
   &--first,
   &--info,
@@ -71,29 +86,54 @@
     background-size: cover
     background-repeat: no-repeat
     position: fixed
+    +media-only(mobile)
+      background-position: center
+      position: static
 
   &--info,
   &--branding,
   &--web-and-mobile,
-  &--illustration,
+  &--illustration
     top: 100%
 
+  &--branding,
+  &--web-and-mobile,
+  &--illustration
+    +media-only(mobile)
+      top: auto
+      height: 100vw
+
+  &--info
+    +media-only(mobile)
+      padding-left: 5vw
+      padding-right: 5vw
+
   &--quote
-    padding: 5rem 6% 8rem
+    padding: 5rem 6vw 8rem
     text-align: left
     background-color: $color--background
+    +media-only(mobile)
+      padding: 2.22rem 5vw 2.77rem
   &--clients
     padding-top: 5rem
     padding-bottom: 5rem
     background-color: $color--background
+    +media-only(mobile)
+      padding: 2.77rem 5vw 2.77rem
   &--contact
-    padding-top: 5rem
+    padding: 5rem 10vw 0 10vw
     background-color: $color--background
+    +media-only(mobile)
+      padding: 2.77rem 5vw 5.56rem 5vw
 
   &--quote,
   &--clients,
   &--contact
     z-index: 10
+    +media-only(mobile)
+      display: block
+      height: auto
+      vertical-align: none
 
   &__wrapper
     display: table-cell
@@ -111,39 +151,43 @@
     color: $color--text-second
 
   &--intro
-    @extend .font-tt-norms
+    @extend %font-tt-norms
+    @extend %size-title-1
     color: $color--text-second
-    font-size: 5.5rem
-    line-height: 5.5rem
 
   &--founded,
   &--design
-    @extend .font-tt-norms
+    @extend %font-tt-norms
+    @extend %size-text-1
     color: $color--text-first
-    font-size: 1.9rem
-    line-height: 2.3rem
     letter-spacing: -0.5px
     div
       opacity: 0.1
       transform: scale(0.96)
   &--design
     margin-top: 3rem
+    +media-only(mobile)
+      margin-top: 1.5rem
 
   &--branding
     h2
-      @extend .font-bell-mt
-      font-size: 8.4rem
-      line-height: 7.4rem
+      @extend %font-bell-mt
+      @extend %size-title-2
 
   &--web-and-mobile
     h2
-      @extend .font-tt-norms
-      font-size: 6.1rem
+      @extend %font-tt-norms
+      @extend %size-title-3
 
   &--illustration
     h2
-      @extend .font-engravers
-      font-size: 6.1rem
+      @extend %font-engravers
+      @extend %size-title-3
+      +media-only(mobile)
+        overflow-wrap: break-word
+        word-wrap: break-word
+        word-break: break-word
+        hyphens: auto
 
   &--branding,
   &--web-and-mobile,
@@ -153,48 +197,60 @@
 
   &--clients
     h2
-      @extend .font-bell-mt
+      @extend %font-bell-mt
+      @extend %size-title-4
       letter-spacing: -8px
-      font-size: 13.3rem
 
   &--contact
     text-align: left
-    padding-left: 10%
-    padding-right: 10%
     h2
-      @extend .font-engravers
-      font-size: 8.4rem
-      line-height: 5rem
+      @extend %font-engravers
+      @extend %size-title-2
       margin: 0
+      +media-only(mobile)
+        font-size: 2.5rem
+        line-height: 2.5rem
     &__mail-us,
     &__mail,
     &__info
-      @extend .font-tt-norms
+      @extend %font-tt-norms
       color: $color--text-first
       letter-spacing: -0.5px
     &__mail-us,
     &__mail
-      font-size: 3.6rem
-      line-height: 3.6rem
+      @extend %size-quote-2
       letter-spacing: -2px
     &__mail-us
       margin-top: 2.4rem
       margin-bottom: 0
+      +media-only(mobile)
+        margin-top: 1.38rem
     &__mail
       position: relative
       display: inline-block
-      margin-bottom: 1.6rem
       padding-bottom: 1.1rem
       cursor: pointer
       transition: color 0.6s
-      &:before
-        content: ''
-        position: absolute
-        left: 0
-        bottom: 0
-        width: 100%
-        height: 3px
-        background-color: $color--text-second
+      border-bottom: 3px solid $color--text-second
+      +media-only(mobile)
+        display: none
+      &--mobile
+        display: none
+        border-bottom: none
+        padding-bottom: 0
+        +media-only(mobile)
+          display: inline-block
+        span
+          position: relative
+          &:after
+            content: ''
+            position: absolute
+            left: 3%
+            bottom: -1px
+            width: 100%
+            height: 3px
+            z-index: -1
+            background-color: $color--text-second
       &:hover, &:focus
         color: $color--text-second
         transition: color 0.3s
@@ -202,13 +258,17 @@
       &, &:hover, &:focus
         color: $color--text-first
     &__info
-      font-size: 1rem
-      line-height: 1.26rem
+      @extend %size-text-0
+      margin-top: 1.6rem
+      +media-only(mobile)
+        margin-top: 2.22rem
 
   &--placeholder,
   &--typed
-    @extend .font-tt-norms
-    font-size: 5rem
+    @extend %font-tt-norms
+    @extend %size-quote-1
+    +media-only(mobile)
+      letter-spacing: -2px
 
   &--placeholder
     color: transparent
@@ -226,7 +286,9 @@
 
 .clients
   +grid-container
-  padding-left: 3%
+  padding-left: 3vw
+  +media-only(mobile)
+    padding-left: 0
 
 .client
   +grid-column(1, $client-grid)
@@ -234,9 +296,9 @@
     +grid-column(1)
   +grid-media($client-grid--mobile-only)
     +grid-column(1)
-  padding-left: 3rem
-  padding-top: 1.4rem
-  padding-bottom: 1.4rem
+  padding: 1.4rem 0 1.4rem 3rem
+  +media-only(mobile)
+    padding: 1.11rem 0
 
   &__delimiter
     width: 76%
@@ -247,14 +309,14 @@
 
   &__title,
   &__work
-    @extend .font-tt-norms
+    @extend %font-tt-norms
     letter-spacing: -1px
     text-align: left
 
   &__title
+    @extend %size-text-2
     position: relative
     display: block
-    font-size: 1.6rem
     &:not(:hover)
       color: $color--text-first
       transition: color 1s ease
@@ -262,5 +324,5 @@
       color: $color--text-second
       transition: color 0.3s ease
   &__work
-    font-size: 0.8rem
+    @extend %size-text-3
     letter-spacing: -0.5px

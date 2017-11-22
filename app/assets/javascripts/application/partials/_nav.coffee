@@ -1,37 +1,60 @@
 $ ->
+  scrollPosition = null
   canOpen = true
   canClose = false
   isMouseleave = false
 
-  logo = $('.logo-1618')
+  menu = $('.nav__menu')
+
+  allowScroll = ->
+    $('.main').removeClass('main--not-scroll')
+    $(window).scrollTop(scrollPosition)
+
+  popupMobile = ->
+    $('.popup').toggleClass 'popup--mobile', Modernizr.mq('screen and (max-width:768px)')
 
   logoHide = ->
     if canClose
       canClose = false
-      menu = logo.find('.logo-1618__menu')
-      menu.fadeOut 300, ->
-        menu.removeClass('logo-1618__menu--show').show()
+      popup = menu.find('.popup')
+      popup.fadeOut 300, ->
+        popup.removeClass('popup--show').show()
         canOpen = true
         unless isMouseleave
-          logoShow(logo)
+          logoShow(menu)
 
   logoShow = ->
     if canOpen
       canOpen = false
-      logo.find('.logo-1618__menu').addClass 'logo-1618__menu--show'
+      menu.find('.popup').addClass 'popup--show'
       setTimeout ->
         canClose = true
         if isMouseleave
-          logoHide(logo)
+          logoHide(menu)
       , 300
 
-  $('.logo-1618__root').on 'mouseenter', ->
+  $('.nav__logo').on 'mouseenter', ->
     isMouseleave = false
     logoShow()
 
-  $('.logo-1618').on 'mouseleave', ->
+  $('.nav__menu').on 'mouseleave', ->
     isMouseleave = true
     logoHide()
 
-  $('.logo-1618 a').on 'click', ->
-    logo.find('.logo-1618__menu').hide()
+  $('.nav__menu a').on 'click', ->
+    allowScroll()
+    menu.find('.popup').hide()
+
+  $('.nav__button').on 'click', ->
+    scrollPosition = $(window).scrollTop()
+    $('.popup').addClass('popup--show').show()
+    $('.main').addClass('main--not-scroll')
+
+  $('.popup__close').on 'click', ->
+    allowScroll()
+    $('.popup').removeClass('popup--show').show()
+
+  popupMobile()
+
+  $(window).resize ->
+    popupMobile()

@@ -1,5 +1,5 @@
 .link
-  @extend .font-tt-norms
+  @extend %font-tt-norms
   position: relative
   display: inline-block
   letter-spacing: -0.5px
@@ -23,11 +23,11 @@
       color: $color--text-first
 
   &--xs
-    font-size: 0.95rem
+    @extend %size-cta-2
     padding-bottom: 0.3rem
 
   &--sm
-    font-size: 1.4rem
+    @extend %size-cta-1
     padding-bottom: 0.4rem
 
   &--hover-line

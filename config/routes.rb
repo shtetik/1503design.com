@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'home/index'
 
-  root 'welcome#index'
+  root 'home#index'
 
   resources :works, only: :show
   resources :tags, only: [:index, :show]

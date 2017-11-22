@@ -14,24 +14,23 @@
   &__link,
   &__year,
   &__related
-    @extend .font-tt-norms
+    @extend %font-tt-norms
 
   &__title
+    @extend %size-title-project-2
     margin-top: 5.56rem
-    font-size: 4.16rem
 
   &__text
+    @extend %size-text-0
     width: 68%
     margin-top: 1.2rem
     padding-top: 2.22rem
     border-top: 3px solid $color--text-second
-    font-size: 1rem
-    line-height: 1.33rem
     letter-spacing: -0.4px
 
   &__link
+    @extend %size-text-0
     margin-top: 2.22rem
-    font-size: 1rem
     letter-spacing: -0.4px
   &__tags
     margin-top: 1.67rem
@@ -46,9 +45,9 @@
     padding: 0rem 1.4rem
 
   &__related
+    @extend %size-title-project-2
     text-align: left
     margin-top: 5.56rem
     margin-bottom: 0
     padding-left: 12%
-    font-size: 4.16rem
     color: $color--text-second

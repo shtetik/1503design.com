@@ -1,57 +1,53 @@
+# ScrollMagic Controller
+controller = null
+# TypedJS instance
+textTyped = null
+
+# Reinit all animations
+doneResizing = ->
+  if controller?
+    controller = controller.destroy(true)
+    initScrollMagicController()
+    arrowScroll()
+    animanions()
+    textTypedInit() unless textTyped?
+
+    unless Modernizr.mq('screen and (max-width:768px)')
+      parallaxAndBlackout()
+
+# Blackout style
 blackoutTimeline = (reset = true) ->
   timeline = new TimelineLite()
   timeline.add(TweenMax.to('#blackout', 1, { opacity: 1, ease: Power1.easeIn }))
   timeline.set('#blackout', { opacity: 0, zIndex: "+=1" }) if reset
   timeline
 
-### ANIMANION ON LANDING PAGE ###
-animanions = ->
-  # SCROLLMAGIC + TWEENMAX
+# Init ScrollMagic Controller
+initScrollMagicController = ->
   controller = new ScrollMagic.Controller
 
-  # Arrow
-  new ScrollMagic.Scene(triggerElement: '#intro', duration: 200)
-    .triggerHook(0)
-    .setTween(TweenMax.to('#arrow', 1, { opacity: 0 }))
-    .addTo(controller)
-  new ScrollMagic.Scene(triggerElement: '#intro', offset: 200)
-    .triggerHook(0)
-    .setClassToggle('#arrow', 'arrow--hide')
-    .addTo(controller)
-
-  $('#arrow').click ->
-    TweenLite.to(window, 1, { scrollTo: $( window ).height(), ease: Expo.easeOut })
-
-  # Text
-  $('[data-text-first]').each (i, el) ->
-    new ScrollMagic.Scene(triggerElement: '#intro', duration: '60%')
+# Scroll bottom button
+arrowScroll = ->
+  $('.js-arrow').each (i, el) ->
+    h = $( window ).height()
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: h * i - 100, duration: 200 - i * 50)
       .triggerHook(0)
-      .setTween(TweenMax.to(el, 1, { opacity: 0.3, scale: 0.96, ease: Power1.easeIn }))
+      .setTween(TweenMax.fromTo(el, 1, { opacity: 0 }, { opacity: 1, repeat: 1, yoyo: true }))
+      .addTo(controller)
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: h * i - 100)
+      .triggerHook(0)
+      .setClassToggle(el, 'arrow--show')
+      .addTo(controller)
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: h * i + 100)
+      .triggerHook(0)
+      .setClassToggle(el, 'arrow--hide')
       .addTo(controller)
 
-  scroll = $(window).scrollTop()
-  info_height = $('.section--info').height()
-  info_top = $('.section--info').offset().top - scroll
+    $(el).click ->
+      TweenLite.to(window, 1, { scrollTo: h * (i + 1), ease: Expo.easeOut })
 
-  dataTextDurations = $('[data-text]').map (i, el) ->
-    el_height = $(el).height()
-    el_top = $(el).offset().top - scroll
-    info_top + info_height - el_top - el_height
-
-  dataTextOffsets = $('[data-text]').map (i, el) ->
-    info_top + info_height - dataTextDurations[i] - $(el).height()
-
-  $('[data-text]').each (i, el) ->
-    new ScrollMagic.Scene(triggerElement: '#intro', offset: dataTextOffsets[i], duration: dataTextDurations[i])
-      .triggerHook(1)
-      .setTween(TweenMax.to(el, 1, { opacity: 1, ease: Power0.easeNone }))
-      .addTo(controller)
-    new ScrollMagic.Scene(triggerElement: '#intro', offset: dataTextOffsets[i], duration: dataTextDurations[i])
-      .triggerHook(1)
-      .setTween(TweenMax.to(el, 1, { scale: 1, ease: Power0.easeNone }))
-      .addTo(controller)
-
-  # Parallax + Blackout
+### Parallax + Blackout animation ###
+parallaxAndBlackout = ->
   firstHeight = $('.section--first').height()
   introPadding = firstHeight + $( window ).height() * $('[data-section]').length
 
@@ -79,10 +75,42 @@ animanions = ->
     .setTween(blackoutTimeline(false))
     .addTo(controller)
 
+  new ScrollMagic.Scene(triggerElement: '.section--quote', offset: 100)
+    .triggerHook(0)
+    .setClassToggle('#blackout', 'blackout--hide')
+    .addTo(controller)
+
   new ScrollMagic.Scene(triggerElement: '.section--quote', offset: 300, duration: '100%')
     .triggerHook(0)
     .setTween('[data-section]', 1, { y: '-200%' })
     .addTo(controller)
+
+# Other Animanion on Landing page
+animanions = ->
+  # Text
+  $('[data-text-first]').each (i, el) ->
+    new ScrollMagic.Scene(triggerElement: '#intro', duration: '60%')
+      .triggerHook(0)
+      .setTween(TweenMax.to(el, 1, { opacity: 0.3, scale: 0.96, ease: Power1.easeIn }))
+      .addTo(controller)
+
+  scroll = $(window).scrollTop()
+  info_height = $('.section--info').height()
+  info_top = $('.section--info').offset().top - scroll
+
+  dataTextDurations = $('[data-text]').map (i, el) ->
+    el_height = $(el).height()
+    el_top = $(el).offset().top - scroll
+    info_top + info_height - el_top - el_height
+
+  dataTextOffsets = $('[data-text]').map (i, el) ->
+    info_top + info_height - dataTextDurations[i] - $(el).height()
+
+  $('[data-text]').each (i, el) ->
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: dataTextOffsets[i], duration: dataTextDurations[i])
+      .triggerHook(1)
+      .setTween(TweenMax.to(el, 1, { opacity: 1, scale: 1, ease: Power0.easeNone }))
+      .addTo(controller)
 
   # Quote
   $('.js-pretyped').each (i, el) ->
@@ -146,13 +174,13 @@ animanions = ->
     .setTween(TweenMax.fromTo(info[0], 1, { scale: 0.99, opacity: 0 }, { scale: 1, opacity: 1 }))
     .addTo(controller)
 
-
-  # SCROLLMAGIC + TYPED.JS
+# Text typed
+textTypedInit = ->
   new ScrollMagic.Scene(triggerElement: '#typed-trigger', reverse: false)
     .addTo(controller)
     .on 'start', ->
       try
-        new Typed '#typed',
+        textTyped = new Typed '#typed',
           strings: ['scenical decorations tailor-made on the client needs.']
           stringsElement: '#typed-strings'
           loop: true
@@ -161,11 +189,16 @@ animanions = ->
           backDelay: 2000
           showCursor: false
 
-  # CLIENTS AND CONTACT SCROLL
-  $('#clients-scroll, #contact-scroll').click (event) ->
-    event.preventDefault()
-    TweenLite.to(window, 1, { scrollTo: "##{event.target.id.replace('-scroll', '')}", ease: Expo.easeOut })
-
 $ ->
   if $('#intro').length
-    animanions()
+    initScrollMagicController()
+    doneResizing()
+
+    # Clients and Contact scroll
+    $('#clients-scroll, #contact-scroll').click (event) ->
+      event.preventDefault()
+      TweenLite.to(window, 1, { scrollTo: "##{event.target.id.replace('-scroll', '')}", ease: Expo.easeOut })
+
+    # Reinit all animations
+    $(window).resize ->
+      doneResizing()
