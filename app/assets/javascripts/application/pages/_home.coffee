@@ -44,7 +44,7 @@ arrowScroll = ->
       .addTo(controller)
 
     $(el).click ->
-      TweenLite.to(window, 1, { scrollTo: scroll * (i + 1), ease: Expo.easeOut })
+      TweenLite.to(window, 1, { scrollTo: { y: scroll * (i + 1) }, ease: Expo.easeOut })
 
 ### Parallax + Blackout animation ###
 parallaxAndBlackout = ->
@@ -187,7 +187,8 @@ $ ->
     # Clients and Contact scroll
     $('#clients-scroll, #contact-scroll').click (event) ->
       event.preventDefault()
-      TweenLite.to(window, 1, { scrollTo: "##{event.target.id.replace('-scroll', '')}", ease: Expo.easeOut })
+      scrollPosition = $("##{event.target.id.replace('-scroll', '')}").offset().top
+      TweenLite.to(window, 1, { scrollTo: { y: scrollPosition }, ease: Expo.easeOut })
 
     # Reinit all animations
     $(window).resize ->
