@@ -1,6 +1,5 @@
 $ ->
-  isMobileWidth = Modernizr.mq('screen and (max-width:768px)')
-  canOpen = !isMobileWidth
+  canOpen = !Helpers.isMobileWidth()
   canClose = false
   isMouseleave = false
   scrollPosition = null
@@ -12,7 +11,8 @@ $ ->
     $(window).scrollTop(scrollPosition)
 
   popupMobile = ->
-    $('.popup').toggleClass 'popup--mobile', isMobileWidth
+    $('.popup').toggleClass 'popup--mobile', Helpers.isMobileWidth()
+    canOpen = !Helpers.isMobileWidth()
 
   menuHide = ->
     if canClose

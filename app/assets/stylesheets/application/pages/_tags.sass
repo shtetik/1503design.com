@@ -2,9 +2,6 @@
   min-height: 150vh
   padding: 4.6rem 1.4rem 0rem 1.4rem
 
-  &__filter
-    margin-bottom: 0.4rem
-
   &__title
     @extend %font-bell-mt
     @extend %size-title-5
@@ -12,12 +9,35 @@
     letter-spacing: -8px
     color: $color--text-second
 
+  &__link
+    font-size: 1.22rem
+    margin-right: 0.56rem !important
+    margin-bottom: 0rem !important
+    display: none
+    +media-only(mobile)
+      display: inline-block
+    &:before
+      opacity: 1
+
+  &__button
+    width: 1rem
+    height: 0.6rem
+    padding: 0
+    border: none
+    border-radius: 0
+    background: asset-url('common/control/arrow_filter.svg') no-repeat
+    &, &:focus
+      outline: 0
+
   .link
     margin-right: 1.8rem
+    margin-bottom: 0.4rem
 
 .tags-works
   +grid-container
   padding-top: 1.6rem
+  +media-only(mobile)
+    padding-top: 1.11rem
 
   &__wrapper
     @include grid-collapse

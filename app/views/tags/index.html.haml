@@ -1,17 +1,29 @@
+- link_classes = 'link link--xs link--black link--hover-line'
+
 %section.tags
   %h1.tags__title Work
-  .tags__filter
-    - link_classes = 'link link--xs link--black link--hover-line'
-    = active_link_to 'All',
-                     tags_path,
-                     class: link_classes,
-                     class_active: 'link--active',
-                     active: :exact
-    - Tag.all.each do |tag|
-      = active_link_to tag.name,
-                       tag_path(tag),
-                       class: link_classes,
-                       class_active: 'link--active'
+  = link_to 'All Work',
+            tags_path,
+            class: link_classes + ' tags__link'
+  = button_tag '', class: 'tags__button visible--mobile'
+  .filter
+    .filter__wrapper
+      .filter__item
+        = active_link_to 'All Work',
+                         tags_path,
+                         class: link_classes,
+                         class_active: 'link--active',
+                         class_inactive: 'link--black',
+                         active: :exact
+      - Tag.all.each do |tag|
+        .filter__item
+          = active_link_to tag.name,
+                           tag_path(tag),
+                           class: link_classes,
+                           class_active: 'link--active',
+                           class_inactive: 'link--black'
+    .filter__wrapper
+      .filter__close.visible--mobile
   .tags-works
     .tags-works__wrapper
       - @works.each do |work|

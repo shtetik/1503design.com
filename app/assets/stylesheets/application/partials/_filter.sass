@@ -1,0 +1,51 @@
+.filter
+  &--mobile
+    visibility: hidden
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    position: fixed
+    left: 0
+    top: 0
+    width: 100vw
+    height: 100vh
+    background: asset-url('mobile/menu/menu_2.jpg') no-repeat
+    background-size: cover
+    z-index: 9999
+    overflow-y: scroll
+    .filter__wrapper:first-child
+      flex: 1 0 auto
+    .filter__wrapper:last-child
+      flex: 0 0 auto
+      padding-bottom: calc(8.5vw + 69px)
+      padding-top: 8.5vw
+    .filter__item
+      margin-left: 8.5vw
+      +media-only(mobile)
+        display: block
+      .link
+        margin: 0
+        font-size: 1.66rem
+      .link--active
+        color: #ffffff
+        &:before
+          background-color: #ffffff
+          opacity: 1
+    .filter__item:first-child
+      margin-top: 8.5vw
+      padding-top: 0
+    .filter__item + .filter__item
+      margin-top: 1.32rem
+    .filter__close
+      display: block
+      width: 2.22rem
+      height: 2.22rem
+      margin: 0 auto
+      background: asset-url('common/control/cross_mobile.svg') no-repeat
+
+  &--show
+    visibility: visible
+    -webkit-overflow-scrolling: touch
+
+  &__item
+    display: inline-block
