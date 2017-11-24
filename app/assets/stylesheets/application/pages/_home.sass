@@ -18,7 +18,7 @@
   background: asset-url('common/control/arrow_down.svg') no-repeat
   animation: arrow 1s infinite
   +media-only(mobile)
-    bottom: 2.22rem
+    bottom: 2rem
   &--hide
     display: none
   &--show
@@ -45,8 +45,6 @@
   background: #000000
   pointer-events: none
   backface-visibility: hidden
-  &--hide
-    display: none
 
 .section
   position: relative
@@ -123,6 +121,8 @@
   &--contact
     padding: 5rem 10vw 0 10vw
     background-color: $color--background
+    +media-only(tablet)
+      padding: 5rem 6vw 0 6vw
     +media-only(mobile)
       padding: 2.77rem 5vw 5.56rem 5vw
 
@@ -164,6 +164,9 @@
     div
       opacity: 0.1
       transform: scale(0.96)
+      +media-only(mobile)
+        opacity: 1
+        transform: scale(1)
   &--design
     margin-top: 3rem
     +media-only(mobile)
@@ -183,11 +186,10 @@
     h2
       @extend %font-engravers
       @extend %size-title-3
-      +media-only(mobile)
-        overflow-wrap: break-word
-        word-wrap: break-word
-        word-break: break-word
-        hyphens: auto
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
 
   &--branding,
   &--web-and-mobile,
@@ -297,6 +299,8 @@
   +grid-media($client-grid--mobile-only)
     +grid-column(1)
   padding: 1.4rem 0 1.4rem 3rem
+  +media-only(tablet)
+    padding: 1.4rem 0 1.4rem 2rem
   +media-only(mobile)
     padding: 1.11rem 0
 

@@ -1,10 +1,16 @@
 // Visibility
+.hidden
+  display: none !important
+
+.visible
+  display: initial !important
+
 .hidden--mobile
-  display: block
+  display: initial !important
   +media-only(mobile)
-    display: none
+    display: none !important
 
 .visible--mobile
-  display: none
+  display: none !important
   +media-only(mobile)
-    display: block
+    display: initial !important

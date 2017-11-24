@@ -1,8 +1,9 @@
 $ ->
-  scrollPosition = null
-  canOpen = true
+  isMobileWidth = Modernizr.mq('screen and (max-width:768px)')
+  canOpen = !isMobileWidth
   canClose = false
   isMouseleave = false
+  scrollPosition = null
 
   menu = $('.nav__menu')
 
@@ -11,9 +12,9 @@ $ ->
     $(window).scrollTop(scrollPosition)
 
   popupMobile = ->
-    $('.popup').toggleClass 'popup--mobile', Modernizr.mq('screen and (max-width:768px)')
+    $('.popup').toggleClass 'popup--mobile', isMobileWidth
 
-  logoHide = ->
+  menuHide = ->
     if canClose
       canClose = false
       popup = menu.find('.popup')
@@ -21,25 +22,25 @@ $ ->
         popup.removeClass('popup--show').show()
         canOpen = true
         unless isMouseleave
-          logoShow(menu)
+          menuShow(menu)
 
-  logoShow = ->
+  menuShow = ->
     if canOpen
       canOpen = false
       menu.find('.popup').addClass 'popup--show'
       setTimeout ->
         canClose = true
         if isMouseleave
-          logoHide(menu)
+          menuHide(menu)
       , 300
 
   $('.nav__logo').on 'mouseenter', ->
     isMouseleave = false
-    logoShow()
+    menuShow()
 
   $('.nav__menu').on 'mouseleave', ->
     isMouseleave = true
-    logoHide()
+    menuHide()
 
   $('.nav__menu a').on 'click', ->
     allowScroll()
@@ -52,7 +53,7 @@ $ ->
 
   $('.popup__close').on 'click', ->
     allowScroll()
-    $('.popup').removeClass('popup--show').show()
+    $('.popup').removeClass('popup--show').scrollTop(0)
 
   popupMobile()
 

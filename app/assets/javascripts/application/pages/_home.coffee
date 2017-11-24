@@ -9,10 +9,10 @@ doneResizing = ->
     controller = controller.destroy(true)
     initScrollMagicController()
     arrowScroll()
-    animanions()
     textTypedInit() unless textTyped?
 
     unless Modernizr.mq('screen and (max-width:768px)')
+      animanions()
       parallaxAndBlackout()
 
 # Blackout style
@@ -29,22 +29,22 @@ initScrollMagicController = ->
 # Scroll bottom button
 arrowScroll = ->
   $('.js-arrow').each (i, el) ->
-    h = $( window ).height()
-    new ScrollMagic.Scene(triggerElement: '#intro', offset: h * i - 100, duration: 200 - i * 50)
+    scroll = $('.section--first').height()
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: scroll * i - 100, duration: 200 - i * 50)
       .triggerHook(0)
       .setTween(TweenMax.fromTo(el, 1, { opacity: 0 }, { opacity: 1, repeat: 1, yoyo: true }))
       .addTo(controller)
-    new ScrollMagic.Scene(triggerElement: '#intro', offset: h * i - 100)
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: scroll * i - 100)
       .triggerHook(0)
       .setClassToggle(el, 'arrow--show')
       .addTo(controller)
-    new ScrollMagic.Scene(triggerElement: '#intro', offset: h * i + 100)
+    new ScrollMagic.Scene(triggerElement: '#intro', offset: scroll * i + 100)
       .triggerHook(0)
       .setClassToggle(el, 'arrow--hide')
       .addTo(controller)
 
     $(el).click ->
-      TweenLite.to(window, 1, { scrollTo: h * (i + 1), ease: Expo.easeOut })
+      TweenLite.to(window, 1, { scrollTo: scroll * (i + 1), ease: Expo.easeOut })
 
 ### Parallax + Blackout animation ###
 parallaxAndBlackout = ->
@@ -73,16 +73,6 @@ parallaxAndBlackout = ->
   new ScrollMagic.Scene(triggerElement: '.section--quote', duration: '100%')
     .triggerHook(1)
     .setTween(blackoutTimeline(false))
-    .addTo(controller)
-
-  new ScrollMagic.Scene(triggerElement: '.section--quote', offset: 100)
-    .triggerHook(0)
-    .setClassToggle('#blackout', 'blackout--hide')
-    .addTo(controller)
-
-  new ScrollMagic.Scene(triggerElement: '.section--quote', offset: 300, duration: '100%')
-    .triggerHook(0)
-    .setTween('[data-section]', 1, { y: '-200%' })
     .addTo(controller)
 
 # Other Animanion on Landing page
