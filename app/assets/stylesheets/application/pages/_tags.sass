@@ -1,6 +1,8 @@
 .tags
   min-height: 150vh
   padding: 4.6rem 1.4rem 0rem 1.4rem
+  +media-only(mobile)
+    padding: 3.2rem 8.5vw 0rem 8.5vw
 
   &__title
     @extend %font-bell-mt
@@ -62,6 +64,10 @@
     justify-content: center
     opacity: 0
     transition: opacity 0.3s
+    +media-only(mobile)
+      position: relative
+      padding: 0.56rem 0 1.2rem 0
+      opacity: 1
     &:hover
       opacity: 1
       transition: opacity 0.3s 0.3s
@@ -76,11 +82,15 @@
 
   &__title
     @extend %size-title-project-1
+    +media-only(mobile)
+      letter-spacing: -2px
 
   &__caption
     @extend %size-text-0
     margin-top: 0.4rem
     letter-spacing: -0.5px
+    +media-only(mobile)
+      margin-top: 0.2rem
 
   &:hover
     .tags-work__img

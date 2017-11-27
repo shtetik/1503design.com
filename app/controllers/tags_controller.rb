@@ -4,7 +4,8 @@ class TagsController < ApplicationController
   end
 
   def show
-    @works = Tag.find(params[:id]).works
+    @tag = Tag.find(params[:id])
+    @works = @tag.works
     render 'index'
   end
 end

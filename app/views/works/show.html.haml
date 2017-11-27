@@ -9,11 +9,14 @@
 
   .work__content-wrapper
     %h1.work__title= @work.name
+  .work__content-wrapper.work__content-wrapper--wide
     .work__text= @work.text
-    .work__link
-      = link_to @work.link, @work.link, target: :_blank, class: 'link link--xs link--black link--hover-white'
+  .work__content-wrapper
+    - if @work.link.present?
+      .work__link
+        = link_to @work.link, @work.link, target: :_blank, class: 'link link--xs link--black link--hover-white'
     .work__tags
-      - link_classes = 'link link--xs link--black link--hover-line'
+      - link_classes = 'link link--xs link--black link--hover-white'
       - @work.tags.each do |tag|
         = link_to tag.name,
                   tag_path(tag),

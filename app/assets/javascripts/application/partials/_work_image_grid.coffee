@@ -4,7 +4,6 @@
 
   if $(grid).length
     grid = new Muuri grid,
-      layoutOnResize: true
       layout:
         fillGaps: true
         rounding: false

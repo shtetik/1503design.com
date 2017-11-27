@@ -22,7 +22,7 @@
 class Work < ApplicationRecord
   include Friendliable
 
-  validates :caption, :text, :year, presence: true
+  validates :caption, :text, :year, :tags, presence: true
   validates :link, url: { allow_blank: true }
 
   validate :cover_required

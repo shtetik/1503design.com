@@ -1,13 +1,16 @@
 .work
-  min-height: 100vh
-
   &__imgs
   &__img
     width: 100%
     height: auto
 
   &__content-wrapper
-    padding: 0rem 12%
+    padding: 0rem 12vw
+    +media-only(mobile)
+      padding: 0rem 8.5vw
+    &--wide
+      +media-only(mobile)
+        padding: 0rem 7vw
 
   &__title,
   &__text,
@@ -19,6 +22,9 @@
   &__title
     @extend %size-title-project-2
     margin-top: 5.56rem
+    +media-only(mobile)
+      margin-top: 0
+      letter-spacing: -2px
 
   &__text
     @extend %size-text-0
@@ -27,15 +33,23 @@
     padding-top: 2.22rem
     border-top: 3px solid $color--text-second
     letter-spacing: -0.4px
+    +media-only(mobile)
+      width: 95%
+      margin-top: 1rem
+      padding-top: 1rem
 
   &__link
     @extend %size-text-0
     margin-top: 2.22rem
     letter-spacing: -0.4px
+    +media-only(mobile)
+      margin-top: 1.67rem
+
   &__tags
     margin-top: 1.67rem
     .link
       margin-right: 2rem
+      margin-bottom: 0.4rem
 
   &__year
     margin-top: 1.67rem
@@ -43,11 +57,23 @@
 
   &__related-wrapper
     padding: 0rem 1.4rem
+    +media-only(mobile)
+      padding: 0rem 8.5vw
 
   &__related
     @extend %size-title-project-2
     text-align: left
     margin-top: 5.56rem
     margin-bottom: 0
-    padding-left: 12%
+    padding-left: 12vw
     color: $color--text-second
+    +media-only(mobile)
+      margin-top: 2.22rem
+      padding-left: 8.5vw
+      font-size: 2.28rem
+      line-height: 2.28rem
+      letter-spacing: -2px
+
+  .grid
+    +media-only(mobile)
+      margin-bottom: 1.4rem

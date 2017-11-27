@@ -56,9 +56,6 @@
   &--first
     top: 0
     z-index: 1
-    // TODO: потом тут будет фон
-    // background-image: asset-url('desktope/home/1.jpg')
-    // background-attachment: fixed
   &--branding
     z-index: 2
     background-image: asset-url('desktope/home/1.jpg')
@@ -173,17 +170,17 @@
       margin-top: 1.5rem
 
   &--branding
-    h2
+    div
       @extend %font-bell-mt
       @extend %size-title-2
 
   &--web-and-mobile
-    h2
+    div
       @extend %font-tt-norms
       @extend %size-title-3
 
   &--illustration
-    h2
+    div
       @extend %font-engravers
       @extend %size-title-3
       overflow-wrap: break-word
@@ -194,7 +191,7 @@
   &--branding,
   &--web-and-mobile,
   &--illustration
-    h2
+    div
       margin-bottom: 1rem
 
   &--clients

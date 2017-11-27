@@ -2,8 +2,8 @@
 
 %section.tags
   %h1.tags__title Work
-  = link_to 'All Work',
-            tags_path,
+  = link_to @tag ? @tag.name : 'All Work',
+            @tag ? tag_path(tag) : tags_path,
             class: link_classes + ' tags__link'
   = button_tag '', class: 'tags__button visible--mobile'
   .filter
