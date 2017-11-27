@@ -11,7 +11,7 @@ doneResizing = ->
     arrowScroll()
     textTypedInit() unless textTyped?
 
-    unless Modernizr.mq('screen and (max-width:768px)')
+    unless Helpers.isMobileWidth()
       animanions()
       parallaxAndBlackout()
 

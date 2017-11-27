@@ -16,7 +16,7 @@
 %size-title-1
   font-size: 5.5rem
   +media-only(mobile)
-    font-size: 2.7rem
+    font-size: 2.55rem
 %size-title-2
   font-size: 8.4rem
   line-height: 7.4rem
@@ -44,7 +44,7 @@
     line-height: 5rem
 %size-title-project-1
   font-size: 3.1rem
-  +media-only(mobile)
+  @media only screen and (max-width: #{$break--tablet + 1})
     font-size: 1.67rem
 %size-title-project-2
   font-size: 4.16rem
@@ -75,7 +75,7 @@
     font-size: 2.5rem
 %size-quote-2
   font-size: 3.6rem
-  +media-only(tablet)
+  @media only screen and (min-width: #{$break--tablet}) and (max-width: 1200px)
     font-size: 3.1rem
   +media-only(mobile)
     font-size: 1.83rem

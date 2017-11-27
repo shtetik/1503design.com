@@ -4,13 +4,20 @@
     = button_tag '', class: 'nav__button visible--mobile'
     .popup
       .popup__wrapper
-        .popup__item
+        .popup__item.visible--mobile
           = active_link_to 'Home',
                            root_path,
-                           class: 'link link--xs visible--mobile',
-                           active: :exact,
+                           class: 'link link--xs',
                            class_active: 'link--white',
-                           class_inactive: 'link--black'
+                           class_inactive: 'link--black',
+                           active: :exact
+        .popup__item.visible--mobile
+          = active_link_to 'All Work',
+                           tags_path,
+                           class: 'link link--xs',
+                           class_active: 'link--white',
+                           class_inactive: 'link--black',
+                           active: :exact
         - tags = Tag.all
         - tags.each_with_index do |tag, index|
           .popup__item

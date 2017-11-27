@@ -10,12 +10,17 @@
   %section.section.section--info{ data: { section: 1 } }
     .section__wrapper
       .text.text--founded
-        %div{ data: { text: 1 } } 15:03 is a branding and visual communication studio
-        %div{ data: { text: 2 } } founded by Ksenia Smirnova, based in Milan, Italy.
+        %div{ data: { text: 1 } }
+          15:03 is a branding and visual communication studio
+          %br.hidden--mobile
+          founded by Ksenia Smirnova, based in Milan, Italy.
       .text.text--design
-        %div{ data: { text: 3 } } We design everything visual, including brand identities,
-        %div{ data: { text: 4 } } packaging, websites and mobile apps,
-        %div{ data: { text: 5 } } patterns and illustrations.
+        %div{ data: { text: 2 } }
+          We design everything visual, including brand identities,
+          %br.hidden--mobile
+          packaging, websites and mobile apps,
+          %br.hidden--mobile
+          patterns and illustrations.
   %section.section.section--branding{ data: { section: 2 } }
     = link_to tag_path('branding-identities'), class: 'section__wrapper' do
       .text.text--branding
@@ -88,11 +93,9 @@
         %h2 Contact
         .text--contact__vcard.vcard
           %p.text--contact__mail-us Feel free to contact us if you have any questions or comments:
-          = link_to 'ksmirnova.graphics@gmail.com', 'mailto:ksmirnova.graphics@gmail.com', class: 'text--contact__mail email'
-          = link_to 'mailto:ksmirnova.graphics@gmail.com', class: 'text--contact__mail text--contact__mail--mobile email' do
+          = link_to 'mailto:ksmirnova.graphics@gmail.com', class: 'text--contact__mail email' do
             %span ksmirnova.graphics@
-            %br
-            %span gmail.com
+            %span>< gmail.com
           .text--contact__info
             %span.fn Ksenia Smirnova
             %br

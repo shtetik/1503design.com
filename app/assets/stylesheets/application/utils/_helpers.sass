@@ -3,14 +3,16 @@
   display: none
 
 .visible
-  display: inline-block
+  display: block
 
 .hidden--mobile
-  display: inline-block
+  +media-not(mobile)
+    display: initial
   +media-only(mobile)
-    display: none
+    display: none !important
 
 .visible--mobile
-  display: none
+  +media-not(mobile)
+    display: none !important
   +media-only(mobile)
-    display: inline-block
+    display: initial

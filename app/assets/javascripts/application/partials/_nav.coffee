@@ -10,9 +10,17 @@ $ ->
     $('html').removeClass('not-scroll')
     $(window).scrollTop(scrollPosition)
 
-  popupMobile = ->
+  popupItemsDelay = (els, start = 0, step = 0.035) ->
+    els.each (i, el) ->
+      $(@).css 'transition-delay', "#{start + (i * step)}s"
+
+  popupMobileOrNot = ->
     $('.popup').toggleClass 'popup--mobile', Helpers.isMobileWidth()
     canOpen = !Helpers.isMobileWidth()
+    if Helpers.isMobileWidth()
+      popupItemsDelay($('.popup__item a'), 0.2, 0.05)
+    else
+      popupItemsDelay($('.popup__item:not(.visible--mobile) a'))
 
   menuHide = ->
     if canClose
@@ -55,7 +63,7 @@ $ ->
     allowScroll()
     $('.popup').removeClass('popup--show').scrollTop(0)
 
-  popupMobile()
+  popupMobileOrNot()
 
   $(window).resize ->
-    popupMobile()
+    popupMobileOrNot()
