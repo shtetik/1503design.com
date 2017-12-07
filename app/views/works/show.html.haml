@@ -10,7 +10,7 @@
   .work__content-wrapper
     %h1.work__title= @work.name
   .work__content-wrapper.work__content-wrapper--wide
-    .work__text= @work.text
+    .work__text= simple_format @work.text
   .work__content-wrapper
     - if @work.link.present?
       .work__link

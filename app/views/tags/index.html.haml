@@ -30,6 +30,6 @@
         %figure.tags-work
           = link_to work_path(work) do
             = image_tag work.cover_image.img.url, class: 'tags-work__img'
-            %figcaption.tags-work__wrapper
+            %figcaption.tags-work__wrapper{style: "background: url('#{work.cover_hover_image&.img&.url}') no-repeat;"}
               .tags-work__title= work.name
               .tags-work__caption= work.caption
