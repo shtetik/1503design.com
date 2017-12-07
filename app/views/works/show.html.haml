@@ -2,8 +2,13 @@
   - if @images.present?
     .work__imgs
       .grid#js-grid
-        - @images.each do |image|
-          .item{class: image.half? ? 'item--half' : 'item--full', data: { id: image.id }}
+        - is_half_before = false
+        - @images.each_with_index do |image, i|
+          - classes = [(image.half? ? 'item--half' : 'item--full')]
+          - classes << 'item--not-animate' if i == 0 || i == 1 && is_half_before
+          - classes = classes.join(' ')
+          - is_half_before = image.half?
+          .item{class: classes, data: { id: image.id }}
             .item__content
               = image_tag image.img.url, class: 'item__img'
 

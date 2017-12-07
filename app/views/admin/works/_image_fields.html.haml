@@ -1,9 +1,11 @@
 %blockquote.nested-fields
   .row.align-items-baseline
-    .column.column-40
+    .column.column-30
       = f.select :kind, Image.kinds.keys
     .column.column-40
       = f.file_field :img
+    .column.column-10
+      = image_tag f.object.img, style: 'height: 32px;'
     .column.column-10
       = f.check_box :half
       = f.label :half, 'Half?', class: 'label-inline'

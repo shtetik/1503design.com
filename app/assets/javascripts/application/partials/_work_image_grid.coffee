@@ -1,4 +1,7 @@
 # Is called in _loader.coffee
+$.fn.isHalf = ->
+  @hasClass('item--half')
+
 @workImageGrimInit = ->
   grid = '#js-grid'
 
@@ -15,14 +18,11 @@
       items = $('.item')
 
       if items.length > 1
-        first_item = items.first()
-        items = items.not(':first')
-        if first_item.offset().top == items.first().offset().top
-          items = items.not(':first')
+        items = items.not('.item--not-animate')
 
         items.each (i, el) ->
           img = $(el).find('.item__img')
-          offset = if $(el).prev().offset().top == $(el).offset().top
+          offset = if $(el).prev('.item:not(.item--not-animate)').isHalf() and $(el).isHalf()
             250
           else
             150
