@@ -12,6 +12,7 @@ $.fn.isHalf = ->
         rounding: false
 
     grid.layout true, ->
+      grid.synchronize()
       TweenLite.defaultOverwrite = false
       controller = new ScrollMagic.Controller
 
@@ -38,3 +39,4 @@ $.fn.isHalf = ->
             )
             .reverse(false)
             .addTo(controller)
+    window.grid = grid
