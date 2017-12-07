@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @works = Work.all
+    @works = Work.positioned
   end
 end

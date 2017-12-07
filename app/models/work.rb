@@ -12,6 +12,8 @@
 #  updated_at      :datetime         not null
 #  slug            :string           default(""), not null
 #  image_positions :json             not null
+#  has_page        :boolean          default(FALSE), not null
+#  position        :integer
 #
 # Indexes
 #
@@ -42,7 +44,8 @@ class Work < ApplicationRecord
   after_save :only_one_cover
 
   scope :without_ids, -> (ids) { where.not(id: ids) }
-  scope :have_pages, -> (ids) { where(has_page: true) }
+  scope :have_pages, -> { where(has_page: true) }
+  scope :positioned, -> { order(position: :asc) }
 
   def positionable_sample_images
     image_positions = JSON.parse self.image_positions

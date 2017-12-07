@@ -12,6 +12,8 @@
 #  updated_at      :datetime         not null
 #  slug            :string           default(""), not null
 #  image_positions :json             not null
+#  has_page        :boolean          default(FALSE), not null
+#  position        :integer
 #
 # Indexes
 #

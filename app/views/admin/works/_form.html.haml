@@ -14,6 +14,8 @@
               .item__content
                 = image_tag image.img.url, class: 'item__img'
     .column{class: ('column-80' if @images.present?)}
+      = f.check_box :has_page
+      = f.label :has_page, 'Has page?', class: 'label-inline'
       = f.label :name
       = f.text_field :name
       = f.label :caption
@@ -28,8 +30,6 @@
       = f.collection_select :tag_ids, Tag.all, :id, :name, {}, multiple: true
       = f.label :position
       = f.text_field :position
-      = f.check_box :has_page
-      = f.label :has_page, 'Has page?', class: 'label-inline'
       = f.hidden_field :image_positions
       = f.fields_for :images, @work.images do |image|
         = render 'image_fields', f: image
