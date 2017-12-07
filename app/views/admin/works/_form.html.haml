@@ -26,6 +26,10 @@
       = f.text_field :year
       = f.label :tag_ids, 'Tags'
       = f.collection_select :tag_ids, Tag.all, :id, :name, {}, multiple: true
+      = f.label :position
+      = f.text_field :position
+      = f.check_box :has_page
+      = f.label :has_page, 'Has page?', class: 'label-inline'
       = f.hidden_field :image_positions
       = f.fields_for :images, @work.images do |image|
         = render 'image_fields', f: image

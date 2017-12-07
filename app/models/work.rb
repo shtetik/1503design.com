@@ -22,6 +22,8 @@
 class Work < ApplicationRecord
   include Friendliable
 
+  acts_as_list
+
   validates :caption, :text, :year, :tags, presence: true
   validates :link, url: { allow_blank: true }
 
@@ -40,6 +42,7 @@ class Work < ApplicationRecord
   after_save :only_one_cover
 
   scope :without_ids, -> (ids) { where.not(id: ids) }
+  scope :have_pages, -> (ids) { where(has_page: true) }
 
   def positionable_sample_images
     image_positions = JSON.parse self.image_positions

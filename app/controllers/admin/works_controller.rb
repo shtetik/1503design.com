@@ -53,6 +53,8 @@ class Admin::WorksController < Admin::ApplicationController
       :link,
       :year,
       :image_positions,
+      :position,
+      :has_page,
       tag_ids:[],
       images_attributes: [
         :id,

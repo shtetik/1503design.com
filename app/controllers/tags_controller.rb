@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
   def index
-    @works = Work.all
+    @works = Work.have_pages
   end
 
   def show

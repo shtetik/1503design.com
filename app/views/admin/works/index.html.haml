@@ -6,6 +6,7 @@
       %th Id
       %th Name
       %th Slug
+      %th Position
       %th
         .float-right
           = link_to 'New Work', new_admin_work_path()
@@ -15,6 +16,7 @@
         %td= work.id
         %td= work.name
         %td= work.slug
+        %td= work.position
         %td
           .float-right
             = link_to 'Edit', edit_admin_work_path(work)
