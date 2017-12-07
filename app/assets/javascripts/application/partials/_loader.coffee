@@ -1,7 +1,6 @@
 isLoaded = false
 
 window.onload = ->
-  @workImageGrimInit()
   isLoaded = true
 
 $ ->
