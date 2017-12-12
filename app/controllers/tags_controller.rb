@@ -5,7 +5,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @works = @tag.works
+    @works = Work.have_pages.positioned
     render 'index'
   end
 end

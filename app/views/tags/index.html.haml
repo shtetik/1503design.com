@@ -1,17 +1,17 @@
-- link_classes = 'link link--xs link--black link--hover-line'
+- link_classes = 'link link--xs link--black link--hover-line skip-preloader'
 
 %section.tags
   %h1.tags__title Work
   = link_to @tag ? @tag.name : 'All Work',
-            @tag ? tag_path(tag) : tags_path,
+            @tag ? tag_path(@tag) : tags_path,
             class: link_classes + ' tags__link'
-  = button_tag '', class: 'tags__button visible--mobile'
   .filter
     .filter__wrapper
       .filter__item
         = active_link_to 'All Work',
                          tags_path,
                          class: link_classes,
+                         data: { filter: '*' },
                          class_active: 'link--active',
                          class_inactive: 'link--black',
                          active: :exact
@@ -20,6 +20,7 @@
           = active_link_to tag.name,
                            tag_path(tag),
                            class: link_classes,
+                           data: { filter: tag.slug },
                            class_active: 'link--active',
                            class_inactive: 'link--black'
     .filter__wrapper
@@ -27,7 +28,9 @@
   .tags-works
     .tags-works__wrapper
       - @works.each do |work|
-        %figure.tags-work
+        - slugs = work.tags.pluck(:slug)
+        - style = "display: #{slugs.include?(@tag&.slug) || @tag.blank? ? 'block' : 'none'}"
+        %figure.tags-work{data: { filters: ['*', *slugs].join(' ') }, style: style }
           = link_to work_path(work) do
             = image_tag work.cover_image.img.url, class: 'tags-work__img'
             %figcaption.tags-work__wrapper{style: "background: url('#{work.cover_hover_image&.img&.url}') no-repeat;"}
