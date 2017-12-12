@@ -16,6 +16,9 @@
     .column{class: ('column-80' if @images.present?)}
       = f.check_box :has_page
       = f.label :has_page, 'Has page?', class: 'label-inline'
+      %br
+      = f.check_box :has_client
+      = f.label :has_client, 'Display in Clients?', class: 'label-inline'
       = f.label :name
       = f.text_field :name
       = f.label :caption

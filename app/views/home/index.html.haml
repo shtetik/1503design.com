@@ -59,7 +59,7 @@
       .text.text--clients
         %h2 Clients
       .clients
-        - @works.each do |work|
+        - @works.have_clients.each do |work|
           .client
             .client__title
               = link_to_if work.has_page?, work.name, work_path(work)

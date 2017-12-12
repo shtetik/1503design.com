@@ -14,6 +14,7 @@
 #  image_positions :json             not null
 #  has_page        :boolean          default(FALSE), not null
 #  position        :integer
+#  has_client      :boolean          default(FALSE), not null
 #
 # Indexes
 #
