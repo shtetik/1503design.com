@@ -5,7 +5,8 @@
     %tr
       %th Id
       %th Name
-      %th Slug
+      %th Has page?
+      %th Display in Clients?
       %th Position
       %th
         .float-right
@@ -15,7 +16,8 @@
       %tr
         %td= work.id
         %td= work.name
-        %td= work.slug
+        %td= t work.has_page?
+        %td= t work.has_client?
         %td= work.position
         %td
           .float-right
