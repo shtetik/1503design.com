@@ -37,7 +37,7 @@ $ ->
     TweenMax.to('.tags-work', 0.3, { opacity: 0, onComplete: ->
       $('.tags-work').hide 0, ->
         displayedWork = $("[data-filters~='#{filter}']").show 0, ->
-          TweenMax.staggerTo(displayedWork, 0.4, { opacity: 1, ease: Power4.easeIn }, 0.15)
+          TweenMax.staggerTo(displayedWork, 0.2, { opacity: 1, ease: Power4.easeIn }, 0.2)
      })
 
   # Change mobile filter menu after resize
