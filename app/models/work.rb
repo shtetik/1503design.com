@@ -30,6 +30,7 @@ class Work < ApplicationRecord
 
   validates :caption, :text, :year, :tags, presence: true
   validates :link, url: { allow_blank: true }
+  validates :meta_description, length: { maximum: 160 }
 
   validate :cover_required
 
