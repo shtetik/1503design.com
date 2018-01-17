@@ -9,7 +9,7 @@ Code with 🍺 by Pavel Kulikov (shtetik) in 2017-2018.
 # Stack
 * Ruby on Rails 5.1.4, SQLite3, Haml, Clearance, Paperclip, Cocoon
 * CoffeeScript, TweenMax, ScrollMagic, Web-Animations, Modernizr, Bootstrap-Reboot/Normalize, Hammer, jQuery3, TypedJS, Muuri, ImagesLoaded, AutoPrefixer, Neat, Milligram
-* Nginx, Phusion Passenger, New Relic
+* DigitalOcean, Nginx, Phusion Passenger, New Relic, Capistrano
 
 # License
 Code licensed under an [MIT-style License](https://github.com/shtetik/1503design.com/blob/master/LICENSE).
