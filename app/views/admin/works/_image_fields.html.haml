@@ -1,14 +1,19 @@
 %blockquote.nested-fields
-  .row.align-items-baseline
-    .column.column-30
-      = f.select :kind, Image.kinds.keys
-    .column.column-40
-      = f.file_field :img
-    .column.column-10
-      = image_tag f.object.img, style: 'height: 32px;'
-    .column.column-10
-      = f.check_box :half
-      = f.label :half, 'Half?', class: 'label-inline'
-    .column.column-10
-      .float-right
-        = link_to_remove_association "Delete", f
+  .row.align-items-center
+    - if f.object.img?
+      .column.column-10
+        = image_tag f.object.img, class: 'img-fluid'
+    .column{class: ('column-90' if f.object.img?)}
+      .row
+        .column.column-50
+          = f.select :kind, Image.kinds.keys
+        .column.column-50
+          = f.text_field :alt_description, placeholder: 'SEO Alt Description'
+      .row.align-items-center
+        .column.column-50
+          = f.file_field :img
+        .column.column-40
+          = f.check_box :half
+          = f.label :half, 'Half?', class: 'label-inline'
+        .column.column-10
+          = link_to_remove_association 'Delete', f, class: 'float-right'

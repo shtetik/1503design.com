@@ -36,6 +36,7 @@
       = f.label :meta_description, 'SEO Meta Description'
       = f.text_area :meta_description
       = f.hidden_field :image_positions
+      %h4 Images
       = f.fields_for :images, @work.images do |image|
         = render 'image_fields', f: image
       .links.float-left

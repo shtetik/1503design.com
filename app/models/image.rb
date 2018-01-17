@@ -12,6 +12,7 @@
 #  half             :boolean          default(FALSE), not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  alt_description  :string           default(""), not null
 #
 # Indexes
 #
@@ -33,4 +34,9 @@ class Image < ApplicationRecord
   scope :only_sample, -> { where(kind: :sample) }
   scope :only_cover, -> { where(kind: :cover) }
   scope :only_cover_hover, -> { where(kind: :cover_hover) }
+
+  # SEO Alt Description
+  def alt
+    alt_description.presence || "#{work.name}. 1503 Design studio founded by Ksenia Smirnova"
+  end
 end

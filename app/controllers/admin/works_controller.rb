@@ -64,6 +64,7 @@ class Admin::WorksController < Admin::ApplicationController
         :img,
         :kind,
         :half,
+        :alt_description,
         :_destroy
       ]
     )

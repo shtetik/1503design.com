@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180117153852) do
+ActiveRecord::Schema.define(version: 20180117160002) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180117153852) do
     t.boolean "half", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "alt_description", default: "", null: false
     t.index ["work_id"], name: "index_images_on_work_id"
   end
 

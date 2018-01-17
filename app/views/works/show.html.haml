@@ -12,7 +12,9 @@
           - is_half_before = image.half?
           .item{class: classes, data: { id: image.id }}
             .item__content
-              = image_tag image.img.url, class: 'item__img'
+              = image_tag image.img.url,
+                          class: 'item__img',
+                          alt: image.alt
 
   .work__content-wrapper
     %h1.work__title= title @work.name
