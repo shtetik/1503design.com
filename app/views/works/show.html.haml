@@ -13,7 +13,7 @@
               = image_tag image.img.url, class: 'item__img'
 
   .work__content-wrapper
-    %h1.work__title= @work.name
+    %h1.work__title= title @work.name
   .work__content-wrapper.work__content-wrapper--wide
     .work__text= simple_format @work.text
   .work__content-wrapper

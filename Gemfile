@@ -26,6 +26,7 @@ gem 'order_as_specified', '~> 1.3'
 gem 'babosa', '~> 1.0', '>= 1.0.2'
 gem 'newrelic_rpm', '~> 4.5', '>= 4.5.0.337'
 gem 'acts_as_list', '~> 0.9.10'
+gem 'meta-tags', '~> 2.7'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-normalize-css'
