@@ -56,6 +56,7 @@ class Admin::WorksController < Admin::ApplicationController
       :position,
       :has_page,
       :has_client,
+      :meta_description,
       tag_ids:[],
       images_attributes: [
         :id,

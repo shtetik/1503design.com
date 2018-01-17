@@ -33,6 +33,8 @@
       = f.collection_select :tag_ids, Tag.all, :id, :name, {}, multiple: true
       = f.label :position
       = f.text_field :position
+      = f.label :meta_description, 'SEO Meta Description'
+      = f.text_area :meta_description
       = f.hidden_field :image_positions
       = f.fields_for :images, @work.images do |image|
         = render 'image_fields', f: image

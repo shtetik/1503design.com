@@ -2,19 +2,20 @@
 #
 # Table name: works
 #
-#  id              :integer          not null, primary key
-#  name            :string           not null
-#  caption         :string           not null
-#  text            :text             not null
-#  link            :string
-#  year            :integer          not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  slug            :string           default(""), not null
-#  image_positions :json             not null
-#  has_page        :boolean          default(FALSE), not null
-#  position        :integer
-#  has_client      :boolean          default(FALSE), not null
+#  id               :integer          not null, primary key
+#  name             :string           not null
+#  caption          :string           not null
+#  text             :text             not null
+#  link             :string
+#  year             :integer          not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  slug             :string           default(""), not null
+#  image_positions  :json             not null
+#  has_page         :boolean          default(FALSE), not null
+#  position         :integer
+#  has_client       :boolean          default(FALSE), not null
+#  meta_description :text             default(""), not null
 #
 # Indexes
 #
