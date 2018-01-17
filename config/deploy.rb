@@ -3,8 +3,8 @@ lock "~> 3.10.0"
 
 set :rvm_ruby_version, '2.4.1'
 
-set :application, "kseniasmirnova"
-set :repo_url, "git@bitbucket.org:shtetik/kseniasmirnova.git"
+set :application, "1503design"
+set :repo_url, "git@github.com:shtetik/1503design.com.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
