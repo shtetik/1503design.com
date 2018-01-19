@@ -1,4 +1,13 @@
 - description @work.meta_description if @work.meta_description.present?
+- set_meta_tags og: { 'title'        => @work.name,
+                      'description'  => @work.meta_description || @work.caption,
+                      'type'         => 'website',
+                      'url'          => work_url(@work),
+                      'image'        => asset_url(@work.cover_image.img.url),
+                      'image:width'  => 960,
+                      'image:height' => 960 },
+                twitter: { card: "summary_large_image" }
+
 
 %section.work
   - if @images.present?
