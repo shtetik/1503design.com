@@ -1,4 +1,14 @@
-- description 'Our design portfolio. Brand identities, packaging, web&mobile design, patterns and illustrations.'
+- desc = 'Our design portfolio. Brand identities, packaging, web&mobile design, patterns and illustrations.'
+- description desc
+- set_meta_tags og: { 'title'        => '15:03 Design | Work',
+                      'description'  => desc,
+                      'type'         => 'website',
+                      'url'          => tags_url,
+                      'image'        => asset_url('common/og_logo.jpg'),
+                      'image:width'  => 1200,
+                      'image:height' => 630 },
+                twitter: { card: 'summary_large_image' }
+
 - link_classes = 'link link--xs link--black link--hover-line skip-preloader'
 
 %section.tags

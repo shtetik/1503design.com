@@ -1,4 +1,13 @@
-- description '15:03 is a branding and visual communication studio founded by Ksenia Smirnova, based in Milan, Italy.'
+- desc = '15:03 is a branding and visual communication studio founded by Ksenia Smirnova, based in Milan, Italy.'
+- description desc
+- set_meta_tags og: { 'title'        => '15:03 Design',
+                      'description'  => desc,
+                      'type'         => 'website',
+                      'url'          => root_url,
+                      'image'        => asset_url('common/og_logo.jpg'),
+                      'image:width'  => 1200,
+                      'image:height' => 630 },
+                twitter: { card: 'summary_large_image' }
 
 %article.intro#intro
   .arrow.js-arrow

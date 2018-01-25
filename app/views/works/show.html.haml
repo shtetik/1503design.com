@@ -6,8 +6,7 @@
                       'image'        => asset_url(@work.cover_image.img.url),
                       'image:width'  => 960,
                       'image:height' => 960 },
-                twitter: { card: "summary_large_image" }
-
+                twitter: { card: 'summary_large_image' }
 
 %section.work
   - if @images.present?
@@ -32,7 +31,10 @@
   .work__content-wrapper
     - if @work.link.present?
       .work__link
-        = link_to @work.link, @work.link, target: :_blank, class: 'link link--xs link--black link--hover-white'
+        = link_to @work.link,
+                  @work.link,
+                  target: :_blank,
+                  class: 'link link--xs link--black link--hover-white'
     .work__tags
       - link_classes = 'link link--xs link--black link--hover-white'
       - @work.tags.each do |tag|
