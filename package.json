@@ -1,5 +1,8 @@
 {
-  "name": "kseniasmirnova",
+  "name": "1503design.com",
   "private": true,
+  "version": "1.0.0",
+  "repository": "git@github.com:shtetik/1503design.com.git",
+  "author": "Pavel Kulikov <shtetik@gmail.com>",
   "dependencies": {}
 }
