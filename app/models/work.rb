@@ -58,7 +58,7 @@ class Work < ApplicationRecord
   end
 
   def related_works
-    works.without_ids(id).sample(3)
+    works.have_pages.without_ids(id).sample(3)
   end
 
   private
