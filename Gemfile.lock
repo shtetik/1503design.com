@@ -107,7 +107,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    crass (1.0.3)
+    crass (1.0.4)
     debug_inspector (0.0.3)
     dotenv (2.2.1)
     dotenv-rails (2.2.1)
@@ -223,8 +223,8 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.0.3)
-      loofah (~> 2.0)
+    rails-html-sanitizer (1.0.4)
+      loofah (~> 2.2, >= 2.2.2)
     railties (5.1.4)
       actionpack (= 5.1.4)
       activesupport (= 5.1.4)
@@ -332,6 +332,7 @@ DEPENDENCIES
   rails-assets-mousetrap!
   rails-assets-normalize-css!
   rails-assets-typed.js!
+  rails-html-sanitizer (~> 1.0, >= 1.0.4)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
