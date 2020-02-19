@@ -5,13 +5,16 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"}
     %meta{:name => "author", :content => "Ksenia Smirnova, Pavel Kulikov"}
     %meta{:name => "google-site-verification", :content => "liUnQvEbASRROaWh3NPIgGX07IvUynWliBrl2EBMFCs"}
+    = render 'layouts/google_tag_manager'
     = display_meta_tags site: '15:03 Design'
     = stylesheet_link_tag    'application/main', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body.loading
-    = render 'layouts/partials/loader'
+    - unless controller.action_name == 'privacy'
+      = render 'layouts/partials/loader'
     = render 'layouts/partials/nav'
     %main.main
       = yield
-    = render 'layouts/partials/footer'
+    - unless controller.action_name == 'privacy'
+      = render 'layouts/partials/footer'

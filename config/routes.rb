@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'privacy', to: 'home#privacy'
+
   resources :works, only: :show
   resources :tags, only: [:index, :show]
 
