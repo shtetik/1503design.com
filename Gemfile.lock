@@ -217,6 +217,9 @@ GEM
       railties (= 5.1.4)
       sprockets-rails (>= 2.0.0)
     rails-assets-ScrollMagic (2.0.5)
+    rails-assets-jquery (3.4.1)
+    rails-assets-jquery.cookie (1.4.1)
+      rails-assets-jquery (>= 1.2)
     rails-assets-mousetrap (1.6.1)
     rails-assets-normalize-css (7.0.0)
     rails-assets-typed.js (2.0.6)
@@ -329,6 +332,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.4)
   rails-assets-ScrollMagic!
+  rails-assets-jquery.cookie
   rails-assets-mousetrap!
   rails-assets-normalize-css!
   rails-assets-typed.js!
@@ -342,4 +346,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0.pre.3
+   1.17.2

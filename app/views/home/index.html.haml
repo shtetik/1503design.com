@@ -100,17 +100,18 @@
               %span.country-name Italy
             %span P.Iva 09040380967
 
-#cookie-consent-banner
-  .text.text--cookies
-    .visible--mobile
-      This website uses first and third party cookies. For further information on cookies and how to unable them
-      %a{href: '/privacy'} click here
-      %span> . To allow the cookies usage on this website click OK.
-    .hidden--mobile
-      %div
+- unless request.cookies["hideBanner"]
+  #cookie-consent-banner
+    .text.text--cookies
+      .visible--mobile
         This website uses first and third party cookies. For further information on cookies and how to unable them
         %a{href: '/privacy'} click here
-        %span> .
-      %div To allow the cookies usage on this website click OK.
-  %a.consent__button{onclick: "dataLayer.push({'event': 'cookieConsent'});"}
-    OK
+        %span> . To allow the cookies usage on this website click OK.
+      .hidden--mobile
+        %div
+          This website uses first and third party cookies. For further information on cookies and how to unable them
+          %a{href: '/privacy'} click here
+          %span> .
+        %div To allow the cookies usage on this website click OK.
+    %a.consent__button.skip-preloader{href: '#'}
+      OK

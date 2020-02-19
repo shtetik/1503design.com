@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails', '~> 1.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem "rails-assets-jquery.cookie"
 gem 'greensock-rails', '~> 1.20', '>= 1.20.2.0'
 gem 'autoprefixer-rails', '~> 7.1', '>= 7.1.4.1'
 gem 'neat', '~> 2.1'

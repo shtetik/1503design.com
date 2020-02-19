@@ -194,3 +194,12 @@ $ ->
     # Reinit all animations
     $(window).resize ->
       doneResizing()
+
+
+
+$ ->
+  $('.consent__button').on 'click', (event) ->
+    event.preventDefault()
+    $('#cookie-consent-banner').css({display: 'none'})
+    dataLayer.push({'event': 'cookieConsent'})
+    $.cookie("hideBanner", true)
