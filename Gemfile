@@ -47,7 +47,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'puma', '~> 3.7'
+  gem 'puma', '~> 3.12'
   gem 'better_errors', '~> 2.4'
   gem 'binding_of_caller', '~> 0.7.3'
   gem 'annotate', '~> 2.7', '>= 2.7.2'
