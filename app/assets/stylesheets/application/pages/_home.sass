@@ -4,6 +4,11 @@
   +media-only(mobile)
     padding-top: 0 !important
 
+%article.privacy
+  position: relative
+  // Should be 45px below the logo
+  padding-top: 75px
+
 .arrow
   display: none
   position: fixed
@@ -94,9 +99,14 @@
   &--illustration
     top: 100%
 
+  &--privacy
+    top: 0px
+    height: auto
+
   &--branding,
   &--web-and-mobile,
-  &--illustration
+  &--illustration,
+  &--privacy
     +media-only(mobile)
       top: auto
       height: 100vw
@@ -147,8 +157,14 @@
   &--illustration,
   &--quote,
   &--clients,
-  &--contact
+  &--contact,
+  &--privacy
     color: $color--text-second
+
+  &--legal
+    font-size: 13px
+    line-height: 1.3
+    color: $color--text-first
 
   &--intro
     @extend %font-tt-norms
@@ -169,6 +185,7 @@
       +media-only(mobile)
         opacity: 1
         transform: scale(1)
+
   &--design
     margin-top: 3rem
     +media-only(mobile)
@@ -183,6 +200,19 @@
     div
       @extend %font-tt-norms
       @extend %size-title-3
+
+  &--privacy
+    text-align: left
+    padding-left: 5%
+    padding-right: 5%
+    h2
+      @extend %font-engravers
+      @extend %size-text-1
+      padding-bottom: 20px
+      +media-only(mobile)
+        padding-bottom: 20px
+        font-size: 35px
+        line-height: 2.4rem
 
   &--illustration
     div
@@ -331,3 +361,46 @@
   &__work
     @extend %size-text-3
     letter-spacing: -0.5px
+
+
+#cookie-consent-banner
+  position: fixed
+  bottom: 0
+  z-index: 10
+  background-color: white
+  height: 85px
+  +media-only(mobile)
+    height: 200px
+  width: 100%
+  padding-left: 5%
+  padding-right: 5%
+
+  .text--cookies, .consent__button
+    margin-top: 20px
+    +media-only(mobile)
+      margin-top: 30px
+
+  .text--cookies
+    font-size: 14px
+    +media-only(mobile)
+      font-size: 15px
+      margin-top: 30px
+    float: left
+    line-height: 1.3
+
+    a
+      text-decoration: underline
+
+  .consent__button
+    cursor: pointer
+    float: right
+    width: 120px
+    height: 35px
+    color: black
+    text-align: center
+    padding-top: 6px
+    font-size: 16px
+    border: 2px solid black
+    +media-only(mobile)
+      float: none
+      display: inline-block
