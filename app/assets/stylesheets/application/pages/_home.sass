@@ -209,6 +209,10 @@
       @extend %font-engravers
       @extend %size-text-1
       padding-bottom: 20px
+      +media-only(mobile)
+        padding-bottom: 20px
+        font-size: 35px
+        line-height: 2.4rem
 
   &--illustration
     div
@@ -365,15 +369,22 @@
   z-index: 10
   background-color: white
   height: 85px
+  +media-only(mobile)
+    height: 200px
   width: 100%
   padding-left: 5%
   padding-right: 5%
 
   .text--cookies, .consent__button
     margin-top: 20px
+    +media-only(mobile)
+      margin-top: 30px
 
   .text--cookies
     font-size: 14px
+    +media-only(mobile)
+      font-size: 15px
+      margin-top: 30px
     float: left
     line-height: 1.3
 
@@ -386,7 +397,10 @@
     width: 120px
     height: 35px
     color: black
-    border: 2px solid black
     text-align: center
     padding-top: 6px
     font-size: 16px
+    border: 2px solid black
+    +media-only(mobile)
+      float: none
+      display: inline-block

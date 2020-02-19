@@ -102,11 +102,15 @@
 
 #cookie-consent-banner
   .text.text--cookies
-    %span
+    .visible--mobile
       This website uses first and third party cookies. For further information on cookies and how to unable them
       %a{href: '/privacy'} click here
-      %span> .
-    %br
-    %span To allow the cookies usage on this website click OK.
+      %span> . To allow the cookies usage on this website click OK.
+    .hidden--mobile
+      %div
+        This website uses first and third party cookies. For further information on cookies and how to unable them
+        %a{href: '/privacy'} click here
+        %span> .
+      %div To allow the cookies usage on this website click OK.
   %a.consent__button{onclick: "dataLayer.push({'event': 'cookieConsent'});"}
     OK
