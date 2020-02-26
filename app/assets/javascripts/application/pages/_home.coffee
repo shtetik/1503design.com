@@ -202,4 +202,4 @@ $ ->
     event.preventDefault()
     $('#cookie-consent-banner').css({display: 'none'})
     dataLayer.push({'event': 'cookieConsent'})
-    $.cookie("hideBanner", true)
+    $.cookie("hideBanner", true, { expires: 7 }) # Expires after a week
