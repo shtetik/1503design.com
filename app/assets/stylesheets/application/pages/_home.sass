@@ -166,7 +166,9 @@
     line-height: 1.3
     color: $color--text-first
     +media-only(mobile)
-      padding-right: 15%
+      padding-right: 10%
+    +media-only(small-mobile)
+      width: 370px
 
   &--intro
     @extend %font-tt-norms
@@ -215,6 +217,11 @@
         padding-bottom: 20px
         font-size: 35px
         line-height: 2.4rem
+      +media-only(small-mobile)
+        padding-bottom: 20px
+        font-size: 35px
+        line-height: 2.4rem
+        width: 360px
 
   &--illustration
     div

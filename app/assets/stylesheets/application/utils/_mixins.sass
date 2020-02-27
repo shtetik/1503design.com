@@ -1,5 +1,8 @@
 =media-only($media)
-  @if $media == mobile
+  @if $media == small-mobile
+    @media #{$media--small-mobile}
+      @content
+  @else if $media == mobile
     @media #{$media--mobile}
       @content
   @else if $media == tablet
